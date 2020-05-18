@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("ECO Clean Handling");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
         if(root.isFocused()){
