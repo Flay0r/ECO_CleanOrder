@@ -1,54 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Stylish%20LogIn.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #4A545F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="ICON HERE" textFill="WHITE">
-               <font>
-                  <Font name="Ebrima Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label text="WELCOME TO " textFill="WHITE">
-               <font>
-                  <Font name="Ebrima Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label text="THE FUTURE" textFill="WHITE">
-               <font>
-                  <Font name="Ebrima Bold" size="14.0" />
-               </font>
-            </Label>
+            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #4A545F;">
+               <children>
+                  <FontAwesomeIcon iconName="TRUCK" size="5em" wrappingWidth="62.85711669921875" />
+                  <Label text="WELCOME TO " textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="THE FUTURE" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="430.0" spacing="2.0">
+               <children>
+                  <AnchorPane prefHeight="103.0" prefWidth="400.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="WELCOME BACK!" textFill="#363c44" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="14.0">
+                           <font>
+                              <Font name="Ebrima Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="43.0" text="Sign in to Continue" textFill="#575757e7">
+                           <font>
+                              <Font name="Ebrima Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Employee Number" unFocusColor="#4059a9">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="50.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Password" unFocusColor="#4059a9">
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="20.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXButton id="forgetBtn" fx:id="forgetBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="102.0" text="Lost password? " textFill="#000000e6">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="158.0" right="60.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton id="loginButton" fx:id="loginButton" buttonType="RAISED" prefHeight="46.0" prefWidth="206.0" ripplerFill="#0777ff" text="Log In">
+                     <font>
+                        <Font name="Ebrima Bold" size="16.0" />
+                     </font></JFXButton>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-      <Pane layoutX="400.0" prefHeight="600.0" prefWidth="400.0">
-         <children>
-            <Label layoutX="40.0" layoutY="78.0" text="Sign in to Continue" textFill="#130e65">
-               <font>
-                  <Font name="Ebrima Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="40.0" layoutY="52.0" text="WELCOME BACK!" textFill="#130e65">
-               <font>
-                  <Font name="Ebrima Bold" size="20.0" />
-               </font>
-            </Label>
-            <JFXTextField labelFloat="true" layoutX="36.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Email" unFocusColor="#4059a9" />
-            <JFXTextField labelFloat="true" layoutX="36.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Password" unFocusColor="#4059a9" />
-            <Label fx:id="forgetBtn" layoutX="90.0" layoutY="198.0" stylesheets="@Stylish%20LogIn.css" text="Forgot the password? " textFill="#868d94">
-               <font>
-                  <Font name="Ebrima Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
+      </HBox>
    </children>
 </AnchorPane>

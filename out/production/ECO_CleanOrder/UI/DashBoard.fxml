@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashBoardControlls">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@Stylish%20LogIn.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashBoardControlls">
    <children>
       <HBox spacing="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <children>
