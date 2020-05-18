@@ -1,12 +1,12 @@
 .parent{
-    -fx-background-color: #A3B8B8;
+    -fx-background-color: WHITE;
 }
 .sidebar{
     -fx-background-color: #A3B8B8;
 }
 
 .forgetBtn{
-    -fx-text-fill: #A3B8B8;
+    -fx-text-fill: #29e1e1;
     -fx-background-radius: 0;
 }
 
