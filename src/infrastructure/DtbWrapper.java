@@ -69,6 +69,13 @@ public class DtbWrapper {
         }
     }
 
+    /** Method for software login according to position om employee
+     *
+     * @param UserID
+     * @param password
+     * @return
+     * @throws SQLException
+     */
     public static boolean checkLogin(int UserID, String password) throws SQLException {
         boolean result = false;
         select("select * from LogCred where EmployeeID=" + UserID);
