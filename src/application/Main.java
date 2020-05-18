@@ -6,17 +6,31 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.naming.ldap.Control;
+
 public class Main extends Application {
+
+    private static Controller c;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/sample.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+        if(root.isFocused()){
+            c.printer();
+        }
+
+
+
+
     }
     
     public static void main(String[] args) {
+
         launch(args);
     }
 }
