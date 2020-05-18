@@ -23,14 +23,9 @@ public class Main extends Application {
         if(root.isFocused()){
             c.printer();
         }
-
-
-
-
     }
     
     public static void main(String[] args) {
-
         launch(args);
     }
 }
