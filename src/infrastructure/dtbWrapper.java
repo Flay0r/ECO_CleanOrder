@@ -2,17 +2,18 @@ package infrastructure;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class dtbWrapper {
 
-    public static ResultSet result;
+    public static ResultSet resultSet;
     static PreparedStatement prpstmt;
 
     public static void select(String sql) {
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
-            result = prpstmt.executeQuery();
+            resultSet = prpstmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException();
@@ -28,7 +29,7 @@ public class dtbWrapper {
             e.printStackTrace();
             throw new RuntimeException();
         }
-        System.out.println("update OK, rows affected: " + result);
+        System.out.println("update OK, rows affected: " + resultSet);
     }
 
     public static void insert(String sql) {
@@ -54,17 +55,32 @@ public class dtbWrapper {
     }
 
     public static ResultSet getResultSet() {
-        return result;
+        return resultSet;
     }
 
     //TODO not finished, maybe not necessary
     public static void cleanup() {
         try {
-            result.close();
+            resultSet.close();
             prpstmt.close();
             DatabaseConnector.getConnection().close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean checkLogin(int UserID, String password) throws SQLException {
+        boolean result = false;
+        select("select * from LogCred where EmployeeID=" + UserID);
+        ResultSetMetaData meta = resultSet.getMetaData();
+        String code;
+        if(resultSet.next()) {
+            code = resultSet.getString("Code");
+            System.out.println("Code: " + code);
+            if(password == code) {
+                result = true;
+            }
+        }
+        return result;
     }
 }
