@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class dtbWrapper {
+public class DtbWrapper {
 
     public static ResultSet resultSet;
     static PreparedStatement prpstmt;
@@ -74,12 +74,14 @@ public class dtbWrapper {
         select("select * from LogCred where EmployeeID=" + UserID);
         ResultSetMetaData meta = resultSet.getMetaData();
         String code;
-        if(resultSet.next()) {
-            code = resultSet.getString("Code");
-            System.out.println("Code: " + code);
-            if(password == code) {
-                result = true;
-            }
+        if(!resultSet.next()) {
+            System.out.println("no data from select");
+        } else {
+                code = resultSet.getString("Code");
+                System.out.println("Code: " + code);
+                if (password == code) {
+                    result = true;
+                }
         }
         return result;
     }
