@@ -2,22 +2,22 @@
     -fx-background-color: WHITE;
 }
 .sidebar{
-    -fx-background-color: #A3B8B8;
+    -fx-background-color: #abd1c6;
 }
 
 .forgetBtn{
-    -fx-text-fill: #29e1e1;
+    -fx-text-fill: #3a9191;
     -fx-background-radius: 0;
 }
 
 .forgetBtn:hover{
     -fx-background-radius: 0;
-    -fx-text-fill: #A3B8B8;
+    -fx-text-fill: #abd1c6;
     -fx-underline: true;
 }
 .loginButton{
     -fx-background-radius: 0;
-    -fx-text-fill: #A3B8B8;
+    -fx-text-fill: #336666;
     -fx-background-color: rgba(74, 84, 95, 0.5);
 
 }
@@ -25,8 +25,8 @@
 .loginButton:hover{
     -fx-background-radius: 0;
     -fx-background-color: WHITE;
-    -fx-text-fill:#A3B8B8;
-    -fx-border-color: #A3B8B8;
+    -fx-text-fill:#abd1c6;
+    -fx-border-color: #abd1c6;
     -fx-border-width: 1px;
     -fx-border-style: solid;
 

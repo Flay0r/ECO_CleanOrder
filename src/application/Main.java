@@ -20,9 +20,6 @@ public class Main extends Application {
         primaryStage.setTitle("ECO Clean Handling");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
-        if(root.isFocused()){
-            c.printer();
-        }
     }
     
     public static void main(String[] args) {

@@ -1,4 +1,27 @@
 .sidebar{
-     -fx-background-color: #A3B8B8;
+     -fx-background-color: #abd1c6;
+}
+.sidebar-user-btn{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0;
+     -fx-text-fill: #004643;
+}
+.sidebar-btn{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0;
+     -fx-text-fill: #004643;
+}
+.sidebar-btn{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0;
 
+     /*
+     border color handles in that case the colour of our selector
+     (Thingie to the left)
+      */
+     -fx-border-color: #004643;
+     -fx-border-width: 0px 0px 0px 3px;
+}
+.sidebar-btn-icon{
+     -fx-fill: #004643;
 }
