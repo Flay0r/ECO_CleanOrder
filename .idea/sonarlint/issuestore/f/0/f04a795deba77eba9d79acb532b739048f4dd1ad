@@ -1,0 +1,4 @@
+
+q	java:S116"URename this field "TFPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¨ê²8é‘÷’¢.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ìƒ°ÿÿÿÿÿ8•ßü’¢.
+r	java:S116"VRename this field "TF_userName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÚşÌ8é‘÷’¢.

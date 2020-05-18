@@ -1,0 +1,7 @@
+.forgetBtn{
+    -fx-text-fill: a3a3a3;
+}
+.forgetBtn:hover{
+    -fx-text-fill: #297bc2;
+    -fx-underline: #297bc2;
+}
