@@ -28,6 +28,10 @@ public class DatabaseConnector {
         return con;
     }
 
+    public static ResultSet getResultSet(){
+        return rs;
+    }
+
     public static void manualDisconnect() {
         try {
             con.close();
