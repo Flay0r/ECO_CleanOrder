@@ -92,4 +92,29 @@ public class DtbWrapper {
         }
         return result;
     }
+
+    /*
+    public static boolean newCustomer(String FullName, String Address, String Email, String Phone){
+        boolean result=false;
+
+        try{
+            insert("insert into Customers ");
+        } catch (Exception e) {
+            System.out.println("new customer insert failed");
+        }
+
+
+
+        try {
+            Desktop.getDesktop().browse(new URI("https://javabeginners.de"));
+        } catch (IOException ioe) {
+            System.out.println("IO-Problem");
+            ioe.printStackTrace();
+        } catch  (URISyntaxException use) {
+            System.out.println("URI-Problem");
+            use.printStackTrace();
+        }
+    }
+
+     */
 }
