@@ -8,6 +8,7 @@
     -fx-text-fill: #007efc;
     -fx-background-color: rgba(74, 84, 95, 0.02);
 }
+
 .loginButton:hover{
     -fx-background-color: WHITE;
     -fx-background-radius: 10px;
