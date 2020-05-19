@@ -6,11 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Launch extends Application {
 
-    public static Stage stage = null;
+    public Stage stage;
 
     /*@Override
     public void start(Stage stage) throws Exception {
@@ -24,11 +23,13 @@ public class Launch extends Application {
     }*/
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
-        primaryStage.setTitle("EcoCleaner");
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        stage.setTitle("EcoCleaner");
+        stage.setScene(new Scene(root, 1200, 650));
+        stage.setMinHeight(600);
+        stage.setMinWidth(800);
+        stage.show();
 
         DatabaseConnector.createConnection();
 

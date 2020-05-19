@@ -4,8 +4,14 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.xml.crypto.Data;
+import java.io.IOException;
 
 /**
  * Sample Skeleton for 'LogIn.fxml' Controller Class
@@ -19,21 +25,40 @@ public class Controller {
     @FXML
     private JFXButton btn_login;
 
+
+
     private int currentUserID;
     private String currentPosition;
     private String tempPW;
 
     @FXML
-    public void btn_login(){
+    public void btn_login() throws Exception {
         currentUserID = Integer.valueOf(empNoTF.getText());
         tempPW = passwordTF.getText();
 
         if(comparePassword()) {
             System.out.println("login successful");
+            closeButtonAction();
+            startDashBoard(stage);
             savePosition();
         } else {
             System.out.println("login failed");
         }
+    }
+
+    private void closeButtonAction(){
+        Launch l = new Launch();
+        l.stage;
+        Stage stage = (Stage) btn_login.getScene().getWindow();
+        stage.close();
+    }
+
+    public void startDashBoard(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        this.stage = stage;
+        stage.show();
     }
 
     private boolean comparePassword(){
