@@ -6,6 +6,10 @@ import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
 import javax.xml.crypto.Data;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * Sample Skeleton for 'LogIn.fxml' Controller Class
@@ -17,12 +21,14 @@ public class Controller {
     @FXML
     private JFXTextField passwordTF;
     @FXML
-    private JFXButton btn_login;
+    private JFXButton loginButton;
+
+
 
     private static SessionUser currentUser;
 
     @FXML
-    public void btn_login(){
+    public void btn_login() throws Exception{
         currentUser.password = passwordTF.getText();
         if (empNoTF.getText().matches("[0-9]+")){
             currentUser.id = Integer.valueOf(empNoTF.getText());
@@ -32,9 +38,13 @@ public class Controller {
         }
 
         if(comparePassword()) {
+
             empNoTF.setText("");
             passwordTF.setText("");
             System.out.println("login successful");
+
+            startDashBoard();
+            closeWindow();
             savePosition();
             switch(currentUser.position){
                 case "Manager":
@@ -47,6 +57,7 @@ public class Controller {
                     driverUI();
                     break;
             }
+
         } else {
             System.out.println("login failed");
         }
@@ -82,17 +93,39 @@ public class Controller {
         currentUser.password="";
     }
 
+    private void closeWindow(){
+       Stage stage = (Stage) loginButton.getScene().getWindow();
+       stage.close();
+
+    }
+
+    public Stage startDashBoard() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
+        Scene scene = new Scene(root, 1200, 650);
+        Stage stage = new Stage();
+        stage.setTitle("DashBoard Minimal UI");
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setScene(scene);
+        stage.show();
+        return stage;
+    }
+
     public void managerUI(){
 
+    //TODO Show the UI!
     }
 
     public void assistantUI(){
 
+            //TODO Show the UI!
     }
 
     public void driverUI(){
+            //TODO Show the UI!
+        }
 
-    }
+
 
     public void newOrder(int CustomerID, int SubsidiaryID){
 
@@ -116,7 +149,6 @@ public class Controller {
         burgers.setVisible(true);
         potatoPane.setVisible(false);
     }
-
     @FXML
     void goToDesert(ActionEvent event) {
         sideDish.setVisible(false);

@@ -6,21 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Launch extends Application {
-
-    public static Stage stage = null;
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
-        this.stage = stage;
+        stage.setTitle("EcoCleaner");
+        stage.setScene(new Scene(root, 1200, 650));
+        stage.setMinHeight(600);
+        stage.setMinWidth(800);
         stage.show();
+
         DatabaseConnector.createConnection();
+
     }
     
     public static void main(String[] args) {
