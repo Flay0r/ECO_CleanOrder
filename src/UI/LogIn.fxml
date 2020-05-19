@@ -71,7 +71,7 @@
                         <Insets bottom="20.0" left="158.0" right="60.0" top="2.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton id="loginButton" fx:id="loginButton" buttonType="RAISED" graphicTextGap="0.0" onAction="#btn_login" prefHeight="46.0" prefWidth="206.0" ripplerFill="#0777ff" styleClass="loginButton" stylesheets="@CSS/Stylesheet_Login.css" text="Log In">
+                  <JFXButton id="loginButton" fx:id="btn_login" buttonType="RAISED" graphicTextGap="0.0" onAction="#btn_login" prefHeight="46.0" prefWidth="206.0" ripplerFill="#0777ff" styleClass="loginButton" stylesheets="@CSS/Stylesheet_Login.css" text="Log In">
                      <font>
                         <Font name="Ebrima Bold" size="16.0" />
                      </font></JFXButton>

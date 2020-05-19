@@ -11,7 +11,7 @@ public class Launch extends Application {
 
     public static Stage stage = null;
 
-    @Override
+    /*@Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
         Scene scene = new Scene(root);
@@ -19,6 +19,14 @@ public class Launch extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         this.stage = stage;
         stage.show();
+    }*/
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
+        primaryStage.setTitle("EcoCleaner");
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
     }
     
     public static void main(String[] args) {
