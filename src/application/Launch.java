@@ -9,17 +9,6 @@ import javafx.stage.Stage;
 
 public class Launch extends Application {
 
-    /*@Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
-        this.stage = stage;
-        stage.show();
-
-    }*/
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
