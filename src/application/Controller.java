@@ -21,6 +21,7 @@ public class Controller {
     private String currentPosition;
     private String tempPW;
 
+    @FXML
     public void btn_login(){
         currentUserID = Integer.valueOf(empNoTF.getText());
         tempPW = passwordTF.getText();
@@ -33,4 +34,25 @@ public class Controller {
             System.out.println("empty resultset");
         }
     }
+
+    /*
+    Pane-Chooser
+    @FXML
+    void goToBurger(ActionEvent event) {
+        mainCourse.setVisible(false);
+        dessertPane.setVisible(false);
+        sideDish.setVisible(false);
+        burgers.setVisible(true);
+        potatoPane.setVisible(false);
+    }
+
+    @FXML
+    void goToDesert(ActionEvent event) {
+        sideDish.setVisible(false);
+        burgers.setVisible(false);
+        mainCourse.setVisible(false);
+        dessertPane.setVisible(true);
+        potatoPane.setVisible(false);
+    }
+     */
 }
