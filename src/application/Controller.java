@@ -25,8 +25,13 @@ public class Controller {
 
     @FXML
     public void btn_login(){
-        currentUserID = Integer.valueOf(empNoTF.getText());
         tempPW = passwordTF.getText();
+        if (empNoTF.getText().matches("[0-9]+")){
+            currentUserID = Integer.valueOf(empNoTF.getText());
+        } else {
+            System.out.println("invalid user number");
+            return;
+        }
 
         if(comparePassword()) {
             System.out.println("login successful");
@@ -57,6 +62,14 @@ public class Controller {
             System.out.println("empty resultset");
         }
         System.out.println("saving position: " + currentPosition);
+    }
+
+    public void logout() {
+        //hier muss aufruf zum login screen hin
+        currentUserID=0;
+        currentPosition="";
+        tempPW="";
+
     }
 
     /*
