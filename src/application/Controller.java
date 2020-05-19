@@ -34,11 +34,15 @@ public class Controller {
         }
 
         if(comparePassword()) {
+            empNoTF.setText("");
+            passwordTF.setText("");
             System.out.println("login successful");
             savePosition();
         } else {
             System.out.println("login failed");
         }
+
+
     }
 
     private boolean comparePassword(){
