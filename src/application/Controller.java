@@ -88,7 +88,7 @@ public class Controller {
     }
 
     public void logout() {
-        //hier muss aufruf zum login screen hin
+        //TODO hier muss aufruf zum login screen hin
         currentUserID=0;
         currentPosition="";
         tempPW="";
@@ -128,6 +128,18 @@ public class Controller {
 
 
 
+    public void newOrder(int CustomerID, int SubsidiaryID){
+
+
+
+        /* we need:
+        customerID
+        TimeDate, to be calculated and inserted during runtime
+        TotalPrice, to be calculated and inserted after list of items have been appended to this invoice
+        SubsidiaryID, correct id to be calculated by db join during runtime through alias
+
+         */
+    }
     /*
     Pane-Chooser
     @FXML
