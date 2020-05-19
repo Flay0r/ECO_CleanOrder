@@ -38,7 +38,7 @@ public class Controller {
     @FXML
     private VBox sideBarDriver;
 
-    private static SessionUser currentUser;
+    private static SessionUser currentUser = new SessionUser();
 
     @FXML
     public void btn_login() throws Exception{
