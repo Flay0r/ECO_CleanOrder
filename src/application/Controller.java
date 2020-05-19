@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXTextField;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
 
+import javax.xml.crypto.Data;
+
 /**
  * Sample Skeleton for 'LogIn.fxml' Controller Class
  */
@@ -26,12 +28,11 @@ public class Controller {
         currentUserID = Integer.valueOf(empNoTF.getText());
         tempPW = passwordTF.getText();
 
-        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUserID);
-        try {
-            DatabaseConnector.getResultSet().next();
-            if(tempPW.equals(DatabaseConnector.getResultSet().getString("Code"))) System.out.println("login successful");
-        } catch (Exception e) {
-            System.out.println("empty resultset");
+        if(comparePassword()) {
+            System.out.println("login successful");
+            savePosition();
+        } else {
+            System.out.println("login failed");
         }
     }
 
@@ -48,7 +49,14 @@ public class Controller {
     }
 
     public void savePosition(){
-        DatabaseConnector.query("select * from Employees where EmployeeID=" );
+        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUserID);
+        try {
+            DatabaseConnector.getResultSet().next();
+            currentPosition=DatabaseConnector.getResultSet().getString("Position");
+        } catch ( Exception e) {
+            System.out.println("empty resultset");
+        }
+        System.out.println("saving position: " + currentPosition);
     }
 
     /*
