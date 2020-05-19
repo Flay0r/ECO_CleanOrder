@@ -69,7 +69,6 @@ public class Controller {
         burgers.setVisible(true);
         potatoPane.setVisible(false);
     }
-
     @FXML
     void goToDesert(ActionEvent event) {
         sideDish.setVisible(false);

@@ -25,7 +25,7 @@ public class Launch extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
         primaryStage.setTitle("EcoCleaner");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
