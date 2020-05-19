@@ -1,6 +1,7 @@
 package infrastructure;
 
-import application.Main;
+import application.Launch;
+import application.Launch;
 
 import javax.xml.transform.Result;
 import java.sql.*;
@@ -19,7 +20,7 @@ public class DatabaseConnector {
             con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ECO_CleanOrder", "sa", "123456");
             System.out.println("Connected");
         } catch (SQLException e) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String) null, e);
+            Logger.getLogger(Launch.class.getName()).log(Level.SEVERE, (String) null, e);
             System.out.println("failed creating connection");
         }
     }
