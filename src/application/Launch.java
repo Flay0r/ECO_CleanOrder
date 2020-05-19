@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 
 public class Launch extends Application {
 
-    public Stage stage;
-
     /*@Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));

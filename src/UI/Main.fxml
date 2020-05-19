@@ -16,9 +16,9 @@
 
 <BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ContentAreaController">
    <left>
-      <AnchorPane styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" BorderPane.alignment="CENTER">
+      <AnchorPane styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
          <children>
-            <StackPane prefHeight="650.0" prefWidth="250.0">
+            <StackPane fx:id="stackedSideBars" prefHeight="650.0" prefWidth="250.0">
                <children>
                   <VBox fx:id="sideBarManager" alignment="TOP_CENTER" prefHeight="574.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
                      <children>
@@ -181,7 +181,7 @@
                      <children>
                         <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
                            <image>
-                              <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
+                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
                            </image>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -338,7 +338,7 @@
                      <children>
                         <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
                            <image>
-                              <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
+                              <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
                            </image>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -497,7 +497,7 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane>
          <children>
             <VBox fx:id="content_area" prefHeight="620.0" prefWidth="950.0" styleClass="dashboard" stylesheets="@CSS/Stylesheet_Dashboard.css">
                <children>

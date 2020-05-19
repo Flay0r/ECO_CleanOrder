@@ -8,10 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-import javax.xml.crypto.Data;
-import java.io.IOException;
 
 /**
  * Sample Skeleton for 'LogIn.fxml' Controller Class
@@ -23,7 +19,7 @@ public class Controller {
     @FXML
     private JFXTextField passwordTF;
     @FXML
-    private JFXButton btn_login;
+    private JFXButton loginButton;
 
 
 
@@ -35,30 +31,37 @@ public class Controller {
     public void btn_login() throws Exception {
         currentUserID = Integer.valueOf(empNoTF.getText());
         tempPW = passwordTF.getText();
+        if (empNoTF.getText().matches("[0-9]+")){
+            currentUserID = Integer.valueOf(empNoTF.getText());
+        } else {
+            System.out.println("invalid user number");
+            return;
+        }
 
         if(comparePassword()) {
+
+            empNoTF.setText("");
+            passwordTF.setText("");
             System.out.println("login successful");
-            closeButtonAction();
-            startDashBoard(stage);
+
+            startDashBoard();
+            closeWindow();
             savePosition();
+            switch(currentPosition){
+                case "Manager":
+                    managerUI();
+                    break;
+                case "Employee":
+                    assistantUI();
+                    break;
+                case "Driver":
+                    driverUI();
+                    break;
+            }
+
         } else {
             System.out.println("login failed");
         }
-    }
-
-    private void closeButtonAction(){
-        Launch l = new Launch();
-        l.stage;
-        Stage stage = (Stage) btn_login.getScene().getWindow();
-        stage.close();
-    }
-
-    public void startDashBoard(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        this.stage = stage;
-        stage.show();
     }
 
     private boolean comparePassword(){
@@ -83,6 +86,47 @@ public class Controller {
         }
         System.out.println("saving position: " + currentPosition);
     }
+
+    public void logout() {
+        //hier muss aufruf zum login screen hin
+        currentUserID=0;
+        currentPosition="";
+        tempPW="";
+    }
+
+    private void closeWindow(){
+       Stage stage = (Stage) loginButton.getScene().getWindow();
+       stage.close();
+
+    }
+
+    public Stage startDashBoard() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
+        Scene scene = new Scene(root, 1200, 650);
+        Stage stage = new Stage();
+        stage.setTitle("DashBoard Minimal UI");
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setScene(scene);
+        stage.show();
+        return stage;
+    }
+
+    public void managerUI(){
+
+    //TODO Show the UI!
+    }
+
+    public void assistantUI(){
+
+            //TODO Show the UI!
+    }
+
+    public void driverUI(){
+            //TODO Show the UI!
+        }
+
+
 
     /*
     Pane-Chooser
