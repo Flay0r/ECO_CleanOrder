@@ -79,9 +79,6 @@
 .content-area-circle-btns:hover .content-area-circle-btns-icon{
      -fx-fill: #fff;
 }
-.lbl2{
-     -fx-text-fill: #757373;
-}
-.lbl3{
-     -fx-text-fill: #E3EFEC;
+.logout-button:hover{
+
 }

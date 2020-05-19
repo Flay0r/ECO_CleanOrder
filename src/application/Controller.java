@@ -5,23 +5,36 @@ import com.jfoenix.controls.JFXTextField;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Sample Skeleton for 'LogIn.fxml' Controller Class
  */
 public class Controller {
-
     @FXML
     private JFXTextField empNoTF;
     @FXML
     private JFXTextField passwordTF;
     @FXML
     private JFXButton loginButton;
-
-
+    @FXML
+    private JFXButton logoutButton;
+    @FXML
+    private StackPane stackedSidebar;
+    @FXML
+    private VBox sideBarManager;
+    @FXML
+    private VBox getSideBarShopAssistant;
+    @FXML
+    private VBox sideBarDriver;
 
     private int currentUserID;
     private String currentPosition;
@@ -45,7 +58,7 @@ public class Controller {
             System.out.println("login successful");
 
             startDashBoard();
-            closeWindow();
+            closeWindow(loginButton);
             savePosition();
             switch(currentPosition){
                 case "Manager":
@@ -87,17 +100,24 @@ public class Controller {
         System.out.println("saving position: " + currentPosition);
     }
 
-    public void logout() {
-        //TODO hier muss aufruf zum login screen hin
+    @FXML
+    public void logout() throws IOException {
+        closeWindow(logoutButton);
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("EcoCleaner Login");
+        stage.setScene(new Scene(root, 1200, 650));
+        stage.setMinHeight(600);
+        stage.setMinWidth(800);
+        stage.show();
         currentUserID=0;
         currentPosition="";
         tempPW="";
     }
 
-    private void closeWindow(){
-       Stage stage = (Stage) loginButton.getScene().getWindow();
-       stage.close();
-
+    private void closeWindow(Button button){
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
 
     public Stage startDashBoard() throws Exception {
@@ -113,18 +133,26 @@ public class Controller {
     }
 
     public void managerUI(){
+        if(currentPosition.equalsIgnoreCase("manager")){
+          Scene scene =   stackedSidebar.getChildren().get(0).getScene();
+            Stage stage = new Stage();
+            stage.setTitle("DashBoard Minimal UI");
+            stage.setMinWidth(800);
+            stage.setMinHeight(600);
+            stage.setScene(scene);
+            stage.show();
 
-    //TODO Show the UI!
+        }
+
     }
 
     public void assistantUI(){
-
-            //TODO Show the UI!
+        stackedSidebar.getChildren().get(1);
     }
 
     public void driverUI(){
-            //TODO Show the UI!
-        }
+        stackedSidebar.getChildren().get(2);
+    }
 
 
 
