@@ -2,9 +2,9 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
-
 import javax.xml.crypto.Data;
 
 /**
@@ -19,15 +19,13 @@ public class Controller {
     @FXML
     private JFXButton btn_login;
 
-    private int currentUserID;
-    private String currentPosition;
-    private String tempPW;
+    private static SessionUser currentUser;
 
     @FXML
     public void btn_login(){
-        tempPW = passwordTF.getText();
+        currentUser.password = passwordTF.getText();
         if (empNoTF.getText().matches("[0-9]+")){
-            currentUserID = Integer.valueOf(empNoTF.getText());
+            currentUser.id = Integer.valueOf(empNoTF.getText());
         } else {
             System.out.println("invalid user number");
             return;
@@ -38,7 +36,7 @@ public class Controller {
             passwordTF.setText("");
             System.out.println("login successful");
             savePosition();
-            switch(currentPosition){
+            switch(currentUser.position){
                 case "Manager":
                     managerUI();
                     break;
@@ -52,16 +50,14 @@ public class Controller {
         } else {
             System.out.println("login failed");
         }
-
-
     }
 
     private boolean comparePassword(){
         boolean result=false;
-        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUserID);
+        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            if(tempPW.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
+            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
@@ -69,21 +65,21 @@ public class Controller {
     }
 
     public void savePosition(){
-        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUserID);
+        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            currentPosition=DatabaseConnector.getResultSet().getString("Position");
+            currentUser.position=DatabaseConnector.getResultSet().getString("Position");
         } catch ( Exception e) {
             System.out.println("empty resultset");
         }
-        System.out.println("saving position: " + currentPosition);
+        System.out.println("saving position: " + currentUser.position);
     }
 
     public void logout() {
         //TODO hier muss aufruf zum login screen hin
-        currentUserID=0;
-        currentPosition="";
-        tempPW="";
+        currentUser.id=0;
+        currentUser.position="";
+        currentUser.password="";
     }
 
     public void managerUI(){
