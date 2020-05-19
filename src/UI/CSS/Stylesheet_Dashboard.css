@@ -1,27 +1,84 @@
 .sidebar{
-     -fx-background-color: #abd1c6;
+     -fx-background-color: #ABD1C6;
 }
 .sidebar-user-btn{
      -fx-background-color: transparent;
-     -fx-background-radius: 0;
-     -fx-text-fill: #004643;
+     -fx-background-radius: 0px;
+     -fx-text-fill: #001E1D;
 }
-.sidebar-btn{
-     -fx-background-color: transparent;
-     -fx-background-radius: 0;
-     -fx-text-fill: #004643;
-}
-.sidebar-btn{
-     -fx-background-color: transparent;
-     -fx-background-radius: 0;
 
-     /*
-     border color handles in that case the colour of our selector
-     (Thingie to the left)
-      */
-     -fx-border-color: #004643;
+.sidebar-btn{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0px;
+     -fx-text-fill: #001E1D;
+}
+.sidebar-btn:hover{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0px;
+     -fx-text-fill: #b8b1b1;
+     -fx-border-color: rgb(22,169,250);
      -fx-border-width: 0px 0px 0px 3px;
 }
+.label{
+     -fx-text-fill: #001E1D;
+}
+.sidebar-btn:pressed .label{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0px;
+     -fx-text-fill: #0099ff;
+}
+.sidebar-btn:pressed .sidebar-btn-icon{
+     -fx-fill: #0099ff;
+}
 .sidebar-btn-icon{
-     -fx-fill: #004643;
+     -fx-fill: #001E1D;
+}
+
+.menu-bar-btns{
+     -fx-background-color: #fff;
+     -fx-border-color: #cccccc;
+     -fx-border-width: 0px 0px 0px 1px;
+}
+.menu-bar-btns:hover{
+     -fx-background-color: #0099ff;
+}
+.menu-bar-btns-icon{
+     -fx-fill: #999;
+}
+.menu-bar-btns:hover .menu-bar-btns-icon{
+     -fx-fill: #fff;
+}
+.menu-bar-search-field{
+     -fx-prompt-text-fill: #b8b1b1;
+     -fx-text-fill: #000;
+}
+.menu-bar-search-field-box{
+     -fx-prompt-text-fill: #b8b1b1;
+     -fx-text-fill: #000;
+     -fx-border-color: #cccccc;
+     -fx-border-width: 0px 0px 0px 1px;
+}
+
+.content-area-circle-btns{
+     -fx-background-color: #fff;
+     -fx-background-radius: 0;
+     -fx-border-color: #cccccc;
+     -fx-border-radius: 0;
+}
+.content-area-circle-btns:hover{
+     -fx-background-color: #0099ff;
+     -fx-background-radius: 0;
+     -fx-text-fill: #fff;
+}
+.content-area-circle-btns-icon{
+     -fx-fill: #b8b1b1;
+}
+.content-area-circle-btns:hover .content-area-circle-btns-icon{
+     -fx-fill: #fff;
+}
+.lbl2{
+     -fx-text-fill: #757373;
+}
+.lbl3{
+     -fx-text-fill: #00a1ff;
 }
