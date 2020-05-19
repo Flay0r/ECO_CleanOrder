@@ -1,7 +1,6 @@
 package infrastructure;
 
 import application.Launch;
-import application.Launch;
 
 import javax.xml.transform.Result;
 import java.sql.*;
@@ -41,7 +40,7 @@ public class DatabaseConnector {
         }
     }
 
-    public static void select(String sql) {
+    public static void query(String sql) {
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
             System.out.println("preparing statement: OK");
@@ -49,8 +48,9 @@ public class DatabaseConnector {
             System.out.println("executing statement: OK");
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("select didnt work");
+            System.out.println("query didnt work");
         }
         System.out.println("SELECT: OK");
     }
 }
+
