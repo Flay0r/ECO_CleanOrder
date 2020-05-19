@@ -133,25 +133,35 @@ public class Controller {
     }
 
     public void managerUI(){
-        if(currentPosition.equalsIgnoreCase("manager")){
-          Scene scene =   stackedSidebar.getChildren().get(0).getScene();
-            Stage stage = new Stage();
-            stage.setTitle("DashBoard Minimal UI");
-            stage.setMinWidth(800);
-            stage.setMinHeight(600);
-            stage.setScene(scene);
-            stage.show();
+        Scene scene =   stackedSidebar.getChildren().get(0).getScene();
+        Stage stage = new Stage();
+        stage.setTitle("DashBoard Manager UI");
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setScene(scene);
+        stage.show();
 
         }
 
-    }
 
     public void assistantUI(){
-        stackedSidebar.getChildren().get(1);
+        Scene scene = stackedSidebar.getChildren().get(1).getScene();
+        Stage stage = new Stage();
+        stage.setTitle("DashBoard Manager UI");
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void driverUI(){
-        stackedSidebar.getChildren().get(2);
+        Scene scene = stackedSidebar.getChildren().get(2).getScene();
+        Stage stage = new Stage();
+        stage.setTitle("DashBoard Manager UI");
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
