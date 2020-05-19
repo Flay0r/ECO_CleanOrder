@@ -38,6 +38,17 @@ public class Controller {
             passwordTF.setText("");
             System.out.println("login successful");
             savePosition();
+            switch(currentPosition){
+                case "Manager":
+                    managerUI();
+                    break;
+                case "Employee":
+                    assistantUI();
+                    break;
+                case "Driver":
+                    driverUI();
+                    break;
+            }
         } else {
             System.out.println("login failed");
         }
@@ -73,6 +84,17 @@ public class Controller {
         currentUserID=0;
         currentPosition="";
         tempPW="";
+    }
+
+    public void managerUI(){
+
+    }
+
+    public void assistantUI(){
+
+    }
+
+    public void driverUI(){
 
     }
 
