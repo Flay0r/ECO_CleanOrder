@@ -2,8 +2,10 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
+import javax.xml.crypto.Data;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -36,16 +38,13 @@ public class Controller {
     @FXML
     private VBox sideBarDriver;
 
-    private int currentUserID;
-    private String currentPosition;
-    private String tempPW;
+    private static SessionUser currentUser;
 
     @FXML
-    public void btn_login() throws Exception {
-        currentUserID = Integer.valueOf(empNoTF.getText());
-        tempPW = passwordTF.getText();
+    public void btn_login() throws Exception{
+        currentUser.password = passwordTF.getText();
         if (empNoTF.getText().matches("[0-9]+")){
-            currentUserID = Integer.valueOf(empNoTF.getText());
+            currentUser.id = Integer.valueOf(empNoTF.getText());
         } else {
             System.out.println("invalid user number");
             return;
@@ -60,7 +59,7 @@ public class Controller {
             startDashBoard();
             closeWindow(loginButton);
             savePosition();
-            switch(currentPosition){
+            switch(currentUser.position){
                 case "Manager":
                     managerUI();
                     break;
@@ -79,10 +78,10 @@ public class Controller {
 
     private boolean comparePassword(){
         boolean result=false;
-        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUserID);
+        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            if(tempPW.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
+            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
@@ -90,15 +89,16 @@ public class Controller {
     }
 
     public void savePosition(){
-        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUserID);
+        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            currentPosition=DatabaseConnector.getResultSet().getString("Position");
+            currentUser.position=DatabaseConnector.getResultSet().getString("Position");
         } catch ( Exception e) {
             System.out.println("empty resultset");
         }
-        System.out.println("saving position: " + currentPosition);
+        System.out.println("saving position: " + currentUser.position);
     }
+
 
     @FXML
     public void logout() throws IOException {
@@ -110,9 +110,9 @@ public class Controller {
         stage.setMinHeight(600);
         stage.setMinWidth(800);
         stage.show();
-        currentUserID=0;
-        currentPosition="";
-        tempPW="";
+        currentUser.id=0;
+        currentUser.position="";
+        currentUser.password="";
     }
 
     private void closeWindow(Button button){
