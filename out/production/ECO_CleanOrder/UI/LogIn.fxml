@@ -11,7 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="486.0" minWidth="518.0" prefHeight="600.0" prefWidth="801.0" styleClass="parent" stylesheets="@/UI/CSS/Stylesheet_Login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="486.0" minWidth="518.0" prefHeight="600.0" prefWidth="801.0" styleClass="parent" stylesheets="@/UI/CSS/Stylesheet_Login.css" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+>>>>>>> ecdf1c2fef2c6217c0347cd98e4c2b115d845785
    <children>
       <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

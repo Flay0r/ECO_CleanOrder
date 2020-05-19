@@ -1,5 +1,6 @@
 package application;
 
+import infrastructure.DatabaseConnector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,7 @@ public class Launch extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         this.stage = stage;
         stage.show();
+
     }*/
 
     @Override
@@ -27,10 +29,12 @@ public class Launch extends Application {
         primaryStage.setTitle("EcoCleaner");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+
+        DatabaseConnector.createConnection();
+
     }
     
     public static void main(String[] args) {
-
         launch(args);
     }
 }
