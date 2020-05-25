@@ -6,6 +6,8 @@ import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -35,6 +37,8 @@ public class Controller {
     private VBox sideBarAssistant;
     @FXML
     private VBox sideBarDriver;
+    @FXML
+    private Group groupSideBars;
 
     private static SessionUser currentUser = new SessionUser();
 
@@ -77,7 +81,8 @@ public class Controller {
         DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
+            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
+                result=true;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
@@ -128,24 +133,48 @@ public class Controller {
         return stage;
     }
 
-    public void managerUI(){
-        sideBarManager.toFront();
-        sideBarDriver.setVisible(false);
-        sideBarAssistant.setVisible(false);
+    public void managerUI() {
+//        sideBarManager.toFront();
+//        sideBarAssistant.toBack();
+//        sideBarDriver.toBack();
+            sideBarManager.setVisible(true);
+
+
+//        groupSideBars.getChildren().get(0).toFront();
+//        groupSideBars.getChildren().get(1).toBack();
+//        groupSideBars.getChildren().get(2).toBack();
     }
 
+        public void assistantUI(){
+//            groupSideBars.getChildren().get(0).toBack();
+//            groupSideBars.getChildren().get(1).toFront();
+//            groupSideBars.getChildren().get(2).toBack();
 
-    public void assistantUI() throws IOException {
-        sideBarManager.setVisible(false);
-        sideBarDriver.setVisible(false);
-        sideBarAssistant.setVisible(true);
+//            sideBarAssistant.toFront();
+//            sideBarManager.toBack();
+//            sideBarDriver.toBack();
 
-    }
+            sideBarAssistant.setVisible(true);
 
-    public void driverUI() throws IOException {
-        sideBarManager.setVisible(false);
+
+        }
+
+
+
+    public void driverUI(){
+//        groupSideBars.getChildren().get(0).toBack();
+//        groupSideBars.getChildren().get(1).toBack();
+//        groupSideBars.getChildren().get(2).toFront();
+
+//        sideBarDriver.toFront();
+//        sideBarAssistant.toBack();
+//        sideBarManager.toBack();
+
+
+
+//        sideBarManager.setVisible(false);
         sideBarDriver.setVisible(true);
-        sideBarAssistant.setVisible(false);
+//        sideBarAssistant.setVisible(false);
     }
 
 
