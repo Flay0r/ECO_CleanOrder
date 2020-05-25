@@ -11,15 +11,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
-/**
- * Sample Skeleton for 'LogIn.fxml' Controller Class
- */
 public class Controller {
     @FXML
     private JFXTextField empNoTF;
@@ -133,48 +132,50 @@ public class Controller {
         return stage;
     }
 
+
     public void managerUI() {
 //        sideBarManager.toFront();
 //        sideBarAssistant.toBack();
 //        sideBarDriver.toBack();
-            sideBarManager.setVisible(true);
-
-
+//        sideBarManager.setBlendMode(BlendMode.SRC_ATOP);
 //        groupSideBars.getChildren().get(0).toFront();
 //        groupSideBars.getChildren().get(1).toBack();
 //        groupSideBars.getChildren().get(2).toBack();
+//        sideBarManager.setVisible(true);
+//        sideBarDriver.setVisible(false);
+//        sideBarAssistant.setVisible(false);
+        sideBarAssistant.getChildren().clear();
+        sideBarDriver.getChildren().clear();
     }
 
-        public void assistantUI(){
+    public void assistantUI(){
 //            groupSideBars.getChildren().get(0).toBack();
 //            groupSideBars.getChildren().get(1).toFront();
 //            groupSideBars.getChildren().get(2).toBack();
-
 //            sideBarAssistant.toFront();
 //            sideBarManager.toBack();
 //            sideBarDriver.toBack();
+//        sideBarAssistant.setBlendMode(BlendMode.SRC_ATOP);
+//
+//        sideBarAssistant.setVisible(true);
+//        sideBarDriver.setVisible(false);
+//        sideBarManager.setVisible(false);
+        sideBarAssistant.getChildren().clear();
+        sideBarManager.getChildren().clear();
 
-            sideBarAssistant.setVisible(true);
-
-
-        }
-
+    }
 
 
     public void driverUI(){
 //        groupSideBars.getChildren().get(0).toBack();
 //        groupSideBars.getChildren().get(1).toBack();
 //        groupSideBars.getChildren().get(2).toFront();
-
 //        sideBarDriver.toFront();
 //        sideBarAssistant.toBack();
 //        sideBarManager.toBack();
-
-
-
-//        sideBarManager.setVisible(false);
-        sideBarDriver.setVisible(true);
-//        sideBarAssistant.setVisible(false);
+        sideBarAssistant.getChildren().clear();
+        sideBarManager.getChildren().clear();
+//        sideBarDriver.setBlendMode(BlendMode.SRC_ATOP);
     }
 
 
