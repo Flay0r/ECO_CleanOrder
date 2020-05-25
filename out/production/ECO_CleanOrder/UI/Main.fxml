@@ -16,487 +16,6 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
-   <left>
-      <AnchorPane styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-         <children>
-            <StackPane fx:id="stackedSideBars" prefHeight="650.0" prefWidth="250.0">
-               <children>
-                  <VBox fx:id="sideBarManager" alignment="TOP_CENTER" prefHeight="574.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIcon glyphStyle="-fx-fill:#b8b1b1" iconName="SORT_DESC" size="1.2em" />
-                           </graphic>
-                        </JFXButton>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="BARCODE" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="ORDERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="GROUP" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="STAFF" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="DASHBOARD" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="STATISTICS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="CALENDAR" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="CALENDER" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="USERS" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="USERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="LOCATIONS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="SITEMAP" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="WORKFLOW" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" prefHeight="620.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIcon glyphStyle="-fx-fill:#b8b1b1" iconName="SORT_DESC" size="1.2em" />
-                           </graphic>
-                        </JFXButton>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="BARCODE" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="ORDERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="GROUP" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="STAFF" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="DASHBOARD" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="STATISTICS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="CALENDAR" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="CALENDER" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="USERS" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="USERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="LOCATIONS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="SITEMAP" size="1.5em" styleClass="sidebar-btn-icon" />
-                              <Label text="WORKFLOW" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="sideBarShopAssistant" alignment="TOP_CENTER" prefHeight="662.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIcon glyphStyle="-fx-fill:#E3EFEC" iconName="SORT_DESC" size="1.2em" />
-                           </graphic>
-                        </JFXButton>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="BARCODE" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="ORDERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="GROUP" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="STAFF" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="DASHBOARD" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="STATISTICS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="CALENDAR" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="CALENDER" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="USERS" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="USERS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="MAP_MARKER" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="LOCATIONS" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="SITEMAP" size="2em" styleClass="sidebar-btn-icon" />
-                              <Label text="WORKFLOW" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </StackPane>
-         </children>
-      </AnchorPane>
-   </left>
    <center>
       <AnchorPane>
          <children>
@@ -539,7 +58,7 @@
                               </JFXButton>
                               <JFXButton fx:id="logoutButton" accessibleRole="TOOLTIP" accessibleRoleDescription="logout Button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#logout" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
                                  <tooltip>
-                                    <Tooltip text=" Logout Here "/>
+                                    <Tooltip text=" Logout Here " />
                                  </tooltip>
                                  <graphic>
                                     <FontAwesomeIcon focusTraversable="true" glyphStyleClass="logout-button" iconName="LOCK" size="3em" styleClass="menu-bar-btns-icon" />
@@ -648,4 +167,481 @@
          </children>
       </AnchorPane>
    </center>
+   <left>
+      <StackPane fx:id="stackedSideBars" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="sideBarManager" alignment="TOP_CENTER" prefHeight="574.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon glyphStyle="-fx-fill:#b8b1b1" iconName="SORT_DESC" size="1.2em" />
+                     </graphic>
+                  </JFXButton>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="BARCODE" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="ORDERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="GROUP" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="STAFF" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="DASHBOARD" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="STATISTICS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="CALENDAR" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="CALENDER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="USERS" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="USERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="LOCATIONS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="SITEMAP" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="WORKFLOW" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" prefHeight="620.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon glyphStyle="-fx-fill:#b8b1b1" iconName="SORT_DESC" size="1.2em" />
+                     </graphic>
+                  </JFXButton>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="BARCODE" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="ORDERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="GROUP" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="STAFF" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="DASHBOARD" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="STATISTICS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="CALENDAR" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="CALENDER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="USERS" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="USERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="LOCATIONS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="SITEMAP" size="1.5em" styleClass="sidebar-btn-icon" />
+                        <Label text="WORKFLOW" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="sideBarAssistant" alignment="TOP_CENTER" prefHeight="662.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Neuton Barley">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon glyphStyle="-fx-fill:#E3EFEC" iconName="SORT_DESC" size="1.2em" />
+                     </graphic>
+                  </JFXButton>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="sidebar-btn" text="Main" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="BARCODE" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="ORDERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="GROUP" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="STAFF" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="DASHBOARD" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="STATISTICS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="CALENDAR" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="CALENDER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="USERS" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="USERS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="MAP_MARKER" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="LOCATIONS" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon iconName="SITEMAP" size="2em" styleClass="sidebar-btn-icon" />
+                        <Label text="WORKFLOW" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Consolas Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </left>
 </BorderPane>

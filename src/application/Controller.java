@@ -5,9 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
-import javax.xml.crypto.Data;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,11 +28,11 @@ public class Controller {
     @FXML
     private JFXButton logoutButton;
     @FXML
-    private StackPane stackedSidebar;
+    private StackPane stackedSideBars;
     @FXML
     private VBox sideBarManager;
     @FXML
-    private VBox getSideBarShopAssistant;
+    private VBox sideBarAssistant;
     @FXML
     private VBox sideBarDriver;
 
@@ -55,7 +53,6 @@ public class Controller {
             empNoTF.setText("");
             passwordTF.setText("");
             System.out.println("login successful");
-
             startDashBoard();
             closeWindow(loginButton);
             savePosition();
@@ -70,7 +67,6 @@ public class Controller {
                     driverUI();
                     break;
             }
-
         } else {
             System.out.println("login failed");
         }
@@ -133,35 +129,23 @@ public class Controller {
     }
 
     public void managerUI(){
-        Scene scene =   stackedSidebar.getChildren().get(0).getScene();
-        Stage stage = new Stage();
-        stage.setTitle("DashBoard Manager UI");
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
-        stage.setScene(scene);
-        stage.show();
-
-        }
-
-
-    public void assistantUI(){
-        Scene scene = stackedSidebar.getChildren().get(1).getScene();
-        Stage stage = new Stage();
-        stage.setTitle("DashBoard Manager UI");
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
-        stage.setScene(scene);
-        stage.show();
+        sideBarManager.toFront();
+        sideBarDriver.setVisible(false);
+        sideBarAssistant.setVisible(false);
     }
 
-    public void driverUI(){
-        Scene scene = stackedSidebar.getChildren().get(2).getScene();
-        Stage stage = new Stage();
-        stage.setTitle("DashBoard Manager UI");
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
-        stage.setScene(scene);
-        stage.show();
+
+    public void assistantUI() throws IOException {
+        sideBarManager.setVisible(false);
+        sideBarDriver.setVisible(false);
+        sideBarAssistant.setVisible(true);
+
+    }
+
+    public void driverUI() throws IOException {
+        sideBarManager.setVisible(false);
+        sideBarDriver.setVisible(true);
+        sideBarAssistant.setVisible(false);
     }
 
 
