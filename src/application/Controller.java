@@ -6,6 +6,7 @@ import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,8 +19,10 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable{
     @FXML
     private JFXTextField empNoTF;
     @FXML
@@ -31,15 +34,24 @@ public class Controller {
     @FXML
     private StackPane stackedSideBars;
     @FXML
-    private VBox sideBarManager;
+    private VBox sideBarManager = new VBox();
     @FXML
-    private VBox sideBarAssistant;
+    private VBox sideBarAssistant = new VBox();
     @FXML
-    private VBox sideBarDriver;
+    private VBox sideBarDriver = new VBox();
     @FXML
     private Group groupSideBars;
 
     private static SessionUser currentUser = new SessionUser();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+        if(currentUser.position != null) {
+            if (currentUser.position.equals("Manager")) managerUI();
+            if (currentUser.position.equals("Employee")) assistantUI();
+            if (currentUser.position.equals("Driver")) driverUI();
+        }
+    }
 
     @FXML
     public void btn_login() throws Exception{
@@ -52,24 +64,12 @@ public class Controller {
         }
 
         if(comparePassword()) {
-
+            savePosition();
             empNoTF.setText("");
             passwordTF.setText("");
             System.out.println("login successful");
             startDashBoard();
             closeWindow(loginButton);
-            savePosition();
-            switch(currentUser.position){
-                case "Manager":
-                    managerUI();
-                    break;
-                case "Employee":
-                    assistantUI();
-                    break;
-                case "Driver":
-                    driverUI();
-                    break;
-            }
         } else {
             System.out.println("login failed");
         }
@@ -98,7 +98,6 @@ public class Controller {
         }
         System.out.println("saving position: " + currentUser.position);
     }
-
 
     @FXML
     public void logout() throws IOException {
@@ -134,48 +133,16 @@ public class Controller {
 
 
     public void managerUI() {
-//        sideBarManager.toFront();
-//        sideBarAssistant.toBack();
-//        sideBarDriver.toBack();
-//        sideBarManager.setBlendMode(BlendMode.SRC_ATOP);
-//        groupSideBars.getChildren().get(0).toFront();
-//        groupSideBars.getChildren().get(1).toBack();
-//        groupSideBars.getChildren().get(2).toBack();
-//        sideBarManager.setVisible(true);
-//        sideBarDriver.setVisible(false);
-//        sideBarAssistant.setVisible(false);
-        sideBarAssistant.getChildren().clear();
-        sideBarDriver.getChildren().clear();
+        sideBarManager.toFront();
     }
 
     public void assistantUI(){
-//            groupSideBars.getChildren().get(0).toBack();
-//            groupSideBars.getChildren().get(1).toFront();
-//            groupSideBars.getChildren().get(2).toBack();
-//            sideBarAssistant.toFront();
-//            sideBarManager.toBack();
-//            sideBarDriver.toBack();
-//        sideBarAssistant.setBlendMode(BlendMode.SRC_ATOP);
-//
-//        sideBarAssistant.setVisible(true);
-//        sideBarDriver.setVisible(false);
-//        sideBarManager.setVisible(false);
-        sideBarAssistant.getChildren().clear();
-        sideBarManager.getChildren().clear();
-
+        sideBarAssistant.toFront();
     }
 
 
     public void driverUI(){
-//        groupSideBars.getChildren().get(0).toBack();
-//        groupSideBars.getChildren().get(1).toBack();
-//        groupSideBars.getChildren().get(2).toFront();
-//        sideBarDriver.toFront();
-//        sideBarAssistant.toBack();
-//        sideBarManager.toBack();
-        sideBarAssistant.getChildren().clear();
-        sideBarManager.getChildren().clear();
-//        sideBarDriver.setBlendMode(BlendMode.SRC_ATOP);
+        sideBarDriver.toFront();
     }
 
 
