@@ -5,3 +5,19 @@ O
 src/application/Controller.java,f\0\f04a795deba77eba9d79acb532b739048f4dd1ad
 A
 src/UI/LogIn.fxml,6\1\61e6ad89b5bc9807f45752669d4824e7b6e7c573
+Y
+)src/infrastructure/DatabaseConnector.java,d\a\da68cf28a3b0c7226e0199204de4644533ff27a5
+Z
+*out/production/ECO_CleanOrder/UI/Main.fxml,d\c\dc8f63052996e4c492631e66ee5b228c7006525a
+m
+=out/production/ECO_CleanOrder/UI/CSS/Stylesheet_Dashboard.css,a\a\aa7faf9b89c45be3cf0d2fec05ce9f0299c94813
+S
+#src/UI/CSS/Stylesheet_Dashboard.css,b\2\b20ca5fce1ec62847486d8f267cd289c5b8ed663
+K
+src/application/Launch.java,6\0\60aa7a72570dadec1007275b8ec2378addc2ba76
+@
+src/UI/Main.fxml,a\9\a9163061070f9739a6acfead41957ef892298e40
+O
+src/UI/CSS/Stylesheet_Login.css,9\5\95c18ede14bcd23063e766ffaeaa541f3e1b31a1
+H
+src/domain/Customer.java,6\4\64fb1d0a32336d7a98dfb81107ac32af59205066

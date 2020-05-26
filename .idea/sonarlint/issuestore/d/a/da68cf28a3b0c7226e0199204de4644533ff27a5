@@ -1,0 +1,16 @@
+
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(▐ИНм■    8н╖дув.
+W
+java:S1118
+":Add a private constructor to hide the implicit public one.(Хя▌├8н╖дув.
+E
+java:S11482"#Use a logger to log this exception.(А╔╘Е¤    8н╖дув.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(╚ЯаЖ°    8н╖дув.
+Y
+java:S1128"7Remove this unused import 'javax.xml.transform.Result'.(т╙╕Р√    8н╖дув.
+Z	java:S1063"9Replace this use of System.out or System.err by a logger.(№ХЯ╪°    8н╖дув.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(┤с└К     8н╖дув.
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(сЄ┘и·    
+E
+java:S1148'"#Use a logger to log this exception.(А╔╘Е¤    8н╖дув.
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(╔Є▌╨№    8н╖дув.

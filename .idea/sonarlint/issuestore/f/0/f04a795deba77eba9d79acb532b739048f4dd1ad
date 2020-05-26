@@ -1,4 +1,17 @@
 
-q	java:S116"URename this field "TFPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¨ê²8é‘÷’¢.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ìƒ°ÿÿÿÿÿ8•ßü’¢.
-r	java:S116"VRename this field "TF_userName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÚşÌ8é‘÷’¢.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(ªİ‡8‰ı‘ë¢.
+C	java:S131;""Add a default case to this switch.(³ıïĞúÿÿÿÿ8¸Ï§ì¢.
+n	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
+T	java:S106R"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
+b	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8ŞÎÖè¢.
+Z	java:S106G"9Replace this use of System.out or System.err by a logger.(³Ö»õÿÿÿÿÿ8‰ı‘ë¢.
+n	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
+Y	java:S125¨"<This block of commented-out lines of code should be removed.(¾³ƒ8Š½êê¢.
+
+java:S1130‘"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ĞÖ˜§ıÿÿÿÿ8ÕŠ£ì¢.
+U	java:S106_"9Replace this use of System.out or System.err by a logger.(ÅÈèş8‰ı‘ë¢.
+‰
+java:S1130Š"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ì’¼!8û÷¢ì¢.
+T	java:S106]"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
+U	java:S1067"9Replace this use of System.out or System.err by a logger.(«‚¥¡8‰ı‘ë¢.
+o	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8‰ı‘ë¢.

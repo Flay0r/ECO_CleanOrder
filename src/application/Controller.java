@@ -5,27 +5,41 @@ import com.jfoenix.controls.JFXTextField;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.fxml.FXML;
-import javax.xml.crypto.Data;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/**
- * Sample Skeleton for 'LogIn.fxml' Controller Class
- */
-public class Controller {
+import javax.swing.*;
+import java.io.IOException;
 
+public class Controller {
     @FXML
     private JFXTextField empNoTF;
     @FXML
     private JFXTextField passwordTF;
     @FXML
     private JFXButton loginButton;
+    @FXML
+    private JFXButton logoutButton;
+    @FXML
+    private StackPane stackedSideBars;
+    @FXML
+    private VBox sideBarManager;
+    @FXML
+    private VBox sideBarAssistant;
+    @FXML
+    private VBox sideBarDriver;
+    @FXML
+    private Group groupSideBars;
 
-
-
-    private static SessionUser currentUser;
+    private static SessionUser currentUser = new SessionUser();
 
     @FXML
     public void btn_login() throws Exception{
@@ -42,9 +56,8 @@ public class Controller {
             empNoTF.setText("");
             passwordTF.setText("");
             System.out.println("login successful");
-
             startDashBoard();
-            closeWindow();
+            closeWindow(loginButton);
             savePosition();
             switch(currentUser.position){
                 case "Manager":
@@ -57,7 +70,6 @@ public class Controller {
                     driverUI();
                     break;
             }
-
         } else {
             System.out.println("login failed");
         }
@@ -68,7 +80,8 @@ public class Controller {
         DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code"))) result=true;
+            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
+                result=true;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
@@ -86,17 +99,25 @@ public class Controller {
         System.out.println("saving position: " + currentUser.position);
     }
 
-    public void logout() {
-        //TODO hier muss aufruf zum login screen hin
+
+    @FXML
+    public void logout() throws IOException {
+        closeWindow(logoutButton);
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("EcoCleaner Login");
+        stage.setScene(new Scene(root, 1200, 650));
+        stage.setMinHeight(600);
+        stage.setMinWidth(800);
+        stage.show();
         currentUser.id=0;
         currentUser.position="";
         currentUser.password="";
     }
 
-    private void closeWindow(){
-       Stage stage = (Stage) loginButton.getScene().getWindow();
-       stage.close();
-
+    private void closeWindow(Button button){
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
 
     public Stage startDashBoard() throws Exception {
@@ -111,19 +132,51 @@ public class Controller {
         return stage;
     }
 
-    public void managerUI(){
 
-    //TODO Show the UI!
+    public void managerUI() {
+//        sideBarManager.toFront();
+//        sideBarAssistant.toBack();
+//        sideBarDriver.toBack();
+//        sideBarManager.setBlendMode(BlendMode.SRC_ATOP);
+//        groupSideBars.getChildren().get(0).toFront();
+//        groupSideBars.getChildren().get(1).toBack();
+//        groupSideBars.getChildren().get(2).toBack();
+//        sideBarManager.setVisible(true);
+//        sideBarDriver.setVisible(false);
+//        sideBarAssistant.setVisible(false);
+        sideBarAssistant.getChildren().clear();
+        sideBarDriver.getChildren().clear();
     }
 
     public void assistantUI(){
+//            groupSideBars.getChildren().get(0).toBack();
+//            groupSideBars.getChildren().get(1).toFront();
+//            groupSideBars.getChildren().get(2).toBack();
+//            sideBarAssistant.toFront();
+//            sideBarManager.toBack();
+//            sideBarDriver.toBack();
+//        sideBarAssistant.setBlendMode(BlendMode.SRC_ATOP);
+//
+//        sideBarAssistant.setVisible(true);
+//        sideBarDriver.setVisible(false);
+//        sideBarManager.setVisible(false);
+        sideBarAssistant.getChildren().clear();
+        sideBarManager.getChildren().clear();
 
-            //TODO Show the UI!
     }
 
+
     public void driverUI(){
-            //TODO Show the UI!
-        }
+//        groupSideBars.getChildren().get(0).toBack();
+//        groupSideBars.getChildren().get(1).toBack();
+//        groupSideBars.getChildren().get(2).toFront();
+//        sideBarDriver.toFront();
+//        sideBarAssistant.toBack();
+//        sideBarManager.toBack();
+        sideBarAssistant.getChildren().clear();
+        sideBarManager.getChildren().clear();
+//        sideBarDriver.setBlendMode(BlendMode.SRC_ATOP);
+    }
 
 
 
