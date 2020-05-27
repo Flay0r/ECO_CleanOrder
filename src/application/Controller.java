@@ -1,9 +1,11 @@
 package application;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,10 +13,13 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.BlendMode;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -41,9 +46,150 @@ public class Controller implements Initializable{
     private VBox sideBarDriver = new VBox();
     @FXML
     private Group groupSideBars;
+    @FXML
+    private Label contentLabel; //Use setText on Button Press for each ContentArea
+
+    @FXML
+    private Label validatorLabel;
 
     private static SessionUser currentUser = new SessionUser();
 
+    @FXML
+    private BorderPane border_pane;
+
+    @FXML
+    private VBox content_area;
+
+    @FXML
+    private HBox menubar;
+
+    @FXML
+    private TextField searchBarTF;
+
+    @FXML
+    private JFXButton userProfile;
+
+    @FXML
+    private HBox ContentArea;
+
+    @FXML
+    private AnchorPane statisticsPane;
+
+    @FXML
+    private CategoryAxis timeAxis;
+
+    @FXML
+    private NumberAxis salesAxix;
+
+    @FXML
+    private AnchorPane orderPane;
+
+    @FXML
+    private JFXButton orderPaneOrderButton;
+
+    @FXML
+    private JFXButton mailSearch;
+
+    @FXML
+    private JFXListView<?> listViewOrderPane;
+
+    @FXML
+    private TextField searchOrderNumber;
+
+    @FXML
+    private TextField searchMail;
+
+    @FXML
+    private TextField searchBillingName;
+
+    @FXML
+    private TextField searchStoreID;
+
+    @FXML
+    private TextField searchStatus;
+
+    @FXML
+    private AnchorPane calendarPane;
+
+    @FXML
+    private AnchorPane adminUserPane;
+
+    @FXML
+    private AnchorPane locationPane;
+
+    @FXML
+    private AnchorPane workFlowPane;
+
+    @FXML
+    private AnchorPane staffPane;
+
+    @FXML
+    private JFXButton orderPaneOrderButton1;
+
+    @FXML
+    private JFXButton mailSearch1;
+
+    @FXML
+    private JFXListView<?> listViewStaffPane;
+
+    @FXML
+    private TextField searchOrderNumber1;
+
+    @FXML
+    private TextField searchMail1;
+
+    @FXML
+    private TextField searchBillingName1;
+
+    @FXML
+    private TextField searchStoreID1;
+
+    @FXML
+    private TextField searchStatus1;
+
+    @FXML
+    private StackPane stackedSideBar;
+
+
+
+    @FXML
+    private JFXButton orderButton;
+
+    @FXML
+    private JFXButton workflowButton;
+
+    @FXML
+    private JFXButton locationsButton;
+
+    @FXML
+    private JFXButton calendarButton;
+
+
+    @FXML
+    private JFXButton staffButton;
+
+    @FXML
+    private JFXButton statisticsButton;
+
+    @FXML
+    private JFXButton usersProfiles;
+
+    @FXML
+    void logout(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openCalenderPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void orderClicked(ActionEvent event) {
+        System.out.println("Clicked");
+        contentLabel.setText("Welcome");
+
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources){
         if(currentUser.position != null) {
@@ -67,7 +213,7 @@ public class Controller implements Initializable{
             savePosition();
             empNoTF.setText("");
             passwordTF.setText("");
-            System.out.println("login successful");
+            validatorLabel.setText("LoginSucces");
             startDashBoard();
             closeWindow(loginButton);
         } else {
