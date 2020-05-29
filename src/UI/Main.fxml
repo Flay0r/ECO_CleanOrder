@@ -8,6 +8,8 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
@@ -263,11 +265,10 @@
                                     </HBox>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="calendarPane" prefHeight="200.0" prefWidth="200.0" />
-                              <AnchorPane fx:id="adminUserPane" prefHeight="200.0" prefWidth="200.0" />
-                              <AnchorPane fx:id="locationPane" prefHeight="200.0" prefWidth="200.0" />
-                              <AnchorPane fx:id="workFlowPane" prefHeight="200.0" prefWidth="200.0" />
-                              <AnchorPane fx:id="staffPane" prefHeight="200.0" prefWidth="200.0">
+                              <AnchorPane fx:id="calendarPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                              <AnchorPane fx:id="adminUserPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                              <AnchorPane fx:id="locationPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                              <AnchorPane fx:id="staffPane" prefHeight="200.0" prefWidth="200.0" visible="false">
                                  <children>
                                     <HBox prefHeight="39.0" prefWidth="947.0">
                                        <children>
@@ -313,7 +314,7 @@
                                           </JFXButton>
                                        </children>
                                     </HBox>
-                                    <JFXListView fx:id="listViewStaffPane" layoutY="124.0" prefHeight="369.0" prefWidth="757.0" style="-fx-background-color: #E3EFEC;" />
+                                    <JFXListView fx:id="listViewStaffPane" editable="true" layoutY="77.0" prefHeight="416.0" prefWidth="949.0" showTooltip="true" style="-fx-background-color: #CCCCBB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="77.0" />
                                     <HBox alignment="CENTER_LEFT" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
                                        <children>
                                           <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
@@ -381,6 +382,23 @@
                                     </HBox>
                                  </children>
                               </AnchorPane>
+                              <AnchorPane fx:id="workFlowPane" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane layoutX="139.0" layoutY="83.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab fx:id="ta" text="Incoming ">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Untitled Tab 2">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children></AnchorPane>
                            </children>
                         </StackPane>
                      </children>
