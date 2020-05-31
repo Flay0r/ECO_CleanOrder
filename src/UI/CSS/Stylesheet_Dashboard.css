@@ -25,6 +25,19 @@
      -fx-border-color: #E3EFEC;
      -fx-border-width: 0px 0px 0px 3px;
 }
+.sidebar-btn-tabs{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0px;
+     -fx-text-fill:  #A1C4BA;
+}
+.sidebar-btn-tabs:hover{
+     -fx-background-color: transparent;
+     -fx-background-radius: 0px;
+     -fx-text-fill: #b8b1b1;
+     -fx-border-color:  #A1C4BA;
+     -fx-border-width: 0px 0px 0px 3px;
+}
+
 .label{
      -fx-text-fill: #001E1D;
 }
