@@ -21,3 +21,5 @@ O
 src/UI/CSS/Stylesheet_Login.css,9\5\95c18ede14bcd23063e766ffaeaa541f3e1b31a1
 H
 src/domain/Customer.java,6\4\64fb1d0a32336d7a98dfb81107ac32af59205066
+I
+src/UI/CSS/titledPane.css,5\6\5683e1aa68f6b06688de88088f6af68abbf6955c

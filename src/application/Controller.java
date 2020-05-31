@@ -10,50 +10,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
-import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable{
-    @FXML
-    private JFXTextField empNoTF;
-    @FXML
-    private JFXTextField passwordTF;
-    @FXML
-    private JFXButton loginButton;
-    @FXML
-    private JFXButton logoutButton;
-    @FXML
-    private StackPane stackedSideBars;
-    @FXML
-    private VBox sideBarManager = new VBox();
-    @FXML
-    private VBox sideBarAssistant = new VBox();
-    @FXML
-    private VBox sideBarDriver = new VBox();
-    @FXML
-    private Group groupSideBars;
-    @FXML
-    private Label contentLabel; //Use setText on Button Press for each ContentArea
-
-    @FXML
-    private Label validatorLabel;
-
-    private static SessionUser currentUser = new SessionUser();
-
+public class Controller implements Initializable {
     @FXML
     private BorderPane border_pane;
 
@@ -68,6 +40,12 @@ public class Controller implements Initializable{
 
     @FXML
     private JFXButton userProfile;
+
+    @FXML
+    private JFXButton logoutButton;
+
+    @FXML
+    private AnchorPane allThePanesAreHere;
 
     @FXML
     private HBox ContentArea;
@@ -109,18 +87,6 @@ public class Controller implements Initializable{
     private TextField searchStatus;
 
     @FXML
-    private AnchorPane calendarPane;
-
-    @FXML
-    private AnchorPane adminUserPane;
-
-    @FXML
-    private AnchorPane locationPane;
-
-    @FXML
-    private AnchorPane workFlowPane;
-
-    @FXML
     private AnchorPane staffPane;
 
     @FXML
@@ -148,12 +114,34 @@ public class Controller implements Initializable{
     private TextField searchStatus1;
 
     @FXML
+    private AnchorPane workFlowPane;
+
+    @FXML
+    private Tab tab;
+
+    @FXML
+    private Tab statisticsTab;
+
+    @FXML
+    private AnchorPane calendarPane;
+
+    @FXML
+    private AnchorPane locationPane;
+
+    @FXML
+    private AnchorPane adminUsersPane;
+
+    @FXML
     private StackPane stackedSideBar;
 
-
+    @FXML
+    private VBox sideBarAssistant;
 
     @FXML
     private JFXButton orderButton;
+
+    @FXML
+    private VBox sideBarDriver;
 
     @FXML
     private JFXButton workflowButton;
@@ -164,6 +152,8 @@ public class Controller implements Initializable{
     @FXML
     private JFXButton calendarButton;
 
+    @FXML
+    private VBox sideBarManager;
 
     @FXML
     private JFXButton staffButton;
@@ -174,13 +164,25 @@ public class Controller implements Initializable{
     @FXML
     private JFXButton usersProfiles;
 
+    private static SessionUser currentUser = new SessionUser();
+    @FXML
+    private JFXTextField empNoTF;
+    @FXML
+    private JFXTextField passwordTF;
+    @FXML
+    private JFXButton loginButton;
+
+    @FXML
+    private StackPane stackedSideBars;
+    @FXML
+    private Group groupSideBars;
+    @FXML
+    private Label contentLabel; //Use setText on Button Press for each ContentArea
+    @FXML
+    private Label validatorLabel;
+
     @FXML
     void logout(ActionEvent event) {
-
-    }
-
-    @FXML
-    void openCalenderPane(ActionEvent event) {
 
     }
 
@@ -190,9 +192,39 @@ public class Controller implements Initializable{
         contentLabel.setText("Welcome");
 
     }
+    @FXML
+    void openCalenderPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openLocationPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openStaffPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openStatisticsPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openUsersPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openWorkFlowPane(ActionEvent event) {
+
+    }
+
     @Override
-    public void initialize(URL location, ResourceBundle resources){
-        if(currentUser.position != null) {
+    public void initialize(URL location, ResourceBundle resources) {
+        if (currentUser.position != null) {
             if (currentUser.position.equals("Manager")) managerUI();
             if (currentUser.position.equals("Employee")) assistantUI();
             if (currentUser.position.equals("Driver")) driverUI();
@@ -200,16 +232,16 @@ public class Controller implements Initializable{
     }
 
     @FXML
-    public void btn_login() throws Exception{
+    public void btn_login() throws Exception {
         currentUser.password = passwordTF.getText();
-        if (empNoTF.getText().matches("[0-9]+")){
+        if (empNoTF.getText().matches("[0-9]+")) {
             currentUser.id = Integer.valueOf(empNoTF.getText());
         } else {
             System.out.println("invalid user number");
             return;
         }
 
-        if(comparePassword()) {
+        if (comparePassword()) {
             savePosition();
             empNoTF.setText("");
             passwordTF.setText("");
@@ -221,25 +253,25 @@ public class Controller implements Initializable{
         }
     }
 
-    private boolean comparePassword(){
-        boolean result=false;
+    private boolean comparePassword() {
+        boolean result = false;
         DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
-                result=true;
+            if (currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
+                result = true;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
         return result;
     }
 
-    public void savePosition(){
+    public void savePosition() {
         DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
-            currentUser.position=DatabaseConnector.getResultSet().getString("Position");
-        } catch ( Exception e) {
+            currentUser.position = DatabaseConnector.getResultSet().getString("Position");
+        } catch (Exception e) {
             System.out.println("empty resultset");
         }
         System.out.println("saving position: " + currentUser.position);
@@ -255,12 +287,12 @@ public class Controller implements Initializable{
         stage.setMinHeight(600);
         stage.setMinWidth(800);
         stage.show();
-        currentUser.id=0;
-        currentUser.position="";
-        currentUser.password="";
+        currentUser.id = 0;
+        currentUser.position = "";
+        currentUser.password = "";
     }
 
-    private void closeWindow(Button button){
+    private void closeWindow(Button button) {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
     }
@@ -282,18 +314,17 @@ public class Controller implements Initializable{
         sideBarManager.toFront();
     }
 
-    public void assistantUI(){
+    public void assistantUI() {
         sideBarAssistant.toFront();
     }
 
 
-    public void driverUI(){
+    public void driverUI() {
         sideBarDriver.toFront();
     }
 
 
-
-    public void newOrder(int CustomerID, int SubsidiaryID){
+    public void newOrder(int CustomerID, int SubsidiaryID) {
 
 
 
