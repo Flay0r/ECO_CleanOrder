@@ -27,382 +27,395 @@
          <children>
             <VBox fx:id="content_area" prefHeight="650.0" prefWidth="950.0" styleClass="dashboard" stylesheets="@CSS/Stylesheet_Dashboard.css">
                <children>
-                  <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="774.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="menu-bar-search-field-box" HBox.hgrow="ALWAYS">
-                           <children>
-                              <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                              <TextField fx:id="searchBarTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="Calibri" size="16.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <JFXButton fx:id="userProfile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="USER" size="3em" styleClass="menu-bar-btns-icon" />
-                                 </graphic>
-                              </JFXButton>
-                              <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="LIST_ALT" size="3em" styleClass="menu-bar-btns-icon" />
-                                 </graphic>
-                              </JFXButton>
-                              <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="TH" size="3em" styleClass="menu-bar-btns-icon" />
-                                 </graphic>
-                              </JFXButton>
-                              <JFXButton fx:id="logoutButton" accessibleRole="TOOLTIP" accessibleRoleDescription="logout Button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#logout" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
-                                 <tooltip>
-                                    <Tooltip text=" Logout Here " />
-                                 </tooltip>
-                                 <graphic>
-                                    <FontAwesomeIcon focusTraversable="true" glyphStyleClass="logout-button" iconName="LOCK" size="3em" styleClass="menu-bar-btns-icon" />
-
-                                       </graphic>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                     </children>
+                  <AnchorPane>
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="774.0" style="-fx-background-color: #fff;">
                      <children>
-                        <VBox alignment="CENTER_LEFT">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
+                        <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="950.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
-                                 <font>
-                                    <Font name="Calibri Bold" size="28.0" />
-                                 </font>
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="MAP_MARKER" />
-                                 </graphic>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                           <children>
-                              <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                 </graphic>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="menu-bar-search-field-box" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
+                                    <TextField fx:id="searchBarTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Calibri" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
                                  <HBox.margin>
-                                    <Insets right="10.0" />
+                                    <Insets />
                                  </HBox.margin>
-                              </JFXButton>
-                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                 </graphic>
-                                 <HBox.margin>
-                                    <Insets right="10.0" />
-                                 </HBox.margin>
-                              </JFXButton>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="userProfile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="USER" size="3em" styleClass="menu-bar-btns-icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="LIST_ALT" size="3em" styleClass="menu-bar-btns-icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="TH" size="3em" styleClass="menu-bar-btns-icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="logoutButton" accessibleRole="TOOLTIP" accessibleRoleDescription="logout Button" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#logout" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                       <tooltip>
+                                          <Tooltip text=" Logout Here " />
+                                       </tooltip>
+                                       <graphic>
+                                          <FontAwesomeIcon focusTraversable="true" glyphStyleClass="logout-button" iconName="LOCK" size="3em" styleClass="menu-bar-btns-icon" />
+      
+                                             </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
                            </children>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
                         </HBox>
                      </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
-                  <HBox fx:id="ContentArea" alignment="CENTER" prefHeight="466.0" prefWidth="950.0" styleClass="dashboard" VBox.vgrow="ALWAYS">
+                  </AnchorPane>
+                  <AnchorPane>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <StackPane prefHeight="493.0" prefWidth="950.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane fx:id="statisticsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
+                              <VBox alignment="CENTER_LEFT">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
                                  <children>
-                                    <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
-                                      <xAxis>
-                                        <CategoryAxis fx:id="timeAxis" side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis fx:id="salesAxix" side="LEFT" />
-                                      </yAxis>
-                                    </StackedBarChart>
+                                    <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
+                                       <font>
+                                          <Font name="Calibri Bold" size="28.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="MAP_MARKER" />
+                                       </graphic>
+                                    </Label>
                                  </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="orderPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                              </VBox>
+                              <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <HBox layoutX="1.0" layoutY="30.0" prefHeight="19.0" prefWidth="947.0">
-                                       <children>
-                                          <JFXButton fx:id="orderPaneOrderButton" prefHeight="27.0" prefWidth="101.0" text="Ordernumber">
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton fx:id="mailSearch" text="Email (Customer)">
-                                             <HBox.margin>
-                                                <Insets left="85.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="Billling name">
-                                             <HBox.margin>
-                                                <Insets left="85.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="Store ID">
-                                             <HBox.margin>
-                                                <Insets left="85.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="Status">
-                                             <HBox.margin>
-                                                <Insets left="105.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                    <JFXListView fx:id="listViewOrderPane" layoutX="1.0" layoutY="124.0" prefHeight="369.0" prefWidth="757.0" style="-fx-background-color: #E3EFEC;" />
-                                    <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="399.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="573.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="747.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
+                                    <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
                                  </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="calendarPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
-                              <AnchorPane fx:id="adminUserPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
-                              <AnchorPane fx:id="locationPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
-                              <AnchorPane fx:id="staffPane" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                 <children>
-                                    <HBox prefHeight="39.0" prefWidth="947.0">
-                                       <children>
-                                          <JFXButton fx:id="orderPaneOrderButton1" prefHeight="27.0" prefWidth="101.0" text="Position">
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton fx:id="mailSearch1" text="FullName">
-                                             <HBox.margin>
-                                                <Insets left="85.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="HomeLocation">
-                                             <HBox.margin>
-                                                <Insets left="130.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="SubsidiaryID">
-                                             <HBox.margin>
-                                                <Insets left="85.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <JFXButton text="Status">
-                                             <HBox.margin>
-                                                <Insets left="105.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                    <JFXListView fx:id="listViewStaffPane" editable="true" layoutY="77.0" prefHeight="416.0" prefWidth="949.0" showTooltip="true" style="-fx-background-color: #CCCCBB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="77.0" />
-                                    <HBox alignment="CENTER_LEFT" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchOrderNumber1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="All Labels from E-R" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchMail1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="397.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchBillingName1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="571.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchStoreID1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" layoutX="745.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                       <children>
-                                          <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchStatus1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Active or not? " style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="workFlowPane" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <TabPane layoutX="139.0" layoutY="83.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                                      <tabs>
-                                        <Tab fx:id="ta" text="Incoming ">
-                                          <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                          </content>
-                                        </Tab>
-                                        <Tab text="Untitled Tab 2">
-                                          <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                          </content>
-                                        </Tab>
-                                      </tabs>
-                                    </TabPane>
-                                 </children></AnchorPane>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </HBox>
                            </children>
-                        </StackPane>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </AnchorPane>
+                  <AnchorPane VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <HBox fx:id="ContentArea" alignment="CENTER" prefHeight="493.0" prefWidth="950.0" styleClass="dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <StackPane fx:id="allThePanesAreHere" prefHeight="493.0" prefWidth="950.0">
+                                 <children>
+                                    <AnchorPane fx:id="statisticsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
+                                            <xAxis>
+                                              <CategoryAxis fx:id="timeAxis" side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis fx:id="salesAxix" side="LEFT" />
+                                            </yAxis>
+                                          </StackedBarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="orderPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <HBox layoutX="1.0" layoutY="30.0" prefHeight="19.0" prefWidth="947.0">
+                                             <children>
+                                                <JFXButton fx:id="orderPaneOrderButton" prefHeight="27.0" prefWidth="101.0" text="Ordernumber">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton fx:id="mailSearch" text="Email (Customer)">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Billling name">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Store ID">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Status">
+                                                   <HBox.margin>
+                                                      <Insets left="105.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <JFXListView fx:id="listViewOrderPane" layoutX="1.0" layoutY="124.0" prefHeight="369.0" prefWidth="757.0" style="-fx-background-color: #E3EFEC;" />
+                                          <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="399.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="573.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="747.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="calendarPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                                    <AnchorPane fx:id="adminUserPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                                    <AnchorPane fx:id="locationPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                                    <AnchorPane fx:id="staffPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <HBox prefHeight="39.0" prefWidth="947.0">
+                                             <children>
+                                                <JFXButton fx:id="orderPaneOrderButton1" prefHeight="27.0" prefWidth="101.0" text="Position">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton fx:id="mailSearch1" text="FullName">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="HomeLocation">
+                                                   <HBox.margin>
+                                                      <Insets left="130.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="SubsidiaryID">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Status">
+                                                   <HBox.margin>
+                                                      <Insets left="105.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <JFXListView fx:id="listViewStaffPane" editable="true" layoutY="77.0" prefHeight="416.0" prefWidth="949.0" showTooltip="true" style="-fx-background-color: #CCCCBB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="77.0" />
+                                          <HBox alignment="CENTER_LEFT" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchOrderNumber1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="All Labels from E-R" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchMail1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="397.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchBillingName1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="571.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStoreID1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="745.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStatus1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Active or not? " style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TabPane layoutY="-1.0" prefHeight="493.0" prefWidth="951.0" styleClass="content-area-manager" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                              <Tab fx:id="ta" styleClass="sidebar-btn" text="Incoming ">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                </content>
+                                              </Tab>
+                                              <Tab fx:id="statisticsTab" onSelectionChanged="#openStatisticsPane" styleClass="sidebar-btn" text="Statistics">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="675.0" />
+                                                </content>
+                                              </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
                </children>
             </VBox>
          </children>
@@ -576,7 +589,7 @@
                         <Insets left="20.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="staffButton" text="STAFF">
+                        <JFXButton fx:id="staffButton" onAction="#openStaffPane" text="STAFF">
                            <graphic>
                               <FontAwesomeIcon iconName="USERS" size="1.5em" />
                            </graphic>
@@ -591,7 +604,7 @@
                         <Insets left="20.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="statisticsButton" text="STATISTICS">
+                        <JFXButton fx:id="statisticsButton" onAction="#openStatisticsPane" text="STATISTICS">
                            <graphic>
                               <FontAwesomeIcon iconName="BAR_CHART" size="1.5em" />
                            </graphic>
@@ -632,7 +645,7 @@
                         <Insets left="20.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="usersProfiles" text="USERS">
+                        <JFXButton fx:id="usersProfiles" onAction="#openUsersPane" text="USERS">
                            <graphic>
                               <FontAwesomeIcon iconName="USER_SECRET" size="1.5em" />
                            </graphic>
@@ -647,7 +660,7 @@
                         <Insets left="20.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="locationsButton" text="LOCATIONS">
+                        <JFXButton fx:id="locationsButton" onAction="#openLocationPane" text="LOCATIONS">
                            <graphic>
                               <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
                            </graphic>
@@ -662,7 +675,7 @@
                         <Insets left="20.0" />
                      </padding>
                      <children>
-                        <JFXButton fx:id="workflowButton" text="WORKFLOW">
+                        <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW">
                            <graphic>
                               <FontAwesomeIcon iconName="CHAIN" size="1.5em" />
                            </graphic>

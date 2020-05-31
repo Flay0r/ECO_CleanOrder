@@ -1,17 +1,23 @@
 
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(ªİ‡8‰ı‘ë¢.
-C	java:S131;""Add a default case to this switch.(³ıïĞúÿÿÿÿ8¸Ï§ì¢.
-n	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
-T	java:S106R"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
-b	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8ŞÎÖè¢.
-Z	java:S106G"9Replace this use of System.out or System.err by a logger.(³Ö»õÿÿÿÿÿ8‰ı‘ë¢.
-n	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
-Y	java:S125¨"<This block of commented-out lines of code should be removed.(¾³ƒ8Š½êê¢.
-
-java:S1130‘"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ĞÖ˜§ıÿÿÿÿ8ÕŠ£ì¢.
-U	java:S106_"9Replace this use of System.out or System.err by a logger.(ÅÈèş8‰ı‘ë¢.
-‰
-java:S1130Š"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ì’¼!8û÷¢ì¢.
-T	java:S106]"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(«‚¥¡8‰ı‘ë¢.
-o	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8‰ı‘ë¢.
+Ÿ
+java:S1186·"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’®€‰8† â„¦.
+n	java:S117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
+W
+java:S1128":Remove this unused import 'javafx.scene.effect.BlendMode'.(éÁ®Š8† â„¦.
+[	java:S106Ü"9Replace this use of System.out or System.err by a logger.(³Ö»õÿÿÿÿÿ8‰ı‘ë¢.
+K
+java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8† â„¦.
+r	java:S116:"VRename this field "border_pane" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é½ÉÄ8† â„¦.
+n	java:S117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Âµ 8ŞÎÖè¢.
+[	java:S106½"9Replace this use of System.out or System.err by a logger.(Šı‹úÿÿÿÿ8† â„¦.
+p	java:S100Ë"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8‰ı‘ë¢.
+V	java:S106õ"9Replace this use of System.out or System.err by a logger.(ÅÈèş8‰ı‘ë¢.
+Y	java:S125·"<This block of commented-out lines of code should be removed.(¾³ƒ8Š½êê¢.
+s	java:S116="WRename this field "content_area" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Çê8† â„¦.
+V	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(ªİ‡8‰ı‘ë¢.
+U	java:S106è"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
+w	java:S116I"VRename this field "ContentArea" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü°¹¨şÿÿÿÿ8† â„¦.
+Ÿ
+java:S1186²"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ûÂè8† â„¦.
+U	java:S106ó"9Replace this use of System.out or System.err by a logger.(òßŞb8‰ı‘ë¢.
+c	java:S112Œ"FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8ŞÎÖè¢.

@@ -1,6 +1,9 @@
 .sidebar{
      -fx-background-color: #ABD1C6;
 }
+.content-area-manager{
+     -fx-background-color: #A1C4BA;
+}
 .dashboard{
      -fx-background-color: #E3EFEC;
 }
