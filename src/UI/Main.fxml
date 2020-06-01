@@ -607,7 +607,7 @@
                                                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box" GridPane.rowIndex="1">
                                                                <children>
                                                                   <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter mail" HBox.hgrow="ALWAYS">
+                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter mail" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                                                      <font>
                                                                         <Font name="Calibri" size="16.0" />
                                                                      </font>
@@ -620,7 +620,7 @@
                                                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box">
                                                                <children>
                                                                   <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF11" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter CUS name" HBox.hgrow="ALWAYS">
+                                                                  <TextField fx:id="searchBarTF11" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter CUS name" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                                                      <font>
                                                                         <Font name="Calibri" size="16.0" />
                                                                      </font>

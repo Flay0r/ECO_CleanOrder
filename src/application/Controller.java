@@ -262,8 +262,6 @@ public class Controller implements Initializable {
     @FXML
     void openStatisticsPane(ActionEvent event) {
         contentLabel.setText("Stats 42/0/0");
-        statisticsPane.setVisible(true);
-        statisticsPane.toFront();
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         orderPane.setVisible(false);
@@ -271,6 +269,9 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         newOrderPane.setVisible(false);
         workFlowPane.setVisible(false);
+        statisticsPane.setVisible(true);
+        statisticsPane.toFront();
+
     }
 
     @FXML
