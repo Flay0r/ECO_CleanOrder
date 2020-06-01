@@ -517,9 +517,9 @@
          <children>
             <StackPane fx:id="stackedSideBar" prefHeight="650.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane>
+                  <AnchorPane fx:id="sideBarAssistant">
                      <children>
-                        <VBox fx:id="sideBarAssistant" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
                                  <image>
@@ -564,9 +564,9 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane>
+                  <AnchorPane fx:id="sideBarDriver">
                      <children>
-                        <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
                                  <image>
@@ -644,9 +644,9 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane>
+                  <AnchorPane fx:id="sideBarManager">
                      <children>
-                        <VBox fx:id="sideBarManager" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane>
                                  <children>

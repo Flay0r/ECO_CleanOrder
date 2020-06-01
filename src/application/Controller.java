@@ -135,13 +135,13 @@ public class Controller implements Initializable {
     private StackPane stackedSideBar;
 
     @FXML
-    private VBox sideBarAssistant;
+    private AnchorPane sideBarAssistant;
 
     @FXML
     private JFXButton orderButton;
 
     @FXML
-    private VBox sideBarDriver;
+    private AnchorPane sideBarDriver;
 
     @FXML
     private JFXButton workflowButton;
@@ -153,7 +153,7 @@ public class Controller implements Initializable {
     private JFXButton calendarButton;
 
     @FXML
-    private VBox sideBarManager;
+    private AnchorPane sideBarManager;
 
     @FXML
     private JFXButton staffButton;
@@ -330,7 +330,7 @@ public class Controller implements Initializable {
     public void logout() throws IOException {
         System.out.println("Before close Wind");
         closeWindow(logoutButton);
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("UI\\LogIn.fxml"));
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
         stage.setScene(new Scene(root, 1200, 650));
@@ -344,9 +344,10 @@ public class Controller implements Initializable {
     }
 
     private void closeWindow(Button button) {
-        System.out.println("Login Button reached closeWind");
+        System.out.println("lgout Button reached closeWind");
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
+        System.out.println("Closed Window");
     }
 
     public Stage startDashBoard() throws Exception {

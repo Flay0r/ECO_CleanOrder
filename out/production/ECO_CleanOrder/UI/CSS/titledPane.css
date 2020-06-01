@@ -1,0 +1,50 @@
+.titled-pane
+{
+    -fx-text-fill: black;
+    -fx-font-family: Consolas;
+    -fx-font-size: 12;
+    -fx-font-weight: 700;
+    text-decoration: underline solid rgb(68, 68, 68);
+    text-transform: uppercase;
+
+}
+.titled-pane:focused
+{
+    -fx-text-fill:WHITE;
+}
+.titled-pane > .title
+{
+    -fx-background-color: transparent;
+}
+
+.titled-pane:focused > .title
+{
+    -fx-color: black;
+}
+
+.titled-pane > .title > .arrow-button
+{
+    -fx-background-color: transparent;
+}
+
+.titled-pane > .title > .arrow-button .arrow
+{
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow
+{
+    -fx-rotate: -90;
+}
+
+.titled-pane > *.content
+{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.titled-pane:focused > .title > .arrow-button .arrow
+{
+    -fx-background-color: WHITE;
+}
