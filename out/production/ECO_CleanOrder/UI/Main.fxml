@@ -301,7 +301,7 @@
                                           <TreeTableView layoutX="582.0" layoutY="-3.0" prefHeight="498.0" prefWidth="368.0">
                                             <columns>
                                               <TreeTableColumn prefWidth="173.7142333984375" style="-fx-background-colour: TRANSPARENT;" styleClass="sidebar-btn" text="Upcoming" />
-                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More importatn stuff" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More important stuff" />
                                             </columns>
                                           </TreeTableView>
                                        </children></AnchorPane>

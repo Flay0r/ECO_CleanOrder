@@ -2,6 +2,7 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
@@ -14,10 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -168,10 +166,9 @@ public class Controller implements Initializable {
     @FXML
     private JFXTextField empNoTF;
     @FXML
-    private JFXTextField passwordTF;
+    private JFXPasswordField passwordTF;
     @FXML
     private JFXButton loginButton;
-
     @FXML
     private StackPane stackedSideBars;
     @FXML
@@ -180,7 +177,6 @@ public class Controller implements Initializable {
     private Label contentLabel; //Use setText on Button Press for each ContentArea
     @FXML
     private Label validatorLabel;
-
     @FXML
     void orderClicked(ActionEvent event) {
         System.out.println("Clicked");
@@ -207,7 +203,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openLocationPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Calender");
@@ -220,7 +215,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openStaffPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Staff");
@@ -233,7 +227,6 @@ public class Controller implements Initializable {
         orderPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openStatisticsPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Stats");
@@ -245,7 +238,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openUsersPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Users");
@@ -258,7 +250,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Workflow");
@@ -270,7 +261,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
 
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (currentUser.position != null) {
@@ -279,6 +269,7 @@ public class Controller implements Initializable {
             if (currentUser.position.equals("Driver")) driverUI();
         }
     }
+
 
     @FXML
     public void btn_login() throws Exception {
@@ -289,7 +280,6 @@ public class Controller implements Initializable {
             System.out.println("invalid user number");
             return;
         }
-
         if (comparePassword()) {
             savePosition();
             empNoTF.setText("");
@@ -301,7 +291,6 @@ public class Controller implements Initializable {
             System.out.println("login failed");
         }
     }
-
     private boolean comparePassword() {
         boolean result = false;
         DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
@@ -314,7 +303,6 @@ public class Controller implements Initializable {
         }
         return result;
     }
-
     public void savePosition() {
         DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
         try {
@@ -325,15 +313,15 @@ public class Controller implements Initializable {
         }
         System.out.println("saving position: " + currentUser.position);
     }
-
     @FXML
     public void logout() throws IOException {
         System.out.println("Before close Wind");
         closeWindow(logoutButton);
-        Parent root = FXMLLoader.load(getClass().getResource("UI\\LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/UI/LogIn.fxml"));
+        Scene scene = new Scene(root, 1200, 650);
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
-        stage.setScene(new Scene(root, 1200, 650));
+        stage.setScene(scene);
         stage.setMinHeight(600);
         stage.setMinWidth(800);
         stage.show();
@@ -342,14 +330,12 @@ public class Controller implements Initializable {
         currentUser.password = "";
         System.out.println("LogOut ran through");
     }
-
     private void closeWindow(Button button) {
-        System.out.println("lgout Button reached closeWind");
+        System.out.println("logout Button reached closeWind");
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
         System.out.println("Closed Window");
     }
-
     public Stage startDashBoard() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
         Scene scene = new Scene(root, 1200, 650);
@@ -361,22 +347,15 @@ public class Controller implements Initializable {
         stage.show();
         return stage;
     }
-
-
     public void managerUI() {
         sideBarManager.toFront();
     }
-
     public void assistantUI() {
         sideBarAssistant.toFront();
     }
-
-
     public void driverUI() {
         sideBarDriver.toFront();
     }
-
-
     public void newOrder(int CustomerID, int SubsidiaryID) {
 
 

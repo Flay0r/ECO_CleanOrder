@@ -4,6 +4,22 @@
 .sidebar{
     -fx-background-color: #abd1c6
 }
+.password-field{
+    -jfx-focus-color: #8dc4c4;
+    -jfx-unfocus-color: #8dc4c4;
+    -fx-padding: 0.333333em 0 0.333333em 0;
+}
+
+.password-field > .input-line {
+    -fx-background-color: -jfx-unfocus-color;
+    -fx-pref-height: 1px;
+    -fx-translate-y: 1px;
+}
+
+.password-field > .input-focused-line {
+    -fx-background-color: -jfx-focus-color;
+    -fx-pref-height: 2px;
+}
 
 .forgetBtn{
     -fx-text-fill: #a3a3a3;
