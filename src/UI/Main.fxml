@@ -11,7 +11,6 @@
 <?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -26,21 +25,18 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <center>
       <AnchorPane>
          <children>
             <VBox fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" styleClass="dashboard" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane prefHeight="55.0" prefWidth="944.0">
+                  <AnchorPane>
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin>
@@ -71,7 +67,7 @@
                                  <children>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <JFXButton fx:id="userProfile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                          <JFXButton fx:id="userProfile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#newInvoice" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
                                              <graphic>
                                                 <FontAwesomeIcon iconName="USER" size="3em" styleClass="menu-bar-btns-icon" />
                                              </graphic>
@@ -102,12 +98,12 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="97.0" prefWidth="933.0">
+                  <AnchorPane>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="6.0" prefHeight="97.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <VBox alignment="CENTER_LEFT">
                                  <HBox.margin>
@@ -116,17 +112,17 @@
                                  <children>
                                     <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
                                        <font>
-                                          <Font name="Consolas Bold" size="20.0" />
+                                          <Font name="Consolas Bold" size="30.0" />
                                        </font>
                                        <graphic>
-                                          <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
+                                          <FontAwesomeIcon iconName="MAP_MARKER" />
                                        </graphic>
                                     </Label>
                                  </children>
                               </VBox>
                               <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <JFXButton fx:id="newOrderButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#openNewOrderPane" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="New Order">
+                                    <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -169,146 +165,6 @@
                            <children>
                               <StackPane prefHeight="493.0" prefWidth="950.0">
                                  <children>
-                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
-                                            <xAxis>
-                                              <CategoryAxis fx:id="timeAxis" side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis fx:id="salesAxix" side="LEFT" />
-                                            </yAxis>
-                                          </StackedBarChart>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <HBox layoutX="1.0" layoutY="30.0" prefHeight="19.0" prefWidth="947.0">
-                                             <children>
-                                                <JFXButton fx:id="orderPaneOrderButton" prefHeight="27.0" prefWidth="101.0" text="Ordernumber">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="Calibri" size="14.0" />
-                                                   </font>
-                                                </JFXButton>
-                                                <JFXButton fx:id="mailSearch" text="Email (Customer)">
-                                                   <HBox.margin>
-                                                      <Insets left="85.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="Calibri" size="14.0" />
-                                                   </font>
-                                                </JFXButton>
-                                                <JFXButton text="Billling name">
-                                                   <HBox.margin>
-                                                      <Insets left="85.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="Calibri" size="14.0" />
-                                                   </font>
-                                                </JFXButton>
-                                                <JFXButton text="Store ID">
-                                                   <HBox.margin>
-                                                      <Insets left="85.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="Calibri" size="14.0" />
-                                                   </font>
-                                                </JFXButton>
-                                                <JFXButton text="Status">
-                                                   <HBox.margin>
-                                                      <Insets left="105.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="Calibri" size="14.0" />
-                                                   </font>
-                                                </JFXButton>
-                                             </children>
-                                          </HBox>
-                                          <JFXListView fx:id="listViewOrderPane" layoutX="1.0" layoutY="124.0" prefHeight="369.0" prefWidth="757.0" style="-fx-background-color: #E3EFEC;" />
-                                          <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                                <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                             <padding>
-                                                <Insets left="20.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                                <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                             <padding>
-                                                <Insets left="20.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="399.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                                <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                             <padding>
-                                                <Insets left="20.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="573.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                                <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                             <padding>
-                                                <Insets left="20.0" />
-                                             </padding>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="747.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
-                                                <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                             <padding>
-                                                <Insets left="20.0" />
-                                             </padding>
-                                          </HBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TreeTableView layoutX="582.0" layoutY="-3.0" prefHeight="498.0" prefWidth="368.0">
-                                            <columns>
-                                              <TreeTableColumn prefWidth="173.7142333984375" style="-fx-background-colour: TRANSPARENT;" styleClass="sidebar-btn" text="Upcoming" />
-                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More important stuff" />
-                                            </columns>
-                                          </TreeTableView>
-                                       </children></AnchorPane>
                                     <AnchorPane fx:id="locationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
@@ -505,147 +361,144 @@
                                           </HBox>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0">
+                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
-                                          <SplitPane dividerPositions="0.7974683544303798" layoutX="3.0" layoutY="1.0" prefHeight="496.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                   <children>
-                                                      <GridPane layoutX="14.0" layoutY="15.0" prefHeight="273.0" prefWidth="433.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                        <columnConstraints>
-                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
-                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                        </columnConstraints>
-                                                        <rowConstraints>
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                        </rowConstraints>
-                                                         <children>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/tShirt.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Jeans.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Rock.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="141.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/UnterHose.png" />
-                                                                     </image></ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Socken.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Hemd.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Kleid.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Blazer.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="169.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/HoseAnzug.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box" GridPane.rowIndex="1">
-                                                               <children>
-                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter mail" HBox.hgrow="ALWAYS">
-                                                                     <font>
-                                                                        <Font name="Calibri" size="16.0" />
-                                                                     </font>
-                                                                  </TextField>
-                                                               </children>
-                                                               <padding>
-                                                                  <Insets left="20.0" />
-                                                               </padding>
-                                                            </HBox>
-                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box">
-                                                               <children>
-                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF11" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter CUS name" HBox.hgrow="ALWAYS">
-                                                                     <font>
-                                                                        <Font name="Calibri" size="16.0" />
-                                                                     </font>
-                                                                  </TextField>
-                                                               </children>
-                                                               <padding>
-                                                                  <Insets left="20.0" />
-                                                               </padding>
-                                                            </HBox>
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </AnchorPane>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="219.0">
-                                                   <children>
-                                                      <TableView layoutX="-100.0" layoutY="173.0" prefHeight="273.0" prefWidth="123.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
-                                                        <columns>
-                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Items" />
-                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Price" />
-                                                        </columns>
-                                                      </TableView>
-                                                   </children>
-                                                </AnchorPane>
-                                            </items>
-                                          </SplitPane>
+                                          <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
+                                            <xAxis>
+                                              <CategoryAxis fx:id="timeAxis" side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis fx:id="salesAxix" side="LEFT" />
+                                            </yAxis>
+                                          </StackedBarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TreeTableView layoutX="582.0" layoutY="-3.0" prefHeight="498.0" prefWidth="368.0">
+                                            <columns>
+                                              <TreeTableColumn prefWidth="173.7142333984375" style="-fx-background-colour: TRANSPARENT;" styleClass="sidebar-btn" text="Upcoming" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More important stuff" />
+                                            </columns>
+                                          </TreeTableView>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <HBox layoutX="1.0" layoutY="30.0" prefHeight="19.0" prefWidth="947.0">
+                                             <children>
+                                                <JFXButton fx:id="orderPaneOrderButton" prefHeight="27.0" prefWidth="101.0" text="Ordernumber">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton fx:id="mailSearch" text="Email (Customer)">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Billling name">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Store ID">
+                                                   <HBox.margin>
+                                                      <Insets left="85.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton text="Status">
+                                                   <HBox.margin>
+                                                      <Insets left="105.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="Calibri" size="14.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <JFXListView fx:id="listViewOrderPane" layoutX="1.0" layoutY="124.0" prefHeight="369.0" prefWidth="757.0" style="-fx-background-color: #E3EFEC;" />
+                                          <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="195.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="399.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="573.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="747.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
+                                                <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -797,9 +650,9 @@
                            <children>
                               <AnchorPane>
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="151.0" prefWidth="256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                                    <VBox alignment="CENTER" prefHeight="118.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <ImageView fitHeight="107.0" fitWidth="110.0" pickOnBounds="true" smooth="false">
+                                          <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
                                              <image>
                                                 <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
                                              </image>
