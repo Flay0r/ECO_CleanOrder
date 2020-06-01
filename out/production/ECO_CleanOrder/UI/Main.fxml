@@ -11,6 +11,7 @@
 <?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -25,7 +26,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -36,7 +40,7 @@
          <children>
             <VBox fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" styleClass="dashboard" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane>
+                  <AnchorPane prefHeight="55.0" prefWidth="944.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin>
@@ -98,12 +102,12 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane>
+                  <AnchorPane prefHeight="97.0" prefWidth="933.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="6.0" prefHeight="97.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <VBox alignment="CENTER_LEFT">
                                  <HBox.margin>
@@ -112,17 +116,17 @@
                                  <children>
                                     <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
                                        <font>
-                                          <Font name="Consolas Bold" size="30.0" />
+                                          <Font name="Consolas Bold" size="20.0" />
                                        </font>
                                        <graphic>
-                                          <FontAwesomeIcon iconName="MAP_MARKER" />
+                                          <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
                                        </graphic>
                                     </Label>
                                  </children>
                               </VBox>
                               <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
+                                    <JFXButton fx:id="newOrderButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#openNewOrderPane" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="New Order">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -387,7 +391,7 @@
                                           </TabPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="staffPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0">
+                                    <AnchorPane fx:id="staffPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <HBox prefHeight="39.0" prefWidth="947.0">
                                              <children>
@@ -499,6 +503,149 @@
                                                 <Insets left="20.0" />
                                              </padding>
                                           </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.7974683544303798" layoutX="3.0" layoutY="1.0" prefHeight="496.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <GridPane layoutX="14.0" layoutY="15.0" prefHeight="273.0" prefWidth="433.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/tShirt.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Jeans.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Rock.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="141.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/UnterHose.png" />
+                                                                     </image></ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Socken.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Hemd.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Kleid.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Blazer.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="169.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/HoseAnzug.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
+                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter mail" HBox.hgrow="ALWAYS">
+                                                                     <font>
+                                                                        <Font name="Calibri" size="16.0" />
+                                                                     </font>
+                                                                  </TextField>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="20.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box">
+                                                               <children>
+                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
+                                                                  <TextField fx:id="searchBarTF11" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" text="Enter CUS name" HBox.hgrow="ALWAYS">
+                                                                     <font>
+                                                                        <Font name="Calibri" size="16.0" />
+                                                                     </font>
+                                                                  </TextField>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="20.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="219.0">
+                                                   <children>
+                                                      <TableView layoutX="-100.0" layoutY="173.0" prefHeight="273.0" prefWidth="123.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Items" />
+                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Price" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -650,9 +797,9 @@
                            <children>
                               <AnchorPane>
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="118.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox alignment="CENTER" prefHeight="151.0" prefWidth="256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                                          <ImageView fitHeight="107.0" fitWidth="110.0" pickOnBounds="true" smooth="false">
                                              <image>
                                                 <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
                                              </image>

@@ -169,20 +169,29 @@ public class Controller implements Initializable {
     private JFXPasswordField passwordTF;
     @FXML
     private JFXButton loginButton;
+
     @FXML
     private StackPane stackedSideBars;
+
     @FXML
     private Group groupSideBars;
+
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
+
     @FXML
     private Label validatorLabel;
+
     @FXML
-    void orderClicked(ActionEvent event) {
+    private AnchorPane newOrderPane;
+
+    @FXML
+    void openNewOrderPane(ActionEvent event) {
         System.out.println("Clicked");
-        contentLabel.setText("Welcome");
-        orderPane.setVisible(true);
-        orderPane.toFront();
+        contentLabel.setText("Place a new Order");
+        newOrderPane.setVisible(true);
+        newOrderPane.toFront();
+        orderPane.setVisible(false);
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
@@ -191,6 +200,23 @@ public class Controller implements Initializable {
         workFlowPane.setVisible(false);
 
     }
+
+    @FXML
+    void orderClicked(ActionEvent event) {
+        System.out.println("Clicked");
+        contentLabel.setText("Manage/seek orders");
+        orderPane.setVisible(true);
+        orderPane.toFront();
+        calendarPane.setVisible(false);
+        locationPane.setVisible(false);
+        statisticsPane.setVisible(false);
+        adminUsersPane.setVisible(false);
+        staffPane.setVisible(false);
+        workFlowPane.setVisible(false);
+        newOrderPane.setVisible(false);
+
+    }
+
     @FXML
     void openCalenderPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Calender");
@@ -202,65 +228,79 @@ public class Controller implements Initializable {
         adminUsersPane.setVisible(false);
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
+        newOrderPane.setVisible(false);
     }
+
     @FXML
     void openLocationPane(ActionEvent event) {
-        contentLabel.setText("Welcome to the Calender");
+        contentLabel.setText("Live tracking Trucks");
         locationPane.setVisible(true);
         locationPane.toFront();
         calendarPane.setVisible(false);
         orderPane.setVisible(false);
         statisticsPane.setVisible(false);
+        newOrderPane.setVisible(false);
         adminUsersPane.setVisible(false);
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
+
     @FXML
     void openStaffPane(ActionEvent event) {
-        contentLabel.setText("Welcome to the Staff");
+        contentLabel.setText("Manage staff");
         staffPane.setVisible(true);
         staffPane.toFront();
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
+        newOrderPane.setVisible(false);
         adminUsersPane.setVisible(false);
         orderPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
+
     @FXML
     void openStatisticsPane(ActionEvent event) {
-        contentLabel.setText("Welcome to the Stats");
+        contentLabel.setText("Stats 42/0/0");
         statisticsPane.setVisible(true);
-        statisticsPane.toFront();calendarPane.setVisible(false);
+        statisticsPane.toFront();
+        calendarPane.setVisible(false);
         locationPane.setVisible(false);
         orderPane.setVisible(false);
         adminUsersPane.setVisible(false);
         staffPane.setVisible(false);
+        newOrderPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
+
     @FXML
     void openUsersPane(ActionEvent event) {
-        contentLabel.setText("Welcome to the Users");
+        contentLabel.setText("Manage the Users");
         adminUsersPane.setVisible(true);
         adminUsersPane.toFront();
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
+        newOrderPane.setVisible(false);
         orderPane.setVisible(false);
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
+
     @FXML
     void openWorkFlowPane(ActionEvent event) {
-        contentLabel.setText("Welcome to the Workflow");
+        contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
-        workFlowPane.toFront();calendarPane.setVisible(false);
+        workFlowPane.toFront();
+        calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
         adminUsersPane.setVisible(false);
+        newOrderPane.setVisible(false);
         staffPane.setVisible(false);
 
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (currentUser.position != null) {
@@ -313,11 +353,12 @@ public class Controller implements Initializable {
         }
         System.out.println("saving position: " + currentUser.position);
     }
+
     @FXML
     public void logout() throws IOException {
         System.out.println("Before close Wind");
         closeWindow(logoutButton);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("/UI/LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("src\\UI\\LogIn.fxml"));
         Scene scene = new Scene(root, 1200, 650);
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
@@ -330,12 +371,14 @@ public class Controller implements Initializable {
         currentUser.password = "";
         System.out.println("LogOut ran through");
     }
+    @FXML
     private void closeWindow(Button button) {
         System.out.println("logout Button reached closeWind");
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
         System.out.println("Closed Window");
     }
+    @FXML
     public Stage startDashBoard() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
         Scene scene = new Scene(root, 1200, 650);
@@ -347,12 +390,15 @@ public class Controller implements Initializable {
         stage.show();
         return stage;
     }
+    @FXML
     public void managerUI() {
         sideBarManager.toFront();
     }
+    @FXML
     public void assistantUI() {
         sideBarAssistant.toFront();
     }
+    @FXML
     public void driverUI() {
         sideBarDriver.toFront();
     }
@@ -368,23 +414,4 @@ public class Controller implements Initializable {
 
          */
     }
-    /*
-    Pane-Chooser
-    @FXML
-    void goToBurger(ActionEvent event) {
-        mainCourse.setVisible(false);
-        dessertPane.setVisible(false);
-        sideDish.setVisible(false);
-        burgers.setVisible(true);
-        potatoPane.setVisible(false);
-    }
-    @FXML
-    void goToDesert(ActionEvent event) {
-        sideDish.setVisible(false);
-        burgers.setVisible(false);
-        mainCourse.setVisible(false);
-        dessertPane.setVisible(true);
-        potatoPane.setVisible(false);
-    }
-     */
 }
