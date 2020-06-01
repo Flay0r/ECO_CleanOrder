@@ -52,5 +52,29 @@ public class DatabaseConnector {
         }
         System.out.println("SELECT: OK");
     }
+
+    public static void update(String sql){
+        try {
+            prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
+            System.out.println("preparing statement: OK");
+            rs = prpstmt.executeQuery();
+            System.out.println("executing statement: OK");
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("update didnt work");
+        }
+    }
+
+    public static void insert(String sql){
+        try {
+            prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
+            System.out.println("preparing statement: OK");
+            boolean ok = prpstmt.execute();
+            if (ok) System.out.println("executing statement: OK"); else System.out.println("insert didnt work, but program keeps running");
+        } catch ( SQLException e){
+            e.printStackTrace();
+            System.out.println("insert didnt work, and sql error");
+        }
+    }
 }
 

@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import domain.Invoice;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.event.ActionEvent;
@@ -19,8 +20,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -169,16 +174,12 @@ public class Controller implements Initializable {
     private JFXPasswordField passwordTF;
     @FXML
     private JFXButton loginButton;
-
     @FXML
     private StackPane stackedSideBars;
-
     @FXML
     private Group groupSideBars;
-
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
-
     @FXML
     private Label validatorLabel;
 
@@ -216,7 +217,6 @@ public class Controller implements Initializable {
         newOrderPane.setVisible(false);
 
     }
-
     @FXML
     void openCalenderPane(ActionEvent event) {
         contentLabel.setText("Welcome to the Calender");
@@ -230,7 +230,6 @@ public class Controller implements Initializable {
         workFlowPane.setVisible(false);
         newOrderPane.setVisible(false);
     }
-
     @FXML
     void openLocationPane(ActionEvent event) {
         contentLabel.setText("Live tracking Trucks");
@@ -244,7 +243,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openStaffPane(ActionEvent event) {
         contentLabel.setText("Manage staff");
@@ -258,7 +256,6 @@ public class Controller implements Initializable {
         orderPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openStatisticsPane(ActionEvent event) {
         contentLabel.setText("Stats 42/0/0");
@@ -267,13 +264,11 @@ public class Controller implements Initializable {
         orderPane.setVisible(false);
         adminUsersPane.setVisible(false);
         staffPane.setVisible(false);
-        newOrderPane.setVisible(false);
         workFlowPane.setVisible(false);
         statisticsPane.setVisible(true);
         statisticsPane.toFront();
 
     }
-
     @FXML
     void openUsersPane(ActionEvent event) {
         contentLabel.setText("Manage the Users");
@@ -287,7 +282,6 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
     }
-
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         contentLabel.setText("Manage WorkFlow Here");
@@ -339,9 +333,14 @@ public class Controller implements Initializable {
             DatabaseConnector.getResultSet().next();
             if (currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
                 result = true;
+            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
+                result=true;
+            //TODO hier muss textausgabe an user das der login erfolgreich war
+                return result;
         } catch (Exception e) {
             System.out.println("empty resultset");
         }
+        //TODO hier muss textausgabe an den user das login fehlgeschlagen ist
         return result;
     }
     public void savePosition() {
@@ -354,7 +353,6 @@ public class Controller implements Initializable {
         }
         System.out.println("saving position: " + currentUser.position);
     }
-
     @FXML
     public void logout() throws IOException {
         System.out.println("Before close Wind");
@@ -405,14 +403,26 @@ public class Controller implements Initializable {
     }
     public void newOrder(int CustomerID, int SubsidiaryID) {
 
-
-
-        /* we need:
-        customerID
-        TimeDate, to be calculated and inserted during runtime
-        TotalPrice, to be calculated and inserted after list of items have been appended to this invoice
-        SubsidiaryID, correct id to be calculated by db join during runtime through alias
-
-         */
     }
+
+    @FXML
+    public void printTime(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+    }
+
+    @FXML
+    public void newInvoice(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+
+        //int customerID = TEXTFELD.getText
+
+
+        String sql = "insert into Invoice values (1, '" + dtf.format(now) + "', 54321, 1, 1)";
+        System.out.println("SQL statement: " + sql);
+        DatabaseConnector.insert(sql);
+    }
+
 }
