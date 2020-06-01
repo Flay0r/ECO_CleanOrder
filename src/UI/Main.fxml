@@ -112,7 +112,7 @@
                                  <children>
                                     <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
                                        <font>
-                                          <Font name="Calibri Bold" size="28.0" />
+                                          <Font name="Consolas Bold" size="30.0" />
                                        </font>
                                        <graphic>
                                           <FontAwesomeIcon iconName="MAP_MARKER" />
@@ -309,7 +309,7 @@
                                        <children>
                                           <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@images/Denmark%20Map%20Coloured.png" />
+                                                <Image url="@images/Denmark-Map-Coloured.png" />
                                              </image>
                                           </ImageView>
                                           <TableView layoutX="785.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="165.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">

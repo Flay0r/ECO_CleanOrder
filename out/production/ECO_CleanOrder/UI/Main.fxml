@@ -4,19 +4,23 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -108,7 +112,7 @@
                                  <children>
                                     <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
                                        <font>
-                                          <Font name="Calibri Bold" size="28.0" />
+                                          <Font name="Consolas Bold" size="30.0" />
                                        </font>
                                        <graphic>
                                           <FontAwesomeIcon iconName="MAP_MARKER" />
@@ -161,7 +165,7 @@
                            <children>
                               <StackPane prefHeight="493.0" prefWidth="950.0">
                                  <children>
-                                    <AnchorPane fx:id="statisticsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
                                             <xAxis>
@@ -173,7 +177,7 @@
                                           </StackedBarChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="orderPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <HBox layoutX="1.0" layoutY="30.0" prefHeight="19.0" prefWidth="947.0">
                                              <children>
@@ -287,8 +291,103 @@
                                           </HBox>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="adminUserPane" prefHeight="200.0" prefWidth="200.0" visible="false" />
-                                    <AnchorPane fx:id="staffPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TreeTableView layoutX="582.0" layoutY="-3.0" prefHeight="498.0" prefWidth="368.0">
+                                            <columns>
+                                              <TreeTableColumn prefWidth="173.7142333984375" style="-fx-background-colour: TRANSPARENT;" styleClass="sidebar-btn" text="Upcoming" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More importatn stuff" />
+                                            </columns>
+                                          </TreeTableView>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="locationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/Denmark%20Map%20Coloured.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView layoutX="785.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="165.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="Estimated" />
+                                              <TableColumn prefWidth="75.0" text="Now" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="adminUsersPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <Accordion prefHeight="496.0" prefWidth="949.0">
+                                            <panes>
+                                              <TitledPane text="Locations (shops)">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <effect>
+                                                            <Blend />
+                                                         </effect></AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                              <TitledPane text="Roles">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                </content>
+                                              </TitledPane>
+                                              <TitledPane text="Permissions">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                </content>
+                                              </TitledPane>
+                                                <TitledPane text="Position">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane text="User information (last logged etc.) ">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                   </content>
+                                                </TitledPane>
+                                            </panes>
+                                             <stylesheets>
+                                                <URL value="@CSS/Stylesheet_Dashboard.css" />
+                                                <URL value="@CSS/titledPane.css" />
+                                             </stylesheets>
+                                          </Accordion>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <TabPane prefHeight="493.0" prefWidth="950.0" styleClass="content-area-manager" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab fx:id="tab" styleClass="sidebar-btn-tabs" text="Incoming ">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                </content>
+                                              </Tab>
+                                              <Tab fx:id="statisticsTab" styleClass="sidebar-btn-tabs" text="Statistics">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="675.0" />
+                                                </content>
+                                              </Tab>
+                                                <Tab styleClass="sidebar-btn-tabs" text="More Very">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                                <Tab styleClass="sidebar-btn-tabs" text="important Stuff">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="staffPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <HBox prefHeight="39.0" prefWidth="947.0">
                                              <children>
@@ -334,7 +433,7 @@
                                                 </JFXButton>
                                              </children>
                                           </HBox>
-                                          <JFXListView fx:id="listViewStaffPane" editable="true" layoutY="77.0" prefHeight="416.0" prefWidth="949.0" showTooltip="true" style="-fx-background-color: #CCCCBB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="77.0" />
+                                          <JFXListView fx:id="listViewStaffPane" editable="true" layoutY="57.0" prefHeight="439.0" prefWidth="949.0" showTooltip="true" style="-fx-background-color: #A1C4BA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="57.0" />
                                           <HBox alignment="CENTER_LEFT" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="178.0" styleClass="menu-bar-search-field-box">
                                              <children>
                                                 <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
@@ -361,7 +460,7 @@
                                                 <Insets left="20.0" />
                                              </padding>
                                           </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="397.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                          <HBox alignment="CENTER_LEFT" layoutX="397.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
                                              <children>
                                                 <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
                                                 <TextField fx:id="searchBillingName1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
@@ -374,7 +473,7 @@
                                                 <Insets left="20.0" />
                                              </padding>
                                           </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="571.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
+                                          <HBox alignment="CENTER_LEFT" layoutX="571.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="174.0" styleClass="menu-bar-search-field-box">
                                              <children>
                                                 <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon" />
                                                 <TextField fx:id="searchStoreID1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
@@ -402,63 +501,6 @@
                                           </HBox>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <TabPane prefHeight="493.0" prefWidth="950.0" styleClass="content-area-manager" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <tabs>
-                                              <Tab fx:id="tab" styleClass="sidebar-btn-tabs" text="Incoming ">
-                                                <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                </content>
-                                              </Tab>
-                                              <Tab fx:id="statisticsTab" styleClass="sidebar-btn-tabs" text="Statistics">
-                                                <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="675.0" />
-                                                </content>
-                                              </Tab>
-                                                <Tab styleClass="sidebar-btn-tabs" text="More Very">
-                                                  <content>
-                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                  </content>
-                                                </Tab>
-                                                <Tab styleClass="sidebar-btn-tabs" text="important Stuff">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                   </content>
-                                                </Tab>
-                                            </tabs>
-                                          </TabPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="calendarPane" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TreeTableView layoutX="582.0" layoutY="-3.0" prefHeight="498.0" prefWidth="368.0">
-                                            <columns>
-                                              <TreeTableColumn prefWidth="173.7142333984375" style="-fx-background-colour: TRANSPARENT;" styleClass="sidebar-btn" text="Upcoming" />
-                                              <TreeTableColumn minWidth="0.0" prefWidth="152.2857666015625" styleClass="sidebar-btn" text="More importatn stuff" />
-                                            </columns>
-                                          </TreeTableView>
-                                       </children></AnchorPane>
-                                    <AnchorPane fx:id="locationPane" prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/Denmark%20Map%20Coloured.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TableView layoutX="785.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="165.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
-                                            <columns>
-                                              <TableColumn prefWidth="75.0" text="Estimated" />
-                                              <TableColumn prefWidth="75.0" text="Now" />
-                                            </columns>
-                                          </TableView>
-                                          <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
-                                       </children></AnchorPane>
                                  </children>
                               </StackPane>
                            </children>
