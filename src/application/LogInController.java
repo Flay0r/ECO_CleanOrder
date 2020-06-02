@@ -34,11 +34,7 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (currentUser.position != null) {
-            if (currentUser.position.equals("Manager")) c.managerUI();
-            if (currentUser.position.equals("Employee")) c.assistantUI();
-            if (currentUser.position.equals("Driver")) c.driverUI();
-        }
+
     }
 
     @FXML

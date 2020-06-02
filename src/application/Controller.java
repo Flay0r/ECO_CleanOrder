@@ -371,11 +371,13 @@ public class Controller implements Initializable {
                 ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
                 Alias = DatabaseConnector.getResultSet().getString("Alias");
                 Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
                 items.add(new Item(ItemID, Alias, Price));
             } while(DatabaseConnector.getResultSet().next());
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println("loadItemsFromDb encountered a problem");
+            return;
         }
         System.out.println("--> loadItemFromDb successful");
     }
@@ -383,8 +385,11 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         currentUser = LogInController.getSessionUser();
+        if (currentUser.position != null) {
+            if (currentUser.position.equals("Manager")) managerUI();
+            if (currentUser.position.equals("Employee")) assistantUI();
+            if (currentUser.position.equals("Driver")) driverUI();
+        }
         loadItemsFromDb();
     }
-
-
 }
