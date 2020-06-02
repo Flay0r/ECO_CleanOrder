@@ -158,111 +158,72 @@ public class Controller implements Initializable {
     private AnchorPane newOrderPane;
     @FXML
     void openNewOrderPane(ActionEvent event) {
+        unsee();
         System.out.println("Clicked");
         contentLabel.setText("Place a new Order");
         newOrderPane.setVisible(true);
         newOrderPane.toFront();
-        orderPane.setVisible(false);
-        calendarPane.setVisible(false);
-        locationPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
 
     }
     @FXML
     void orderClicked(ActionEvent event) {
-        System.out.println("Clicked");
+        unsee();
         contentLabel.setText("Manage/seek orders");
         orderPane.setVisible(true);
-        orderPane.toFront();
-        calendarPane.setVisible(false);
-        locationPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
-        newOrderPane.setVisible(false);
-
     }
     @FXML
     void openCalenderPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Welcome to the Calender");
         calendarPane.setVisible(true);
         calendarPane.toFront();
-        orderPane.setVisible(false);
-        locationPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
-        newOrderPane.setVisible(false);
     }
     @FXML
     void openLocationPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Live tracking Trucks");
         locationPane.setVisible(true);
         locationPane.toFront();
-        calendarPane.setVisible(false);
-        orderPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        newOrderPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
     }
     @FXML
     void openStaffPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Manage staff");
         staffPane.setVisible(true);
         staffPane.toFront();
-        calendarPane.setVisible(false);
-        locationPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        newOrderPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        orderPane.setVisible(false);
-        workFlowPane.setVisible(false);
     }
     @FXML
     void openStatisticsPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Stats 42/0/0");
-        calendarPane.setVisible(false);
-        locationPane.setVisible(false);
-        orderPane.setVisible(false);
-        adminUsersPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
         statisticsPane.setVisible(true);
         statisticsPane.toFront();
 
     }
     @FXML
     void openUsersPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Manage the Users");
         adminUsersPane.setVisible(true);
         adminUsersPane.toFront();
-        calendarPane.setVisible(false);
-        locationPane.setVisible(false);
-        statisticsPane.setVisible(false);
-        newOrderPane.setVisible(false);
-        orderPane.setVisible(false);
-        staffPane.setVisible(false);
-        workFlowPane.setVisible(false);
     }
     @FXML
     void openWorkFlowPane(ActionEvent event) {
+        unsee();
         contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
         workFlowPane.toFront();
+    }
+
+    private void unsee(){
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
         adminUsersPane.setVisible(false);
         newOrderPane.setVisible(false);
         staffPane.setVisible(false);
-
+        workFlowPane.setVisible(false);
+        orderPane.setVisible(false);
     }
 
     @FXML
