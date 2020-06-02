@@ -2,9 +2,6 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
-import domain.Invoice;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.event.ActionEvent;
@@ -20,8 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -138,13 +133,13 @@ public class Controller implements Initializable {
     private StackPane stackedSideBar;
 
     @FXML
-    private AnchorPane sideBarAssistant;
+    private VBox sideBarAssistant = new VBox();
 
     @FXML
     private JFXButton orderButton;
 
     @FXML
-    private AnchorPane sideBarDriver;
+    private VBox sideBarDriver;
 
     @FXML
     private JFXButton workflowButton;
@@ -156,7 +151,7 @@ public class Controller implements Initializable {
     private JFXButton calendarButton;
 
     @FXML
-    private AnchorPane sideBarManager;
+    private VBox sideBarManager = new VBox();
 
     @FXML
     private JFXButton staffButton;
@@ -168,12 +163,8 @@ public class Controller implements Initializable {
     private JFXButton usersProfiles;
 
     private static SessionUser currentUser = new SessionUser();
-    @FXML
-    private JFXTextField empNoTF;
-    @FXML
-    private JFXPasswordField passwordTF;
-    @FXML
-    private JFXButton loginButton;
+
+
     @FXML
     private StackPane stackedSideBars;
     @FXML
@@ -181,11 +172,7 @@ public class Controller implements Initializable {
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
     @FXML
-    private Label validatorLabel;
-
-    @FXML
     private AnchorPane newOrderPane;
-
     @FXML
     void openNewOrderPane(ActionEvent event) {
         System.out.println("Clicked");
@@ -201,7 +188,6 @@ public class Controller implements Initializable {
         workFlowPane.setVisible(false);
 
     }
-
     @FXML
     void orderClicked(ActionEvent event) {
         System.out.println("Clicked");
@@ -296,68 +282,35 @@ public class Controller implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        if (currentUser.position != null) {
-            if (currentUser.position.equals("Manager")) managerUI();
-            if (currentUser.position.equals("Employee")) assistantUI();
-            if (currentUser.position.equals("Driver")) driverUI();
-        }
+    @FXML
+    public void closeWindow(Button button) {
+        System.out.println("logout Button reached closeWind");
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
+        System.out.println("Closed Window");
     }
-
 
     @FXML
-    public void btn_login() throws Exception {
-        currentUser.password = passwordTF.getText();
-        if (empNoTF.getText().matches("[0-9]+")) {
-            currentUser.id = Integer.valueOf(empNoTF.getText());
-        } else {
-            System.out.println("invalid user number");
-            return;
-        }
-        if (comparePassword()) {
-            savePosition();
-            empNoTF.setText("");
-            passwordTF.setText("");
-            validatorLabel.setText("LoginSucces");
-            startDashBoard();
-            closeWindow(loginButton);
-        } else {
-            System.out.println("login failed");
-        }
+    public void managerUI() { sideBarManager.toFront(); }
+    @FXML
+    public void assistantUI() {
+        sideBarAssistant.toFront();
     }
-    private boolean comparePassword() {
-        boolean result = false;
-        DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
-        try {
-            DatabaseConnector.getResultSet().next();
-            if (currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
-                result = true;
-            if(currentUser.password.equals(DatabaseConnector.getResultSet().getString("Code")))
-                result=true;
-            //TODO hier muss textausgabe an user das der login erfolgreich war
-                return result;
-        } catch (Exception e) {
-            System.out.println("empty resultset");
-        }
-        //TODO hier muss textausgabe an den user das login fehlgeschlagen ist
-        return result;
+    @FXML
+    public void driverUI() {
+        sideBarDriver.toFront();
     }
-    public void savePosition() {
-        DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
-        try {
-            DatabaseConnector.getResultSet().next();
-            currentUser.position = DatabaseConnector.getResultSet().getString("Position");
-        } catch (Exception e) {
-            System.out.println("empty resultset");
-        }
-        System.out.println("saving position: " + currentUser.position);
+
+    public void newOrder(int CustomerID, int SubsidiaryID) {
+
     }
+
     @FXML
     public void logout() throws IOException {
         System.out.println("Before close Wind");
         closeWindow(logoutButton);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("src\\UI\\LogIn.fxml"));
+        System.out.println("Before the crashing FXML");
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
         Scene scene = new Scene(root, 1200, 650);
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
@@ -370,41 +323,6 @@ public class Controller implements Initializable {
         currentUser.password = "";
         System.out.println("LogOut ran through");
     }
-    @FXML
-    private void closeWindow(Button button) {
-        System.out.println("logout Button reached closeWind");
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.close();
-        System.out.println("Closed Window");
-    }
-    @FXML
-    public Stage startDashBoard() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));
-        Scene scene = new Scene(root, 1200, 650);
-        Stage stage = new Stage();
-        stage.setTitle("DashBoard Minimal UI");
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
-        stage.setScene(scene);
-        stage.show();
-        return stage;
-    }
-    @FXML
-    public void managerUI() {
-        sideBarManager.toFront();
-    }
-    @FXML
-    public void assistantUI() {
-        sideBarAssistant.toFront();
-    }
-    @FXML
-    public void driverUI() {
-        sideBarDriver.toFront();
-    }
-    public void newOrder(int CustomerID, int SubsidiaryID) {
-
-    }
-
     @FXML
     public void printTime(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -425,4 +343,8 @@ public class Controller implements Initializable {
         DatabaseConnector.insert(sql);
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

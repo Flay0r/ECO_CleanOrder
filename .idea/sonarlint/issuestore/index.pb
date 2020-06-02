@@ -7,8 +7,6 @@ A
 src/UI/LogIn.fxml,6\1\61e6ad89b5bc9807f45752669d4824e7b6e7c573
 Y
 )src/infrastructure/DatabaseConnector.java,d\a\da68cf28a3b0c7226e0199204de4644533ff27a5
-Z
-*out/production/ECO_CleanOrder/UI/Main.fxml,d\c\dc8f63052996e4c492631e66ee5b228c7006525a
 m
 =out/production/ECO_CleanOrder/UI/CSS/Stylesheet_Dashboard.css,a\a\aa7faf9b89c45be3cf0d2fec05ce9f0299c94813
 S

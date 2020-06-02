@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Launch extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../UI/LogIn.fxml"));
         stage.setTitle("EcoCleaner");
         stage.setScene(new Scene(root, 1000, 650));
         stage.setMinHeight(600);

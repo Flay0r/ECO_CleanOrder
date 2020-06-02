@@ -664,35 +664,162 @@
          <children>
             <StackPane fx:id="stackedSideBar" prefHeight="650.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane fx:id="sideBarAssistant">
+                  <AnchorPane />
+                  <AnchorPane />
+                  <AnchorPane />
+                  <VBox fx:id="sideBarAssistant" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
                      <children>
-                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="71.0" text="Assistant" textAlignment="CENTER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                            <children>
-                              <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                                 <image>
-                                    <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="71.0" text="Assistant" textAlignment="CENTER" textFill="#b8b1b1">
+                              <JFXButton fx:id="orderButton" onAction="#orderClicked" text="ORDERS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="BARCODE" size="1.5em" />
+                                 </graphic>
                                  <font>
-                                    <Font name="Calibri Bold" size="14.0" />
+                                    <Font name="Consolas Bold" size="13.0" />
                                  </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                     <children>
+                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="workflowButton" text="WORKFLOW">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
+                                 </graphic>
                                  <font>
-                                    <Font name="Calibri Bold" size="14.0" />
+                                    <Font name="Consolas Bold" size="13.0" />
                                  </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="locationsButton" text="LOCATIONS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBarManager" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="151.0" prefWidth="256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="107.0" fitWidth="110.0" pickOnBounds="true" smooth="false">
+                                       <image>
+                                          <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Manager">
+                                       <font>
+                                          <Font name="Calibri" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                                       <font>
+                                          <Font name="Calibri Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <padding>
                                     <Insets left="20.0" />
                                  </padding>
@@ -708,246 +835,110 @@
                                  </children>
                               </HBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="sideBarDriver">
-                     <children>
-                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </AnchorPane>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                            <children>
-                              <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                                 <image>
-                                    <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
+                              <JFXButton fx:id="staffButton" onAction="#openStaffPane" text="STAFF">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="USERS" size="1.5em" />
+                                 </graphic>
                                  <font>
-                                    <Font name="Calibri Bold" size="14.0" />
+                                    <Font name="Consolas Bold" size="13.0" />
                                  </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
-                                 <font>
-                                    <Font name="Calibri Bold" size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="workflowButton" text="WORKFLOW">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="locationsButton" text="LOCATIONS">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
+                              </JFXButton>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="sideBarManager">
-                     <children>
-                        <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                            <children>
-                              <AnchorPane>
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="151.0" prefWidth="256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <ImageView fitHeight="107.0" fitWidth="110.0" pickOnBounds="true" smooth="false">
-                                             <image>
-                                                <Image url="@images/Photo-by-Ali-Morshedlou-on-Unsplash_Manager.png" />
-                                             </image>
-                                          </ImageView>
-                                          <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Manager">
-                                             <font>
-                                                <Font name="Calibri" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
-                                             <font>
-                                                <Font name="Calibri Bold" size="14.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets left="10.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                       <children>
-                                          <JFXButton fx:id="orderButton" onAction="#orderClicked" text="ORDERS">
-                                             <graphic>
-                                                <FontAwesomeIcon iconName="BARCODE" size="1.5em" />
-                                             </graphic>
-                                             <font>
-                                                <Font name="Consolas Bold" size="13.0" />
-                                             </font>
-                                          </JFXButton>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </AnchorPane>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="staffButton" onAction="#openStaffPane" text="STAFF">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="USERS" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="statisticsButton" onAction="#openStatisticsPane" text="STATISTICS">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="BAR_CHART" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                              <JFXButton fx:id="statisticsButton" onAction="#openStatisticsPane" text="STATISTICS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="BAR_CHART" size="1.5em" />
+                                 </graphic>
                                  <font>
-                                    <Font name="Calibri Bold" size="14.0" />
+                                    <Font name="Consolas Bold" size="13.0" />
                                  </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets top="20.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="usersProfiles" onAction="#openUsersPane" text="USERS">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="USER_SECRET" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="locationsButton" onAction="#openLocationPane" text="LOCATIONS">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                                 <padding>
-                                    <Insets left="20.0" />
-                                 </padding>
-                                 <children>
-                                    <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW" HBox.hgrow="ALWAYS">
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="CHAIN" size="1.5em" />
-                                       </graphic>
-                                       <font>
-                                          <Font name="Consolas Bold" size="13.0" />
-                                       </font>
-                                    </JFXButton>
-                                 </children>
-                              </HBox>
+                              </JFXButton>
                            </children>
-                        </VBox>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <Label layoutX="10.0" layoutY="137.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Admin" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="usersProfiles" onAction="#openUsersPane" text="USERS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="USER_SECRET" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="locationsButton" onAction="#openLocationPane" text="LOCATIONS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="CHAIN" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
                      </children>
-                  </AnchorPane>
+                  </VBox>
                </children>
             </StackPane>
          </children>
