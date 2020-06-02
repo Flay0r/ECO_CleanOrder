@@ -20,7 +20,7 @@ public class LogInController implements Initializable {
     @FXML
     private Label validatorLabel;
     private static SessionUser currentUser = new SessionUser();
-    Controller c = new Controller();
+    MainController c = new MainController();
     @FXML
     private JFXButton loginButton;
     @FXML

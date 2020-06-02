@@ -1,0 +1,38 @@
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #56786E;
+    -fx-border-color:#56786E ;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #56786E;
+}
+.chart-alternative-row-fill {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+.axis {
+    -fx-font-size: 1.4em;
+    -fx-tick-label-fill: #56786E;
+    -fx-font-family: "Roboto Light";
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+
+.axis-label {
+    -fx-text-fill: #56786E;
+}
+
+.axis-tick-mark {
+    -fx-stroke: #56786E;
+    -fx-stroke-width: 1;
+}
+.axis-minor-tick-mark {
+    -fx-stroke: #56786E;
+}

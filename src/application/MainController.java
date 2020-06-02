@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
     @FXML
     private BorderPane border_pane;
 
@@ -139,7 +139,7 @@ public class Controller implements Initializable {
     private JFXButton orderButton;
 
     @FXML
-    private VBox sideBarDriver;
+    private VBox sideBarDriver = new VBox();
 
     @FXML
     private JFXButton workflowButton;
@@ -284,10 +284,8 @@ public class Controller implements Initializable {
 
     @FXML
     public void closeWindow(Button button) {
-        System.out.println("logout Button reached closeWind");
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
-        System.out.println("Closed Window");
     }
 
     @FXML
@@ -307,9 +305,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void logout() throws IOException {
-        System.out.println("Before close Wind");
         closeWindow(logoutButton);
-        System.out.println("Before the crashing FXML");
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
         Scene scene = new Scene(root, 1200, 650);
         Stage stage = new Stage();
@@ -321,7 +317,6 @@ public class Controller implements Initializable {
         currentUser.id = 0;
         currentUser.position = "";
         currentUser.password = "";
-        System.out.println("LogOut ran through");
     }
     @FXML
     public void printTime(){
