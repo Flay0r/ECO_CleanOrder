@@ -34,7 +34,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <center>
       <AnchorPane>
          <children>
@@ -505,7 +505,7 @@
                                           </HBox>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0">
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <SplitPane dividerPositions="0.7974683544303798" layoutX="3.0" layoutY="1.0" prefHeight="496.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
@@ -607,7 +607,7 @@
                                                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box" GridPane.rowIndex="1">
                                                                <children>
                                                                   <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter Customer Email" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter mail" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                                                      <font>
                                                                         <Font name="Calibri" size="16.0" />
                                                                      </font>
@@ -648,6 +648,38 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
+                                       <children>
+                                          <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
+                                            <xAxis>
+                                              <CategoryAxis fx:id="timeAxis" endMargin="53.0" label="Here goes the Weeks from 1- 52" side="BOTTOM" startMargin="1.0" tickLabelGap="7.0" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis fx:id="salesAxix" label="Revenue" side="LEFT" />
+                                            </yAxis>
+                                          </StackedBarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
+                                             <image>
+                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TreeTableView editable="true" layoutX="581.0" layoutY="-3.0" prefHeight="500.0" prefWidth="369.0" style="-fx-background-color: transparent;" stylesheets="@CSS/treeTables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TreeTableColumn prefWidth="187.0" text="Upcoming" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="180.0" text="More important stuff" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <effect>
+                                                <Blend mode="ADD" />
+                                             </effect>
+                                          </TreeTableView>
+                                       </children></AnchorPane>
                                  </children>
                               </StackPane>
                            </children>

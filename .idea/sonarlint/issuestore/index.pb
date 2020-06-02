@@ -1,8 +1,6 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-O
-src/application/Controller.java,f\0\f04a795deba77eba9d79acb532b739048f4dd1ad
 A
 src/UI/LogIn.fxml,6\1\61e6ad89b5bc9807f45752669d4824e7b6e7c573
 Y
@@ -21,3 +19,21 @@ H
 src/domain/Customer.java,6\4\64fb1d0a32336d7a98dfb81107ac32af59205066
 I
 src/UI/CSS/titledPane.css,5\6\5683e1aa68f6b06688de88088f6af68abbf6955c
+K
+src/domain/SessionUser.java,b\1\b1e17b57e4adf8d6b8c4f63d9d76aaf7d4877500
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+a
+1out/production/ECO_CleanOrder/UI/CSS/barChart.css,4\6\468f8bfc9e59748adfca33bac3ee7a9276a4d146
+G
+src/UI/CSS/barChart.css,c\5\c5ddd8ea0fdc35ce87d4f748c28b1bc8469778b9
+D
+src/domain/Item.java,3\9\390aa6a7a5b8d0f33df0f1d9b09b7f70f8aa38ff
+c
+3out/production/ECO_CleanOrder/UI/CSS/treeTables.css,b\c\bcfa4484e62fb89a4413f38d301ab758676515fc
+I
+src/UI/CSS/treeTables.css,1\9\19b0d58e1267713494a0a920fbc78f4831d7b657
+S
+#src/application/MainController.java,3\1\31a255630812c55a842c5b03d0b0c96ea9c52536
+T
+$src/application/LogInController.java,d\9\d93c71e9213fbdee00f67efb3a5569fd3358749d
