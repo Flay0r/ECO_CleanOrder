@@ -155,7 +155,7 @@
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                        <graphic>
-                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" text="" />
+                                          <FontAwesomeIcon iconName="EDIT" size="2em" styleClass="content-area-circle-btns-icon" text="" />
                                        </graphic>
                                        <HBox.margin>
                                           <Insets right="10.0" />
@@ -166,7 +166,7 @@
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                        <graphic>
-                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                          <FontAwesomeIcon fontSmoothingType="LCD" iconName="CLOSE" size="2em" styleClass="content-area-circle-btns-icon" />
                                        </graphic>
                                     </JFXButton>
                                  </children>
@@ -595,9 +595,9 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="166.0" prefWidth="184.0" GridPane.columnIndex="2">
                                                                <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                  <ImageView fitHeight="132.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
                                                                         <Image url="@images/Rock.png" />
                                                                      </image>
