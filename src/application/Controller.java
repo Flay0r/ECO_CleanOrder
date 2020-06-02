@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -31,123 +32,38 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     @FXML
     private BorderPane border_pane;
-
     @FXML
     private VBox content_area;
-
     @FXML
-    private HBox menubar;
-
+    private HBox menubar, ContentArea;
     @FXML
-    private TextField searchBarTF;
-
+    private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton userProfile;
-
+    private JFXButton userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
-    private JFXButton logoutButton;
-
-    @FXML
-    private AnchorPane allThePanesAreHere;
-
-    @FXML
-    private HBox ContentArea;
-
-    @FXML
-    private AnchorPane statisticsPane;
-
+    private AnchorPane allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
     private CategoryAxis timeAxis;
-
     @FXML
     private NumberAxis salesAxix;
-
-    @FXML
-    private AnchorPane orderPane;
-
-    @FXML
-    private JFXButton orderPaneOrderButton;
-
-    @FXML
-    private JFXButton mailSearch;
-
     @FXML
     private JFXListView<?> listViewOrderPane;
-
-    @FXML
-    private TextField searchOrderNumber, searchBarTF1;
-
-    @FXML
-    private TextField searchMail;
-
-    @FXML
-    private TextField searchBillingName;
-
-    @FXML
-    private TextField searchStoreID;
-
-    @FXML
-    private TextField searchStatus;
-
-    @FXML
-    private AnchorPane staffPane;
-
-    @FXML
-    private JFXButton orderPaneOrderButton1;
-
-    @FXML
-    private JFXButton mailSearch1;
-
     @FXML
     private JFXListView<?> listViewStaffPane;
-
-    @FXML
-    private TextField searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
-
-    @FXML
-    private AnchorPane workFlowPane;
-
     @FXML
     private Tab tab;
-
     @FXML
     private Tab statisticsTab;
-
-    @FXML
-    private AnchorPane calendarPane, locationPane, adminUsersPane;
     @FXML
     private StackPane stackedSideBar;
-
     @FXML
     private VBox sideBarAssistant = new VBox();
-
-    @FXML
-    private JFXButton orderButton;
-
     @FXML
     private VBox sideBarDriver = new VBox();
-
-    @FXML
-    private JFXButton workflowButton, locationsButton, calendarButton;
-
     @FXML
     private VBox sideBarManager = new VBox();
-
-    @FXML
-    private JFXButton staffButton;
-
-    @FXML
-    private JFXButton statisticsButton;
-
-    @FXML
-    private JFXButton usersProfiles;
-
     @FXML
     private TableView orderList;
-
-    private static SessionUser currentUser;
-
-
     @FXML
     private StackPane stackedSideBars;
     @FXML
@@ -155,7 +71,13 @@ public class Controller implements Initializable {
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
     @FXML
-    private AnchorPane newOrderPane;
+    TableView<Item> orderTable;
+    @FXML
+    TableColumn itemColumn, priceColumn;
+
+    private static SessionUser currentUser;
+    private static ObservableList<Item> items = FXCollections.observableArrayList();
+
     @FXML
     void openNewOrderPane(ActionEvent event) {
         unsee();
@@ -267,14 +189,6 @@ public class Controller implements Initializable {
         currentUser.password = "";
         System.out.println("LogOut ran through");
     }
-    @FXML
-    public void printTime(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
-    }
-
-    public static ObservableList<Item> items = FXCollections.observableArrayList();
 
     @FXML
     public void newInvoice(){
@@ -311,7 +225,6 @@ public class Controller implements Initializable {
             DatabaseConnector.insert(sql);
         } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
-
     }
 
     public static void loadItemsFromDb(){
@@ -352,5 +265,7 @@ public class Controller implements Initializable {
             if (currentUser.position.equals("Driver")) driverUI();
         }
         loadItemsFromDb();
+        itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
     }
 }

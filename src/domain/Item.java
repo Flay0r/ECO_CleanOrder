@@ -1,10 +1,10 @@
 package domain;
 
 public class Item {
-    int ItemID;
-    String Alias;
-    String Info;
-    float Price;
+    private int ItemID;
+    private String Alias;
+    private String Info;
+    private float Price;
 
     public Item(int ItemID, String Alias, float Price){
         this.ItemID=ItemID;

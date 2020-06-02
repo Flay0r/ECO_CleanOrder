@@ -636,10 +636,10 @@
                                                 </AnchorPane>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="219.0">
                                                    <children>
-                                                      <TableView layoutX="-100.0" layoutY="173.0" prefHeight="273.0" prefWidth="123.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                                                      <TableView fx:id="orderTable" layoutX="-100.0" layoutY="173.0" prefHeight="273.0" prefWidth="123.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
-                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Items" />
-                                                          <TableColumn prefWidth="75.0" styleClass="sidebar-btn" text="Price" />
+                                                          <TableColumn fx:id="itemColumn" prefWidth="75.0" styleClass="sidebar-btn" text="Item" />
+                                                          <TableColumn fx:id="priceColumn" prefWidth="75.0" styleClass="sidebar-btn" text="Price" />
                                                         </columns>
                                                       </TableView>
                                                    </children>
