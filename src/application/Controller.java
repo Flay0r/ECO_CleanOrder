@@ -163,7 +163,7 @@ public class Controller implements Initializable {
     @FXML
     private JFXButton usersProfiles;
 
-    private static SessionUser currentUser = new SessionUser();
+    private static SessionUser currentUser;
 
 
     @FXML
@@ -338,6 +338,7 @@ public class Controller implements Initializable {
         String email = searchBarTF1.getText();
         int customerID=0;
         String sql="";
+        float totalPrice=0;
 
         DatabaseConnector.query("select * from Customers where Email='" + email + "'");
         try {
@@ -347,6 +348,9 @@ public class Controller implements Initializable {
             e.printStackTrace();
             System.out.println("empty resultset");
         }
+
+        //hier muss totale preisberechnung der itemsliste im ordermenu rein
+
         if(customerID!=0) {
             sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', 54321, 1, 1)";
         }
@@ -356,6 +360,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        currentUser = LogInController.getSessionUser();
     }
 }
