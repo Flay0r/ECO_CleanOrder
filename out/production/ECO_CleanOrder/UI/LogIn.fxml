@@ -73,7 +73,7 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <JFXPasswordField fx:id="passwordTF" alignment="CENTER" prefHeight="25.0" prefWidth="236.0" stylesheets="@CSS/Stylesheet_Login.css">
+                        <JFXPasswordField fx:id="passwordTF" alignment="CENTER" onAction="#btn_login" prefHeight="25.0" prefWidth="236.0" stylesheets="@CSS/Stylesheet_Login.css">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin></JFXPasswordField>
