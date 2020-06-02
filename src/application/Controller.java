@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -162,6 +163,9 @@ public class Controller implements Initializable {
 
     @FXML
     private JFXButton usersProfiles;
+
+    @FXML
+    private TableView orderList;
 
     private static SessionUser currentUser;
 
@@ -339,6 +343,7 @@ public class Controller implements Initializable {
         int customerID=0;
         String sql="";
         float totalPrice=0;
+        int subsidiaryID=0;
 
         DatabaseConnector.query("select * from Customers where Email='" + email + "'");
         try {
@@ -346,16 +351,26 @@ public class Controller implements Initializable {
             customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("empty resultset");
+            System.out.println("empty resultset for customeID select");
+        }
+
+        DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id + "'");
+        try {
+            DatabaseConnector.getResultSet().next();
+            subsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for subsidiaryID select");
         }
 
         //hier muss totale preisberechnung der itemsliste im ordermenu rein
 
-        if(customerID!=0) {
-            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', 54321, 1, 1)";
-        }
+        if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0) {
+            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', TOTALPRICE," + subsidiaryID + ", 1)";
+            DatabaseConnector.insert(sql);
+        } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
-        DatabaseConnector.insert(sql);
+
     }
 
     @Override
