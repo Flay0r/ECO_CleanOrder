@@ -332,4 +332,21 @@ public class MainController implements Initializable {
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
     }
+
+    /*
+       TextInputDialog dialog = new TextInputDialog("Tran");
+
+        dialog.setTitle("Category");
+        dialog.setHeaderText("Please enter new categories");
+        dialog.setContentText("Come on do it now:");
+        Optional<String> result = dialog.showAndWait();
+         result.ifPresent(name -> {
+            tbData.getSelectionModel().getSelectedItem().setCategory(result.get());
+
+            DB.updateSQL("update tblVideos set Category='" + result.get() + "' where Title='" + selection.getTitle() + "'");
+            DB.manualDisconnect();
+            loadVideoList();
+
+
+     */
 }
