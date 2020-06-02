@@ -12,103 +12,85 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="486.0" minWidth="518.0" prefHeight="600.0"
-            prefWidth="801.0" styleClass="parent" stylesheets="@/UI/CSS/Stylesheet_Login.css"
-            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="application.LogInController"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="486.0" minWidth="518.0" prefHeight="600.0" prefWidth="801.0" styleClass="parent" stylesheets="@/UI/CSS/Stylesheet_Login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogInController">
    <children>
-      <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="550.0" styleClass="sidebar"
-                  stylesheets="@CSS/Stylesheet_Login.css">
+            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="550.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Login.css">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/eCoSOLUTION.png"/>
+                        <Image url="@images/eCoSOLUTION.png" />
                      </image>
                   </ImageView>
                   <Label text="WELCOME TO " textFill="#336666">
                      <font>
-                        <Font name="Ebrima Bold" size="14.0"/>
+                        <Font name="Ebrima Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0"/>
+                        <Insets top="20.0" />
                      </VBox.margin>
                   </Label>
                   <Label text="THE FUTURE" textFill="#336666">
                      <font>
-                        <Font name="Ebrima Bold" size="14.0"/>
+                        <Font name="Ebrima Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="5.0"/>
+                        <Insets top="5.0" />
                      </VBox.margin>
                   </Label>
                </children>
             </VBox>
             <AnchorPane>
                <children>
-                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                        minWidth="-Infinity" prefHeight="600.0" prefWidth="430.0" spacing="2.0">
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="430.0" spacing="2.0">
                      <children>
                         <AnchorPane prefHeight="127.0" prefWidth="430.0">
                            <children>
                               <Label layoutX="134.0" layoutY="14.0" text="WELCOME BACK!" textFill="#363c44">
                                  <font>
-                                    <Font name="Ebrima Bold" size="20.0"/>
+                                    <Font name="Ebrima Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label layoutX="152.0" layoutY="55.0" text="Sign in to Continue" textFill="#575757e7">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0"/>
+                                    <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                               </Label>
                            </children>
                         </AnchorPane>
                         <Label fx:id="validatorLabel" prefHeight="30.0" prefWidth="200.0">
                            <font>
-                              <Font name="System Bold" size="15.0"/>
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="empNoTF" alignment="CENTER" focusColor="#8dc4c4" labelFloat="true"
-                                      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                                      minWidth="-Infinity" prefHeight="30.0" prefWidth="431.0"
-                                      promptText="Employee Number" unFocusColor="#8dc4c4">
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
+                        <JFXTextField fx:id="empNoTF" alignment="CENTER" focusColor="#8dc4c4" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="431.0" promptText="Employee Number" unFocusColor="#8dc4c4">
                            <VBox.margin>
-                              <Insets left="50.0" right="50.0" top="50.0"/>
+                              <Insets left="50.0" right="50.0" top="50.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <Label text="Enter Password">
                            <VBox.margin>
-                              <Insets top="10.0"/>
+                              <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <JFXPasswordField fx:id="passwordTF" alignment="CENTER" prefHeight="25.0" prefWidth="236.0"
-                                          stylesheets="@CSS/Stylesheet_Login.css">
+                        <JFXPasswordField fx:id="passwordTF" alignment="CENTER" prefHeight="25.0" prefWidth="236.0" stylesheets="@CSS/Stylesheet_Login.css">
                            <VBox.margin>
-                              <Insets/>
-                           </VBox.margin>
-                        </JFXPasswordField>
+                              <Insets />
+                           </VBox.margin></JFXPasswordField>
                         <AnchorPane>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="158.0" right="60.0"/>
+                              <Insets bottom="20.0" left="158.0" right="60.0" />
                            </VBox.margin>
                            <children>
-                              <JFXButton fx:id="forgetBtn" layoutX="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
-                                         minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="103.0"
-                                         styleClass="forgetBtn" stylesheets="@CSS/Stylesheet_Login.css"
-                                         text="Lost password? " textFill="#000000e6"/>
+                              <JFXButton fx:id="forgetBtn" layoutX="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="103.0" styleClass="forgetBtn" stylesheets="@CSS/Stylesheet_Login.css" text="Lost password? " textFill="#000000e6" />
                            </children>
                         </AnchorPane>
-                        <JFXButton id="loginButton" fx:id="loginButton" buttonType="RAISED" graphicTextGap="0.0"
-                                   onAction="#btn_login" prefHeight="46.0" prefWidth="206.0" ripplerFill="#0777ff"
-                                   styleClass="loginButton" stylesheets="@CSS/Stylesheet_Login.css" text="Log In">
+                        <JFXButton id="loginButton" fx:id="loginButton" buttonType="RAISED" graphicTextGap="0.0" onAction="#btn_login" prefHeight="46.0" prefWidth="206.0" ripplerFill="#0777ff" styleClass="loginButton" stylesheets="@CSS/Stylesheet_Login.css" text="Log In">
                            <font>
-                              <Font name="Ebrima Bold" size="16.0"/>
+                              <Font name="Ebrima Bold" size="16.0" />
                            </font>
                            <VBox.margin>
-                              <Insets top="100.0"/>
+                              <Insets top="100.0" />
                            </VBox.margin>
                         </JFXButton>
                      </children>

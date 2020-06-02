@@ -643,8 +643,8 @@
                                           </ImageView>
                                           <TreeTableView editable="true" layoutX="581.0" layoutY="-3.0" prefHeight="500.0" prefWidth="369.0" style="-fx-background-color: transparent;" stylesheets="@CSS/treeTables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columns>
-                                              <TreeTableColumn prefWidth="187.0" style="-fx-background-color: transparent;" styleClass="tree-view-column" text="Upcoming" />
-                                              <TreeTableColumn minWidth="0.0" prefWidth="180.0" style="-fx-background-color: transparent;" styleClass="tree-view-column" text="More important stuff" />
+                                              <TreeTableColumn prefWidth="187.0" text="Upcoming" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="180.0" text="More important stuff" />
                                             </columns>
                                              <columnResizePolicy>
                                                 <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

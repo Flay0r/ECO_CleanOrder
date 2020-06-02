@@ -15,13 +15,3 @@
     -fx-background-insets: 0, 0 0 1 0;
 }
 
-.tree-table-row-cell:selected,
-.tree-table-row-cell:selected:odd {
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-focus-color;
-    -fx-background-insets: 0, 1, 2;
-}
-
-.tree-table-row-cell:selected .tree-table-cell .tree-table-cell:hover {
-    -fx-text-fill: #abd1c6;
-    -fx-border-color: #abd1c6;
-}

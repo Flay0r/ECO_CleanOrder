@@ -28,6 +28,10 @@ public class LogInController implements Initializable {
     @FXML
     private JFXPasswordField passwordTF;
 
+    public static SessionUser getSessionUser(){
+        return currentUser;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (currentUser.position != null) {

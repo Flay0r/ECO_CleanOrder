@@ -2,8 +2,11 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import domain.Item;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +20,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -70,7 +75,7 @@ public class MainController implements Initializable {
     private JFXListView<?> listViewOrderPane;
 
     @FXML
-    private TextField searchOrderNumber;
+    private TextField searchOrderNumber, searchBarTF1;
 
     @FXML
     private TextField searchMail;
@@ -97,19 +102,7 @@ public class MainController implements Initializable {
     private JFXListView<?> listViewStaffPane;
 
     @FXML
-    private TextField searchOrderNumber1;
-
-    @FXML
-    private TextField searchMail1;
-
-    @FXML
-    private TextField searchBillingName1;
-
-    @FXML
-    private TextField searchStoreID1;
-
-    @FXML
-    private TextField searchStatus1;
+    private TextField searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
 
     @FXML
     private AnchorPane workFlowPane;
@@ -121,14 +114,7 @@ public class MainController implements Initializable {
     private Tab statisticsTab;
 
     @FXML
-    private AnchorPane calendarPane;
-
-    @FXML
-    private AnchorPane locationPane;
-
-    @FXML
-    private AnchorPane adminUsersPane;
-
+    private AnchorPane calendarPane, locationPane, adminUsersPane;
     @FXML
     private StackPane stackedSideBar;
 
@@ -145,10 +131,7 @@ public class MainController implements Initializable {
     private JFXButton workflowButton;
 
     @FXML
-    private JFXButton locationsButton;
-
-    @FXML
-    private JFXButton calendarButton;
+    private JFXButton locationsButton, calendarButton;
 
     @FXML
     private VBox sideBarManager = new VBox();
@@ -162,7 +145,10 @@ public class MainController implements Initializable {
     @FXML
     private JFXButton usersProfiles;
 
-    private static SessionUser currentUser = new SessionUser();
+    @FXML
+    private TableView orderList;
+
+    private static SessionUser currentUser;
 
 
     @FXML
@@ -325,21 +311,76 @@ public class MainController implements Initializable {
         System.out.println(dtf.format(now));
     }
 
+    public static ObservableList<Item> items = FXCollections.observableArrayList();
+
     @FXML
     public void newInvoice(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         LocalDateTime now = LocalDateTime.now();
+        String email = searchBarTF1.getText();
+        int customerID=0;
+        String sql="";
+        float totalPrice=0;
+        int subsidiaryID=0;
 
-        //int customerID = TEXTFELD.getText
+        DatabaseConnector.query("select * from Customers where Email='" + email + "'");
+        try {
+            DatabaseConnector.getResultSet().next();
+            customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for customeID select");
+        }
 
+        DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id + "'");
+        try {
+            DatabaseConnector.getResultSet().next();
+            subsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for subsidiaryID select");
+        }
 
-        String sql = "insert into Invoice values (1, '" + dtf.format(now) + "', 54321, 1, 1)";
+        //hier muss totale preisberechnung der itemsliste im ordermenu rein
+
+        if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0) {
+            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', TOTALPRICE," + subsidiaryID + ", 1)";
+            DatabaseConnector.insert(sql);
+        } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
-        DatabaseConnector.insert(sql);
+
+    }
+
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+        }
+        System.out.println("--> loadItemFromDb successful");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        currentUser = LogInController.getSessionUser();
+        loadItemsFromDb();
     }
 }
