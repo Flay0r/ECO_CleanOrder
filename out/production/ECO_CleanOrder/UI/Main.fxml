@@ -34,7 +34,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -124,6 +124,19 @@
                                     </Label>
                                  </children>
                               </VBox>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="342.0" styleClass="menu-bar-search-field-box">
+                                 <children>
+                                    <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
+                                    <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter mail" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Calibri" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
                               <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                  <children>
                                     <JFXButton fx:id="newOrderButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#openNewOrderPane" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="New Order">
@@ -142,11 +155,19 @@
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                        <graphic>
-                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" text="" />
                                        </graphic>
                                        <HBox.margin>
                                           <Insets right="10.0" />
                                        </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="EDIT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
                                     </JFXButton>
                                  </children>
                                  <HBox.margin>
@@ -165,9 +186,9 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <HBox fx:id="ContentArea" alignment="CENTER" prefHeight="493.0" prefWidth="950.0" styleClass="dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox fx:id="ContentArea" alignment="CENTER" prefHeight="493.0" prefWidth="950.0" styleClass="dashboard" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane prefHeight="493.0" prefWidth="950.0">
+                              <StackPane prefHeight="493.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
                                  <children>
                                     <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
@@ -363,34 +384,6 @@
                                              </stylesheets>
                                           </Accordion>
                                        </children></AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <TabPane prefHeight="493.0" prefWidth="950.0" styleClass="content-area-manager" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <tabs>
-                                              <Tab fx:id="tab" styleClass="sidebar-btn-tabs" text="Incoming ">
-                                                <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                </content>
-                                              </Tab>
-                                              <Tab fx:id="statisticsTab" styleClass="sidebar-btn-tabs" text="Statistics">
-                                                <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="675.0" />
-                                                </content>
-                                              </Tab>
-                                                <Tab styleClass="sidebar-btn-tabs" text="More Very">
-                                                  <content>
-                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                  </content>
-                                                </Tab>
-                                                <Tab styleClass="sidebar-btn-tabs" text="important Stuff">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                   </content>
-                                                </Tab>
-                                            </tabs>
-                                          </TabPane>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="staffPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <HBox prefHeight="39.0" prefWidth="947.0">
@@ -505,7 +498,67 @@
                                           </HBox>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
+                                       <children>
+                                          <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
+                                            <xAxis>
+                                              <CategoryAxis fx:id="timeAxis" endMargin="53.0" label="Here goes the Weeks from 1- 52" side="BOTTOM" startMargin="1.0" tickLabelGap="7.0" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis fx:id="salesAxix" label="Revenue" side="LEFT" />
+                                            </yAxis>
+                                          </StackedBarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
+                                             <image>
+                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TreeTableView editable="true" layoutX="581.0" layoutY="-3.0" prefHeight="500.0" prefWidth="369.0" style="-fx-background-color: transparent;" stylesheets="@CSS/treeTables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TreeTableColumn prefWidth="187.0" text="Upcoming" />
+                                              <TreeTableColumn minWidth="0.0" prefWidth="180.0" text="More important stuff" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <effect>
+                                                <Blend mode="ADD" />
+                                             </effect>
+                                          </TreeTableView>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                       <children>
+                                          <TabPane prefHeight="493.0" prefWidth="950.0" styleClass="content-area-manager" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab fx:id="tab" styleClass="sidebar-btn-tabs" text="Incoming ">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                </content>
+                                              </Tab>
+                                              <Tab fx:id="statisticsTab" styleClass="sidebar-btn-tabs" text="Statistics">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="675.0" />
+                                                </content>
+                                              </Tab>
+                                                <Tab styleClass="sidebar-btn-tabs" text="More Very">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                                <Tab styleClass="sidebar-btn-tabs" text="important Stuff">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
                                        <children>
                                           <SplitPane dividerPositions="0.7974683544303798" layoutX="3.0" layoutY="1.0" prefHeight="496.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
@@ -568,7 +621,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                            <JFXButton fx:id="tShirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#itemSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -586,7 +639,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                            <JFXButton fx:id="blazerButt" contentDisplay="GRAPHIC_ONLY" onAction="#itemSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -604,32 +657,6 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box" GridPane.rowIndex="1">
-                                                               <children>
-                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter mail" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                                     <font>
-                                                                        <Font name="Calibri" size="16.0" />
-                                                                     </font>
-                                                                  </TextField>
-                                                               </children>
-                                                               <padding>
-                                                                  <Insets left="20.0" />
-                                                               </padding>
-                                                            </HBox>
-                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="163.0" styleClass="menu-bar-search-field-box">
-                                                               <children>
-                                                                  <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF11" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Enter CUS name" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                                     <font>
-                                                                        <Font name="Calibri" size="16.0" />
-                                                                     </font>
-                                                                  </TextField>
-                                                               </children>
-                                                               <padding>
-                                                                  <Insets left="20.0" />
-                                                               </padding>
-                                                            </HBox>
                                                          </children>
                                                       </GridPane>
                                                    </children>
@@ -648,38 +675,6 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
-                                       <children>
-                                          <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
-                                            <xAxis>
-                                              <CategoryAxis fx:id="timeAxis" endMargin="53.0" label="Here goes the Weeks from 1- 52" side="BOTTOM" startMargin="1.0" tickLabelGap="7.0" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis fx:id="salesAxix" label="Revenue" side="LEFT" />
-                                            </yAxis>
-                                          </StackedBarChart>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
-                                             <image>
-                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TreeTableView editable="true" layoutX="581.0" layoutY="-3.0" prefHeight="500.0" prefWidth="369.0" style="-fx-background-color: transparent;" stylesheets="@CSS/treeTables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <columns>
-                                              <TreeTableColumn prefWidth="187.0" text="Upcoming" />
-                                              <TreeTableColumn minWidth="0.0" prefWidth="180.0" text="More important stuff" />
-                                            </columns>
-                                             <columnResizePolicy>
-                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                             </columnResizePolicy>
-                                             <effect>
-                                                <Blend mode="ADD" />
-                                             </effect>
-                                          </TreeTableView>
-                                       </children></AnchorPane>
                                  </children>
                               </StackPane>
                            </children>

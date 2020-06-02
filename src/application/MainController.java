@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
     @FXML
     private BorderPane border_pane;
     @FXML
@@ -39,7 +39,7 @@ public class Controller implements Initializable {
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXButton   skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -85,6 +85,7 @@ public class Controller implements Initializable {
         contentLabel.setText("Place a new Order");
         newOrderPane.setVisible(true);
         newOrderPane.toFront();
+        newOrderButton.setVisible(false);
 
     }
     @FXML
@@ -92,6 +93,7 @@ public class Controller implements Initializable {
         unsee();
         contentLabel.setText("Manage/seek orders");
         orderPane.setVisible(true);
+        newOrderButton.setVisible(true);
     }
     @FXML
     void openCalenderPane(ActionEvent event) {
@@ -99,6 +101,7 @@ public class Controller implements Initializable {
         contentLabel.setText("Welcome to the Calender");
         calendarPane.setVisible(true);
         calendarPane.toFront();
+        newOrderButton.setVisible(true);
     }
     @FXML
     void openLocationPane(ActionEvent event) {
@@ -106,6 +109,7 @@ public class Controller implements Initializable {
         contentLabel.setText("Live tracking Trucks");
         locationPane.setVisible(true);
         locationPane.toFront();
+        newOrderButton.setVisible(true);
     }
     @FXML
     void openStaffPane(ActionEvent event) {
@@ -113,13 +117,16 @@ public class Controller implements Initializable {
         contentLabel.setText("Manage staff");
         staffPane.setVisible(true);
         staffPane.toFront();
+        newOrderButton.setVisible(true);
     }
     @FXML
     void openStatisticsPane(ActionEvent event) {
         unsee();
-        contentLabel.setText("Stats 42/0/0");
+        contentLabel.setText("Manage the numbers");
         statisticsPane.setVisible(true);
         statisticsPane.toFront();
+        newOrderButton.setVisible(true);
+
 
     }
     @FXML
@@ -128,6 +135,8 @@ public class Controller implements Initializable {
         contentLabel.setText("Manage the Users");
         adminUsersPane.setVisible(true);
         adminUsersPane.toFront();
+        newOrderButton.setVisible(true);
+
     }
     @FXML
     void openWorkFlowPane(ActionEvent event) {
@@ -135,6 +144,8 @@ public class Controller implements Initializable {
         contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
         workFlowPane.toFront();
+        newOrderButton.setVisible(true);
+
     }
 
     private void unsee(){
@@ -146,6 +157,7 @@ public class Controller implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
         orderPane.setVisible(false);
+
     }
 
     @FXML
@@ -225,6 +237,58 @@ public class Controller implements Initializable {
             DatabaseConnector.insert(sql);
         } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
+    }
+
+
+    @FXML
+    void pantsSelect(ActionEvent event) {
+     pantsButt//Button - Hose
+    }
+
+    @FXML
+    void selectPanties(ActionEvent event) {
+       pantiesButt//Button - Unterhose
+    }
+
+    @FXML
+    void selectdressPants(ActionEvent event) {
+        dressPantsButt//Button - AnzugHose
+    }
+
+    @FXML
+    void shirtSelect(ActionEvent event) {
+        shirtButt//Button - Hemd
+
+    }
+
+    @FXML
+    void skirtSelect(ActionEvent event) {
+        skirtButt//Button - Rock
+
+    }
+
+    @FXML
+    void sockSelect(ActionEvent event) {
+        sockButt
+
+    }
+
+    @FXML
+    void tShirtSelect(ActionEvent event) {
+        tShirtButt
+
+    }
+
+    @FXML
+    void blazerSelect(ActionEvent event) {
+        blazerButt
+
+    }
+
+    @FXML
+    void dressSelect(ActionEvent event) {
+        dressButt
+
     }
 
     public static void loadItemsFromDb(){
