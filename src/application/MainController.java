@@ -242,52 +242,52 @@ public class MainController implements Initializable {
 
     @FXML
     void pantsSelect(ActionEvent event) {
-     pantsButt//Button - Hose
+//     pantsButt//Button - Hose
     }
 
     @FXML
     void selectPanties(ActionEvent event) {
-       pantiesButt//Button - Unterhose
+//       pantiesButt//Button - Unterhose
     }
 
     @FXML
     void selectdressPants(ActionEvent event) {
-        dressPantsButt//Button - AnzugHose
+//        dressPantsButt//Button - AnzugHose
     }
 
     @FXML
     void shirtSelect(ActionEvent event) {
-        shirtButt//Button - Hemd
+//        shirtButt//Button - Hemd
 
     }
 
     @FXML
     void skirtSelect(ActionEvent event) {
-        skirtButt//Button - Rock
-
+//        skirtButt//Button - Rock
+//
     }
 
     @FXML
     void sockSelect(ActionEvent event) {
-        sockButt
+//        sockButt
 
     }
 
     @FXML
     void tShirtSelect(ActionEvent event) {
-        tShirtButt
+//        tShirtButt
 
     }
 
     @FXML
     void blazerSelect(ActionEvent event) {
-        blazerButt
+//        blazerButt
 
     }
 
     @FXML
     void dressSelect(ActionEvent event) {
-        dressButt
+//        dressButt
 
     }
 

@@ -577,7 +577,7 @@
                                                           <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                                                         </rowConstraints>
                                                          <children>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                            <JFXButton fx:id="tShirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#tShirtSelect" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -586,7 +586,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                                            <JFXButton fx:id="pantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#pantsSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -595,7 +595,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -604,7 +604,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                            <JFXButton fx:id="pantiesButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectPanties" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                                                <graphic>
                                                                   <ImageView fitHeight="141.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -612,7 +612,7 @@
                                                                      </image></ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                            <JFXButton fx:id="sockButt" contentDisplay="GRAPHIC_ONLY" onAction="#sockSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -621,7 +621,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton fx:id="tShirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#itemSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                            <JFXButton fx:id="shirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#shirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -630,7 +630,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                            <JFXButton fx:id="dressButt" contentDisplay="GRAPHIC_ONLY" onAction="#dressSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -639,7 +639,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton fx:id="blazerButt" contentDisplay="GRAPHIC_ONLY" onAction="#itemSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                            <JFXButton fx:id="blazerButt" contentDisplay="GRAPHIC_ONLY" onAction="#blazerSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
@@ -648,7 +648,7 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                            <JFXButton fx:id="dressPantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectdressPants" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                                <graphic>
                                                                   <ImageView fitHeight="169.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
