@@ -1,0 +1,8 @@
+
+T	java:S106L"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
+b	java:S112^"FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8„Ñ°§.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(ªİ‡8„Ñ°§.
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(³Ö»õÿÿÿÿÿ8„Ñ°§.
+o	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8„Ñ°§.
+T	java:S106X"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
+U	java:S106Z"9Replace this use of System.out or System.err by a logger.(ÅÈèş8œÔ±§.

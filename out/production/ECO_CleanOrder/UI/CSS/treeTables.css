@@ -1,0 +1,17 @@
+.table-view{
+
+}
+.column-header-background{
+    -fx-background-color: #abd1c6;
+}
+.tree-table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-control-inner-background: #abd1c6;
+}
+
+.tree-table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, #abd1c6;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
