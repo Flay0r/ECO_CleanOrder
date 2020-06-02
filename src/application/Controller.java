@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -70,7 +71,7 @@ public class Controller implements Initializable {
     private JFXListView<?> listViewOrderPane;
 
     @FXML
-    private TextField searchOrderNumber;
+    private TextField searchOrderNumber, searchBarTF1;
 
     @FXML
     private TextField searchMail;
@@ -332,13 +333,23 @@ public class Controller implements Initializable {
 
     @FXML
     public void newInvoice(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         LocalDateTime now = LocalDateTime.now();
+        String email = searchBarTF1.getText();
+        int customerID=0;
+        String sql="";
 
-        //int customerID = TEXTFELD.getText
-
-
-        String sql = "insert into Invoice values (1, '" + dtf.format(now) + "', 54321, 1, 1)";
+        DatabaseConnector.query("select * from Customers where Email='" + email + "'");
+        try {
+            DatabaseConnector.getResultSet().next();
+            customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset");
+        }
+        if(customerID!=0) {
+            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', 54321, 1, 1)";
+        }
         System.out.println("SQL statement: " + sql);
         DatabaseConnector.insert(sql);
     }
