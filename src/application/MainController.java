@@ -326,18 +326,6 @@ public class MainController implements Initializable {
         }
     }
 
-    public void cancelOrderPopUp(ActionEvent event){
-
-        TextInputDialog dialog = new TextInputDialog("Tran");
-
-        dialog.setTitle("Category");
-        dialog.setHeaderText("Please enter new categories");
-        dialog.setContentText("Come on do it now:");
-        items.clear();
-
-
-        }
-
     public static void loadItemsFromDb(){
         System.out.println("--> loadItemFromDb()");
 

@@ -104,24 +104,17 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="6.0" prefHeight="97.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" focusTraversable="true" layoutX="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <VBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="310.0">
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                                 <children>
-                                    <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="310.0" styleClass="lbl2" textFill="#757373">
-                                       <font>
-                                          <Font name="Consolas Bold" size="20.0" />
-                                       </font>
-                                       <graphic>
-                                          <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
-                                       </graphic>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <JFXButton fx:id="newOrderButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#openNewOrderPane" prefHeight="35.0" prefWidth="114.0" styleClass="content-area-circle-btns" text="New Order">
+                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" textFill="#757373">
+                                 <font>
+                                    <Font name="Consolas Bold Italic" size="28.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="MAP_MARKER" />
+                                 </graphic>
+                              </Label>
+                              <JFXButton fx:id="newOrderButton" onAction="#openNewOrderPane" prefHeight="27.0" prefWidth="114.0" styleClass="content-area-circle-btns" text="New Order">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -129,13 +122,10 @@
                                     <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
                                  </graphic>
                                  <HBox.margin>
-                                    <Insets left="650.0" right="5.0" />
+                                    <Insets left="120.0" />
                                  </HBox.margin>
                               </JFXButton>
                            </children>
-                           <padding>
-                              <Insets bottom="10.0" top="10.0" />
-                           </padding>
                         </HBox>
                      </children>
                   </AnchorPane>
@@ -461,7 +451,7 @@
                                                       </TableView>
                                                       <VBox layoutX="-1.0" prefHeight="77.0" prefWidth="200.0">
                                                          <children>
-                                                            <HBox alignment="CENTER_RIGHT">
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="84.0" prefWidth="226.0">
                                                                <children>
                                                                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#newInvoice" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                                                      <font>
@@ -474,16 +464,13 @@
                                                                         <Insets right="5.0" />
                                                                      </HBox.margin>
                                                                   </JFXButton>
-                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cancelOrderPopUp" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                                                      <font>
                                                                         <Font name="System Bold" size="12.0" />
                                                                      </font>
                                                                      <graphic>
                                                                         <FontAwesomeIcon fontSmoothingType="LCD" iconName="CLOSE" size="2em" styleClass="content-area-circle-btns-icon" />
                                                                      </graphic>
-                                                                     <HBox.margin>
-                                                                        <Insets right="5.0" />
-                                                                     </HBox.margin>
                                                                   </JFXButton>
                                                                </children>
                                                             </HBox>

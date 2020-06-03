@@ -10,7 +10,7 @@
 }
 .titled-pane:focused
 {
-    -fx-text-fill:WHITE;
+    -fx-text-fill: #44635c;
 }
 .titled-pane > .title
 {
@@ -19,7 +19,7 @@
 
 .titled-pane:focused > .title
 {
-    -fx-color: black;
+    -fx-color: #476e68;
 }
 
 .titled-pane > .title > .arrow-button
@@ -46,5 +46,5 @@
 
 .titled-pane:focused > .title > .arrow-button .arrow
 {
-    -fx-background-color: WHITE;
+    -fx-background-color: #aeeedb;
 }
