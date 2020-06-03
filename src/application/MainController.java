@@ -326,7 +326,7 @@ public class MainController implements Initializable {
         }
     }
 
-    public void cancelOrderPopUp(){
+    public void cancelOrderPopUp(ActionEvent event){
 
         TextInputDialog dialog = new TextInputDialog("Tran");
 

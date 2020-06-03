@@ -474,7 +474,7 @@
                                                                         <Insets right="5.0" />
                                                                      </HBox.margin>
                                                                   </JFXButton>
-                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cancelOrderPopUp" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                                                      <font>
                                                                         <Font name="System Bold" size="12.0" />
                                                                      </font>
