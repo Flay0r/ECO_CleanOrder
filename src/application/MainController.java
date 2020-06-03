@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 
 import javax.xml.crypto.Data;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -161,6 +163,11 @@ public class MainController implements Initializable {
         orderPane.setVisible(false);
 
     }
+    public double roundTo2(double value, int places){
+        if (places < 0) throw new IllegalArgumentException();
+
+        return new BigDecimal(value).setScale(places, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
 
     @FXML
     public void closeWindow(Button button) {
@@ -211,7 +218,7 @@ public class MainController implements Initializable {
         String email = searchBarTF1.getText();
         int customerID=0;
         String sql="";
-        double totalPrice=0;
+        double totalPrice = 0;
         int subsidiaryID=0;
 
         DatabaseConnector.query("select * from Customers where Email='" + email + "'");
@@ -238,8 +245,9 @@ public class MainController implements Initializable {
             totalPrice = totalPrice + i.getPrice();
         }
 
+
         if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0) {
-            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + totalPrice + "," + subsidiaryID + ", 1)";
+            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
             DatabaseConnector.insert(sql);
         } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
