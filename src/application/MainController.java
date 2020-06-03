@@ -85,6 +85,8 @@ public class MainController implements Initializable {
         newOrderPane.setVisible(true);
         newOrderPane.toFront();
         newOrderButton.setVisible(false);
+        searchBarTF1.setText("");
+        orderList.clear();
 
     }
     @FXML

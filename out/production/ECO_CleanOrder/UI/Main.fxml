@@ -595,9 +595,9 @@
                                                                   </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="166.0" prefWidth="184.0" GridPane.columnIndex="2">
                                                                <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                  <ImageView fitHeight="132.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
                                                                      <image>
                                                                         <Image url="@images/Rock.png" />
                                                                      </image>
