@@ -5,6 +5,7 @@
     -fx-background-color: #abd1c6
 }
 .password-field{
+    -fx-prompt-text-fill: #001E1D;
     -jfx-focus-color: #8dc4c4;
     -jfx-unfocus-color: #8dc4c4;
     -fx-padding: 0.333333em 0 0.333333em 0;
