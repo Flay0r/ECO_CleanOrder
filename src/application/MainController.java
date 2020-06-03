@@ -27,6 +27,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 //OneLiner
 public class MainController implements Initializable {
@@ -315,6 +316,18 @@ public class MainController implements Initializable {
         }
     }
 
+    public void cancelOrderPopUp(){
+
+        TextInputDialog dialog = new TextInputDialog("Tran");
+
+        dialog.setTitle("Category");
+        dialog.setHeaderText("Please enter new categories");
+        dialog.setContentText("Come on do it now:");
+        items.clear();
+
+
+        }
+
     public static void loadItemsFromDb(){
         System.out.println("--> loadItemFromDb()");
 
@@ -358,20 +371,4 @@ public class MainController implements Initializable {
         orderTable.setItems(orderList);
     }
 
-    /*
-       TextInputDialog dialog = new TextInputDialog("Tran");
-
-        dialog.setTitle("Category");
-        dialog.setHeaderText("Please enter new categories");
-        dialog.setContentText("Come on do it now:");
-        Optional<String> result = dialog.showAndWait();
-         result.ifPresent(name -> {
-            tbData.getSelectionModel().getSelectedItem().setCategory(result.get());
-
-            DB.updateSQL("update tblVideos set Category='" + result.get() + "' where Title='" + selection.getTitle() + "'");
-            DB.manualDisconnect();
-            loadVideoList();
-
-
-     */
 }
