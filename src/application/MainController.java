@@ -63,8 +63,6 @@ public class MainController implements Initializable {
     @FXML
     private VBox sideBarManager = new VBox();
     @FXML
-    private TableView orderList;
-    @FXML
     private StackPane stackedSideBars;
     @FXML
     private Group groupSideBars;
@@ -77,6 +75,7 @@ public class MainController implements Initializable {
 
     private static SessionUser currentUser;
     private static ObservableList<Item> items = FXCollections.observableArrayList();
+    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
 
     @FXML
     void openNewOrderPane(ActionEvent event) {
@@ -209,7 +208,7 @@ public class MainController implements Initializable {
         String email = searchBarTF1.getText();
         int customerID=0;
         String sql="";
-        float totalPrice=0;
+        double totalPrice=0;
         int subsidiaryID=0;
 
         DatabaseConnector.query("select * from Customers where Email='" + email + "'");
@@ -218,77 +217,102 @@ public class MainController implements Initializable {
             customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("empty resultset for customeID select");
+            System.out.println("empty resultset for customerID select");
+            return;
         }
 
-        DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id + "'");
+        DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id);
         try {
             DatabaseConnector.getResultSet().next();
             subsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("empty resultset for subsidiaryID select");
+            return;
         }
 
-        //hier muss totale preisberechnung der itemsliste im ordermenu rein
+        for(Item i : orderList){
+            totalPrice = totalPrice + i.getPrice();
+        }
 
         if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0) {
-            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', TOTALPRICE," + subsidiaryID + ", 1)";
+            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + totalPrice + "," + subsidiaryID + ", 1)";
             DatabaseConnector.insert(sql);
         } else System.out.println("invoice not created, due to not all parameters being present");
         System.out.println("SQL statement: " + sql);
     }
 
-
     @FXML
     void pantsSelect(ActionEvent event) {
-//     pantsButt//Button - Hose
+        for(Item i : items){
+            if(i.getAlias().equals("Pants")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void selectPanties(ActionEvent event) {
-//       pantiesButt//Button - Unterhose
+        for(Item i : items){
+            if(i.getAlias().equals("Underpants")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void selectdressPants(ActionEvent event) {
-//        dressPantsButt//Button - AnzugHose
+        //TODO
     }
 
     @FXML
     void shirtSelect(ActionEvent event) {
-//        shirtButt//Button - Hemd
-
+        for(Item i : items){
+            if(i.getAlias().equals("Shirt")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void skirtSelect(ActionEvent event) {
-//        skirtButt//Button - Rock
-//
+        for(Item i : items){
+            if(i.getAlias().equals("Skirt")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void sockSelect(ActionEvent event) {
-//        sockButt
-
+        for(Item i : items){
+            if(i.getAlias().equals("Socks")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void tShirtSelect(ActionEvent event) {
-//        tShirtButt
-
+        for(Item i : items){
+            if(i.getAlias().equals("T-Shirt")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     @FXML
     void blazerSelect(ActionEvent event) {
-//        blazerButt
-
+//TODO
     }
 
     @FXML
     void dressSelect(ActionEvent event) {
-//        dressButt
-
+        for(Item i : items){
+            if(i.getAlias().equals("Dress")){
+                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+            }
+        }
     }
 
     public static void loadItemsFromDb(){
@@ -331,6 +355,7 @@ public class MainController implements Initializable {
         loadItemsFromDb();
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        orderTable.setItems(orderList);
     }
 
     /*
