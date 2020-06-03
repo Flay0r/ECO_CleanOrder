@@ -566,11 +566,11 @@
                                           </HBox>
                                           <TableView fx:id="searchOrderTableView" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                             <columns>
-                                              <TableColumn prefWidth="187.71429443359375" styleClass="sidebar-btn" text="C1" />
-                                              <TableColumn minWidth="0.0" prefWidth="190.142822265625" styleClass="sidebar-btn" text="C2" />
-                                                <TableColumn prefWidth="188.4285888671875" styleClass="sidebar-btn" text="C1" />
-                                                <TableColumn prefWidth="191.0" styleClass="sidebar-btn" text="C1" />
-                                                <TableColumn prefWidth="195.0" styleClass="sidebar-btn" text="C1" />
+                                              <TableColumn prefWidth="192.85711669921875" text="OrderNo" />
+                                              <TableColumn minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
+                                                <TableColumn prefWidth="176.4285888671875" text="Date" />
+                                                <TableColumn prefWidth="170.0" text="TotalPrice" />
+                                                <TableColumn prefWidth="207.0" text="Status" />
                                             </columns>
                                           </TableView>
                                        </children>
