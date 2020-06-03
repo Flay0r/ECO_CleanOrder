@@ -161,8 +161,9 @@ public class MainController implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
         orderPane.setVisible(false);
-
+        contentLabel.setText("");
     }
+
     public double roundTo2(double value, int places){
         if (places < 0) throw new IllegalArgumentException();
 
@@ -228,7 +229,6 @@ public class MainController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("empty resultset for customerID select");
-            return;
         }
 
         DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id);
@@ -238,19 +238,22 @@ public class MainController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("empty resultset for subsidiaryID select");
-            return;
         }
 
         for(Item i : orderList){
             totalPrice = totalPrice + i.getPrice();
         }
 
-
-        if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0) {
+        if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0 && !searchBarTF1.getText().equals("")) {
             sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
             DatabaseConnector.insert(sql);
-        } else System.out.println("invoice not created, due to not all parameters being present");
-        System.out.println("SQL statement: " + sql);
+            contentLabel.setText("New Invoice created successfully");
+            orderList.clear();
+            searchBarTF1.setText("");
+        } else {
+            System.out.println("invoice not created, due to not all parameters being present");
+            contentLabel.setText("Failed");
+        }
     }
 
     @FXML

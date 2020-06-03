@@ -451,7 +451,7 @@
                                                       </TableView>
                                                       <VBox layoutX="-1.0" prefHeight="77.0" prefWidth="200.0">
                                                          <children>
-                                                            <HBox alignment="CENTER_RIGHT" prefHeight="84.0" prefWidth="226.0">
+                                                            <HBox alignment="CENTER_RIGHT">
                                                                <children>
                                                                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#newInvoice" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
                                                                      <font>

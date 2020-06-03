@@ -11,7 +11,7 @@ public class OrderViewObj {
     private double TotalPrice;
     private int SubsidiaryID;
     private int StageID;
-    //extracted fields fields
+    //extracted fields
     private String CustomerName;
     private String Subsidiary;
     private String Status;
