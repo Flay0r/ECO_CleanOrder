@@ -248,6 +248,8 @@ public class MainController implements Initializable {
             sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
             DatabaseConnector.insert(sql);
             contentLabel.setText("New Invoice created successfully");
+            orderList.clear();
+            searchBarTF1.setText("");
         } else {
             System.out.println("invoice not created, due to not all parameters being present");
             contentLabel.setText("Failed");
