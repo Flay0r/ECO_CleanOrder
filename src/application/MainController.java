@@ -221,6 +221,7 @@ public class MainController implements Initializable {
         String sql="";
         double totalPrice = 0;
         int subsidiaryID=0;
+        int InvoiceID=0;
 
         DatabaseConnector.query("select * from Customers where Email='" + email + "'");
         try {
@@ -248,6 +249,19 @@ public class MainController implements Initializable {
             sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
             DatabaseConnector.insert(sql);
             contentLabel.setText("New Invoice created successfully");
+
+
+            DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
+            try{
+                DatabaseConnector.getResultSet().next();
+                   InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            for (Item i : orderList) {
+                DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
+            }
+
             orderList.clear();
             searchBarTF1.setText("");
         } else {
