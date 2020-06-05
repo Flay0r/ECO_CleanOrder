@@ -1,18 +1,36 @@
-.myDialog{
-    -fx-background-color: #f9d900;
+.dialog-pane {
+    -fx-background-color: #89B9AC;
+    -fx-text-alignment: center;
 }
-.myDialog > *.button-bar > *.container{
-    -fx-background-color: #a9e200;
+.button{
+    -fx-text-alignment: center;
+    -fx-background-radius: 0;
+    -fx-text-fill: #2e7575;
+    -fx-background-color: rgba(74, 84, 95, 0.5);
+
 }
-.myDialog > *.label.content{
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
+
+.button:hover{
+    -fx-background-radius: 0;
+    -fx-background-color: WHITE;
+    -fx-text-fill:#004643;
+    -fx-border-color: #BBCCCC;
+    -fx-border-width: 0,5px;
+    -fx-border-style: solid;
+
 }
-.myDialog .header-panel *.header-panel{
-    -fx-background-color: #a59c31;
+.dialog-pane .label {
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
 }
-.myDialog .header-panel *.header-panel *.label{
-    -fx-font-size: 18px;
+
+.dialog-pane .header-panel {
+    -fx-text-alignment: center;
+    -fx-background-color: #A1C4BA;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-alignment: center;
     -fx-font-style: italic;
-    -fx-fill: #292929;
+    -fx-font-size: 2em;
 }
