@@ -17,10 +17,13 @@ import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.CSS;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -42,7 +45,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton   skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXButton   cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -189,7 +192,29 @@ public class MainController implements Initializable {
         sideBarDriver.toFront();
     }
 
-    public void newOrder(int CustomerID, int SubsidiaryID) {
+    @FXML
+    public void doCancellation(ActionEvent event) throws InterruptedException {
+
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("ecoSolution");
+        alert.setHeaderText("Confirm the deletion of the order. ");
+        alert.setContentText("Choose your option.");
+
+        ButtonType buttonTypeOne = new ButtonType("Delete Order!");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStyleClass().remove("alert");
+        dialogPane.getStylesheets().add(
+                getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonTypeOne){
+            //TODO - Delete the order
+
+        }
 
     }
 
@@ -214,6 +239,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void newInvoice(){
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String email = searchBarTF1.getText();
@@ -223,50 +249,73 @@ public class MainController implements Initializable {
         int subsidiaryID=0;
         int InvoiceID=0;
 
-        DatabaseConnector.query("select * from Customers where Email='" + email + "'");
-        try {
-            DatabaseConnector.getResultSet().next();
-            customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("empty resultset for customerID select");
-        }
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("eCoSolution");
+        alert.setHeaderText("This will save the order irrevocably ");
+        alert.setContentText("Choose your option.");
 
-        DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id);
-        try {
-            DatabaseConnector.getResultSet().next();
-            subsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("empty resultset for subsidiaryID select");
-        }
+        ButtonType buttonTypeOne = new ButtonType("Save it!");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
 
-        for(Item i : orderList){
-            totalPrice = totalPrice + i.getPrice();
-        }
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
 
-        if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0 && !searchBarTF1.getText().equals("")) {
-            sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
-            DatabaseConnector.insert(sql);
-            contentLabel.setText("New Invoice created successfully");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStyleClass().remove("alert");
+        dialogPane.getStylesheets().add(
+                getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
 
-
-            DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
-            try{
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonTypeOne){
+            DatabaseConnector.query("select * from Customers where Email='" + email + "'");
+            try {
                 DatabaseConnector.getResultSet().next();
-                   InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                customerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
-            for (Item i : orderList) {
-                DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
+                System.out.println("empty resultset for customerID select");
             }
 
-            orderList.clear();
-            searchBarTF1.setText("");
-        } else {
-            System.out.println("invoice not created, due to not all parameters being present");
-            contentLabel.setText("Failed");
+            DatabaseConnector.query("select SubsidiaryID from Employees where EmployeeID=" + currentUser.id);
+            try {
+                DatabaseConnector.getResultSet().next();
+                subsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("empty resultset for subsidiaryID select");
+            }
+
+            for(Item i : orderList){
+                totalPrice = totalPrice + i.getPrice();
+            }
+
+            if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0 && !searchBarTF1.getText().equals("")) {
+                sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
+                DatabaseConnector.insert(sql);
+                contentLabel.setText("New Invoice created successfully");
+                orderList.clear();
+                searchBarTF1.setText("");
+
+                DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
+                try{
+                    DatabaseConnector.getResultSet().next();
+                    InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                for (Item i : orderList) {
+                    DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
+                }
+
+                orderList.clear();
+                searchBarTF1.setText("");
+
+            } else {
+                System.out.println("invoice not created, due to not all parameters being present");
+                contentLabel.setText("Failed");
+            }
+
+
+
         }
     }
 
@@ -376,9 +425,9 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         currentUser = LogInController.getSessionUser();
         if (currentUser.position != null) {
-            if (currentUser.position.equals("Manager")) managerUI();
-            if (currentUser.position.equals("Employee")) assistantUI();
-            if (currentUser.position.equals("Driver")) driverUI();
+            if (currentUser.position.equals("1")) managerUI();
+            if (currentUser.position.equals("3")) assistantUI();
+            if (currentUser.position.equals("2")) driverUI();
         }
         loadItemsFromDb();
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
