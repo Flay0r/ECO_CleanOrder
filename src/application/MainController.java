@@ -23,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.CSS;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -250,7 +251,7 @@ public class MainController implements Initializable {
         int subsidiaryID=0;
 
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("ecoSolution");
+        alert.setTitle("eCoSolution");
         alert.setHeaderText("This will save the order irrevocably ");
         alert.setContentText("Choose your option.");
 

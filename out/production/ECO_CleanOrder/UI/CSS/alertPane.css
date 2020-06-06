@@ -20,7 +20,7 @@
 
 }
 .dialog-pane .label {
-    -fx-text-alignment: center;
+    -fx-column-halignment: center;
     -fx-text-fill: white;
 }
 
