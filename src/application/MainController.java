@@ -392,6 +392,7 @@ public class MainController implements Initializable {
         }
     }
 
+    //TODO put into databse correspondence
     public static void loadItemsFromDb(){
         System.out.println("--> loadItemFromDb()");
 

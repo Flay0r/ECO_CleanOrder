@@ -1,5 +1,8 @@
 package domain;
 
+import infrastructure.DatabaseConnector;
+
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -30,6 +33,21 @@ public class OrderViewObj {
         this. SubsidiaryID=SubsidiaryID;
         this.StageID=StageID;
         //extracted fields
+        DatabaseConnector.query("select FullName from Customers where CustomerID=" + CustomerID);
+        try{
+            DatabaseConnector.getResultSet().next();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+        //one big join for filling extracted fields, not multiple
+        //use a VIEW
+        //dapper
+        //look into reflection
     }
 }
