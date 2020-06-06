@@ -106,7 +106,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" focusTraversable="true" layoutX="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" textFill="#757373">
+                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" text="Welcome to the solution" textFill="#757373">
                                  <font>
                                     <Font name="Consolas Bold Italic" size="28.0" />
                                  </font>
@@ -520,7 +520,7 @@
                                               <TableColumn minWidth="50.0" prefWidth="477.57147216796875" text="orderStatus" />
                                             </columns>
                                           </TableView>
-                                          <JFXButton layoutX="816.0" layoutY="2.0" onAction="#isDone" prefHeight="30.0" prefWidth="134.0" styleClass="sidebar-btn" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="sidebar-btn" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -878,7 +878,7 @@
                               <Insets left="20.0" />
                            </padding>
                            <children>
-                              <JFXButton fx:id="locationsButton" onAction="#openLocationsPane" text="LOCATIONS">
+                              <JFXButton fx:id="locationsButton" text="LOCATIONS">
                                  <graphic>
                                     <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
                                  </graphic>

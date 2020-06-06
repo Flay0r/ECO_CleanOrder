@@ -106,7 +106,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" focusTraversable="true" layoutX="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" textFill="#757373">
+                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" text="Welcome to the solution" textFill="#757373">
                                  <font>
                                     <Font name="Consolas Bold Italic" size="28.0" />
                                  </font>
@@ -150,21 +150,6 @@
                                           </StackedBarChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="locationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/Denmark-Map-Coloured.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TableView layoutX="785.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="165.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
-                                            <columns>
-                                              <TableColumn prefWidth="75.0" text="Estimated" />
-                                              <TableColumn prefWidth="75.0" text="Now" />
-                                            </columns>
-                                          </TableView>
-                                          <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
-                                       </children></AnchorPane>
                                     <AnchorPane fx:id="adminUsersPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <Accordion prefHeight="496.0" prefWidth="949.0">
@@ -330,13 +315,13 @@
                                           </StackedBarChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css" visible="false">
                                        <children>
                                           <SplitPane dividerPositions="0.7890295358649789" layoutX="3.0" layoutY="1.0" prefHeight="498.0" prefWidth="950.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="753.0" style="-fx-background-color: #a1c4ba;" stylesheets="@CSS/Stylesheet_Dashboard.css">
                                                    <children>
-                                                      <GridPane layoutX="14.0" layoutY="15.0" prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <GridPane prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                         <columnConstraints>
                                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
                                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
@@ -495,104 +480,6 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0" visible="false">
-                                       <children>
-                                          <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <children>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                                   <children>
-                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
-                                                         <HBox.margin>
-                                                            <Insets left="2.0" />
-                                                         </HBox.margin></FontAwesomeIcon>
-                                                      <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                         <font>
-                                                            <Font name="Calibri" size="16.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                                   <children>
-                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
-                                                         <HBox.margin>
-                                                            <Insets left="2.0" />
-                                                         </HBox.margin></FontAwesomeIcon>
-                                                      <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                         <font>
-                                                            <Font name="Calibri" size="16.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                                   <children>
-                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
-                                                         <HBox.margin>
-                                                            <Insets left="2.0" />
-                                                         </HBox.margin></FontAwesomeIcon>
-                                                      <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                         <font>
-                                                            <Font name="Calibri" size="16.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                                   <children>
-                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
-                                                         <HBox.margin>
-                                                            <Insets left="2.0" />
-                                                         </HBox.margin></FontAwesomeIcon>
-                                                      <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                         <font>
-                                                            <Font name="Calibri" size="16.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                                   <children>
-                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
-                                                         <HBox.margin>
-                                                            <Insets left="2.0" />
-                                                         </HBox.margin></FontAwesomeIcon>
-                                                      <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                         <font>
-                                                            <Font name="Calibri" size="16.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                          </HBox>
-                                          <TableView fx:id="searchOrderTableView" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
-                                            <columns>
-                                              <TableColumn prefWidth="192.85711669921875" text="OrderNo" />
-                                              <TableColumn minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
-                                                <TableColumn prefWidth="176.4285888671875" text="Date" />
-                                                <TableColumn prefWidth="170.0" text="TotalPrice" />
-                                                <TableColumn prefWidth="207.0" text="Status" />
-                                            </columns>
-                                          </TableView>
-                                       </children>
-                                       <stylesheets>
-                                          <URL value="@CSS/Stylesheet_Dashboard.css" />
-                                          <URL value="@CSS/tableView.css" />
-                                       </stylesheets>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
-                                       <children>
-                                          <TableView layoutY="-28.0" prefHeight="528.0" prefWidth="949.0" stylesheets="@CSS/tableView.css">
-                                            <columns>
-                                              <TableColumn minWidth="50.0" prefWidth="235.0" text="C1" />
-                                              <TableColumn minWidth="50.0" prefWidth="235.0" text="C2" />
-                                                <TableColumn minWidth="50.0" prefWidth="235.0" text="C1" />
-                                                <TableColumn minWidth="50.0" prefWidth="243.0" text="C1" />
-                                            </columns>
-                                          </TableView>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -609,8 +496,126 @@
                                             </columns>
                                           </TableView>
                                        </children></AnchorPane>
+                                    <AnchorPane fx:id="locationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="525.0" fitWidth="786.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/Denmark-Map-Coloured.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView layoutX="785.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="165.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="Estimated" />
+                                              <TableColumn prefWidth="75.0" text="Now" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
+                                          <JFXButton layoutX="405.0" layoutY="439.0" prefHeight="25.0" prefWidth="326.0" text="Choose Destination " />
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                       <children>
+                                          <TableView editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                            <columns>
+                                              <TableColumn minWidth="50.0" prefWidth="458.42852783203125" text="orderLocation" />
+                                              <TableColumn minWidth="50.0" prefWidth="477.57147216796875" text="orderStatus" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="sidebar-btn" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </StackPane>
+                              <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
+                                 <children>
+                                    <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchMail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchBillingName" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="141.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchStoreID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="148.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchStatus" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="searchOrderTableView" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                                      <columns>
+                                        <TableColumn prefWidth="192.85711669921875" text="OrderNo" />
+                                        <TableColumn minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
+                                          <TableColumn prefWidth="176.4285888671875" text="Date" />
+                                          <TableColumn prefWidth="170.0" text="TotalPrice" />
+                                          <TableColumn prefWidth="207.0" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@CSS/Stylesheet_Dashboard.css" />
+                                    <URL value="@CSS/tableView.css" />
+                                 </stylesheets>
+                              </AnchorPane>
                            </children>
                         </HBox>
                      </children>
@@ -621,7 +626,7 @@
       </AnchorPane>
    </center>
    <left>
-      <AnchorPane focusTraversable="true">
+      <AnchorPane fx:id="sideBar" focusTraversable="true">
          <children>
             <StackPane fx:id="stackedSideBar" prefHeight="650.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -662,82 +667,6 @@
                               <JFXButton fx:id="orderButton" onAction="#orderClicked" text="ORDERS">
                                  <graphic>
                                     <FontAwesomeIcon iconName="BARCODE" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="workflowButton" text="WORKFLOW">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="locationsButton" text="LOCATIONS">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
                                  </graphic>
                                  <font>
                                     <Font name="Consolas Bold" size="13.0" />
@@ -891,6 +820,82 @@
                               <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW" HBox.hgrow="ALWAYS">
                                  <graphic>
                                     <FontAwesomeIcon iconName="CHAIN" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                     <children>
+                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="workflowButton" text="WORKFLOW">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="locationsButton" text="LOCATIONS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
                                  </graphic>
                                  <font>
                                     <Font name="Consolas Bold" size="13.0" />

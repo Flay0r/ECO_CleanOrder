@@ -207,8 +207,6 @@ public class MainController implements Initializable {
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStyleClass().remove("alert");
-
-
         dialogPane.getStylesheets().add(
                 getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
 
@@ -413,9 +411,9 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         currentUser = LogInController.getSessionUser();
         if (currentUser.position != null) {
-            if (currentUser.position.equals("Manager")) managerUI();
-            if (currentUser.position.equals("Employee")) assistantUI();
-            if (currentUser.position.equals("Driver")) driverUI();
+            if (currentUser.position.equals("1")) managerUI();
+            if (currentUser.position.equals("3")) assistantUI();
+            if (currentUser.position.equals("2")) driverUI();
         }
         loadItemsFromDb();
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
