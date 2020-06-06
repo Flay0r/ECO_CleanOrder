@@ -224,7 +224,7 @@ public class MainController implements Initializable {
         closeWindow(logoutButton);
         System.out.println("Before the crashing FXML");
         Parent root = FXMLLoader.load(getClass().getResource("/UI/LogIn.fxml"));
-        Scene scene = new Scene(root, 1200, 650);
+        Scene scene = new Scene(root, 800, 650);
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
         stage.setScene(scene);
