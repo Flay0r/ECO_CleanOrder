@@ -24,19 +24,25 @@
 }
 
 .table-view .table-cell{
-    -fx-text-fill: #2d3a33;
+    -fx-text-fill: #597265;
 }
+
 
 .table-row-cell:odd{
     -fx-background-color: -fx-table-cell-border-color, #c4f3e5;
     -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em; /* 0 */
+
 }
 
 .table-row-cell:selected {
     -fx-background-color: #57aa91;
     -fx-background-insets: 0;
-    -fx-background-radius: 1;
+    -fx-background-radius: 0;
+}
+.table-row-cell:selected:horizontal:odd {
+    -fx-background-color: #72e6c2;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
 }
 
 .table-view > .virtual-flow > .scroll-bar:vertical,

@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
@@ -22,6 +23,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -189,8 +191,9 @@ public class MainController implements Initializable {
         System.out.println("Closed Window");
     }
 
+
     @FXML
-    void openContextMenu(MouseEvent event) {
+    void handleDeletion(ActionEvent event) {
 
         Item toBeDeleted = orderTable.getSelectionModel().getSelectedItem();
         if(toBeDeleted == null)
@@ -205,7 +208,7 @@ public class MainController implements Initializable {
             dialogPane.getStylesheets().add(
                     getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
             alert.showAndWait();
-
+            return;
         }
 
         Alert alert = new Alert(AlertType.CONFIRMATION);
