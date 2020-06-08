@@ -34,7 +34,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
-//OneLiner
+
 public class MainController implements Initializable {
     @FXML
     private BorderPane border_pane;
@@ -292,13 +292,13 @@ public class MainController implements Initializable {
                 sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
                 DatabaseConnector.insert(sql);
                 contentLabel.setText("New Invoice created successfully");
-                orderList.clear();
                 searchBarTF1.setText("");
 
                 DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
                 try{
                     DatabaseConnector.getResultSet().next();
                     InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                    System.out.println("invoice id grabbed successfully");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -313,9 +313,6 @@ public class MainController implements Initializable {
                 System.out.println("invoice not created, due to not all parameters being present");
                 contentLabel.setText("Failed");
             }
-
-
-
         }
     }
 
@@ -435,5 +432,4 @@ public class MainController implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
         orderTable.setItems(orderList);
     }
-
 }

@@ -16,7 +16,7 @@ public class OrderViewObj {
     private int StageID;
     //extracted fields
     private String CustomerName;
-    private String Subsidiary;
+    private String SubsidiaryName;
     private String Status;
 /*
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
@@ -36,18 +36,35 @@ public class OrderViewObj {
         DatabaseConnector.query("select FullName from Customers where CustomerID=" + CustomerID);
         try{
             DatabaseConnector.getResultSet().next();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        DatabaseConnector.query("select FullName from Customers where CustomerID=" + CustomerID);
+        try{
+            DatabaseConnector.getResultSet().next();
+            CustomerName = DatabaseConnector.getResultSet().getString("FullName");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("selecting customer name for creating orderviewobject did not work");
+        }
 
+        DatabaseConnector.query("select Alias from Subsidiaries where SubsidiaryID=" + SubsidiaryID);
+        try{
+            DatabaseConnector.getResultSet().next();
+            SubsidiaryName = DatabaseConnector.getResultSet().getString("Alias");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("selecting subsidiary for creating orderviewobject did not work");
+        }
 
-
-
-        //one big join for filling extracted fields, not multiple
-        //use a VIEW
-        //dapper
-        //look into reflection
+        DatabaseConnector.query("select Alias from Stage where StageID=" + StageID);
+        try{
+            DatabaseConnector.getResultSet().next();
+            Status = DatabaseConnector.getResultSet().getString("Alias");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("selecting status for creating orderviewobject did not work");
+        }
     }
 }
