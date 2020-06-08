@@ -12,7 +12,7 @@ public class Launch extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("../UI/LogIn.fxml"));
         stage.setTitle("EcoCleaner");
-        stage.setScene(new Scene(root, 1000, 650));
+        stage.setScene(new Scene(root, 800, 650));
         stage.setMinHeight(600);
         stage.setMinWidth(800);
         stage.show();
