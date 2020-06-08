@@ -5,9 +5,11 @@ import com.jfoenix.controls.JFXListView;
 import domain.Item;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +22,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -34,8 +38,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
-//OneLiner
+
 public class MainController implements Initializable {
+    private static SessionUser currentUser;
+    private static ObservableList<Item> items = FXCollections.observableArrayList();
+    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
+
+
+    @FXML
+    TableView<Item> orderTable;
+    @FXML
+    TableColumn itemColumn, priceColumn;
     @FXML
     private BorderPane border_pane;
     @FXML
@@ -74,14 +87,36 @@ public class MainController implements Initializable {
     private Group groupSideBars;
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
-    @FXML
-    TableView<Item> orderTable;
-    @FXML
-    TableColumn itemColumn, priceColumn;
 
-    private static SessionUser currentUser;
-    private static ObservableList<Item> items = FXCollections.observableArrayList();
-    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
+    //TODO put into databse correspondence
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+            return;
+        }
+        System.out.println("--> loadItemFromDb successful");
+    }
 
     @FXML
     void openNewOrderPane(ActionEvent event) {
@@ -95,6 +130,7 @@ public class MainController implements Initializable {
         orderList.clear();
 
     }
+
     @FXML
     void orderClicked(ActionEvent event) {
         unsee();
@@ -102,6 +138,7 @@ public class MainController implements Initializable {
         orderPane.setVisible(true);
         newOrderButton.setVisible(true);
     }
+
     @FXML
     void openCalenderPane(ActionEvent event) {
         unsee();
@@ -110,6 +147,7 @@ public class MainController implements Initializable {
         calendarPane.toFront();
         newOrderButton.setVisible(true);
     }
+
     @FXML
     void openLocationPane(ActionEvent event) {
         unsee();
@@ -118,6 +156,7 @@ public class MainController implements Initializable {
         locationPane.toFront();
         newOrderButton.setVisible(true);
     }
+
     @FXML
     void openStaffPane(ActionEvent event) {
         unsee();
@@ -126,6 +165,7 @@ public class MainController implements Initializable {
         staffPane.toFront();
         newOrderButton.setVisible(true);
     }
+
     @FXML
     void openStatisticsPane(ActionEvent event) {
         unsee();
@@ -136,6 +176,7 @@ public class MainController implements Initializable {
 
 
     }
+
     @FXML
     void openUsersPane(ActionEvent event) {
         unsee();
@@ -145,6 +186,7 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
+
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         unsee();
@@ -182,11 +224,57 @@ public class MainController implements Initializable {
     }
 
     @FXML
+    void openContextMenu(MouseEvent event) {
+
+        Item toBeDeleted = orderTable.getSelectionModel().getSelectedItem();
+        if(toBeDeleted == null)
+        {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("ecoSolution");
+            alert.setHeaderText("No valid order was selected ");
+            alert.setContentText("Please select a valid order for deletion. ");
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStyleClass().remove("alert");
+            dialogPane.getStylesheets().add(
+                    getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
+            alert.showAndWait();
+
+        }
+
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("ecoSolution");
+        alert.setHeaderText("Confirm the deletion of the order. ");
+        alert.setContentText("Choose your option.");
+
+        ButtonType buttonTypeOne = new ButtonType("Delete Order!");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStyleClass().remove("alert");
+        dialogPane.getStylesheets().add(
+                getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonTypeOne){
+           //Hier kommt der SQL Scheiß :3
+
+        }
+
+
+
+
+    }
+    @FXML
     public void managerUI() { sideBarManager.toFront(); }
+
     @FXML
     public void assistantUI() {
         sideBarAssistant.toFront();
     }
+
     @FXML
     public void driverUI() {
         sideBarDriver.toFront();
@@ -212,8 +300,7 @@ public class MainController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne){
-            //TODO - Delete the order
-
+            orderList.clear();
         }
 
     }
@@ -305,7 +392,6 @@ public class MainController implements Initializable {
                 for (Item i : orderList) {
                     DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
                 }
-
                 orderList.clear();
                 searchBarTF1.setText("");
 
@@ -318,6 +404,7 @@ public class MainController implements Initializable {
 
         }
     }
+
 
     @FXML
     void pantsSelect(ActionEvent event) {
@@ -392,36 +479,6 @@ public class MainController implements Initializable {
         }
     }
 
-    //TODO put into databse correspondence
-    public static void loadItemsFromDb(){
-        System.out.println("--> loadItemFromDb()");
-
-        String sql = "select ItemID, Alias, Price from Items";
-        String Alias="";
-        int ItemID=0;
-        float Price=0;
-
-        DatabaseConnector.query(sql);
-        items.clear();
-
-        try{
-            DatabaseConnector.getResultSet().next();
-            do
-            {
-                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
-                Alias = DatabaseConnector.getResultSet().getString("Alias");
-                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
-
-                items.add(new Item(ItemID, Alias, Price));
-            } while(DatabaseConnector.getResultSet().next());
-        } catch (SQLException e){
-            e.printStackTrace();
-            System.out.println("loadItemsFromDb encountered a problem");
-            return;
-        }
-        System.out.println("--> loadItemFromDb successful");
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         currentUser = LogInController.getSessionUser();
@@ -436,4 +493,6 @@ public class MainController implements Initializable {
         orderTable.setItems(orderList);
     }
 
+    private class orderList {
+    }
 }
