@@ -88,36 +88,6 @@ public class MainController implements Initializable {
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
 
-    //TODO put into databse correspondence
-    public static void loadItemsFromDb(){
-        System.out.println("--> loadItemFromDb()");
-
-        String sql = "select ItemID, Alias, Price from Items";
-        String Alias="";
-        int ItemID=0;
-        float Price=0;
-
-        DatabaseConnector.query(sql);
-        items.clear();
-
-        try{
-            DatabaseConnector.getResultSet().next();
-            do
-            {
-                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
-                Alias = DatabaseConnector.getResultSet().getString("Alias");
-                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
-
-                items.add(new Item(ItemID, Alias, Price));
-            } while(DatabaseConnector.getResultSet().next());
-        } catch (SQLException e){
-            e.printStackTrace();
-            System.out.println("loadItemsFromDb encountered a problem");
-            return;
-        }
-        System.out.println("--> loadItemFromDb successful");
-    }
-
     @FXML
     void openNewOrderPane(ActionEvent event) {
         unsee();
@@ -130,7 +100,6 @@ public class MainController implements Initializable {
         orderList.clear();
 
     }
-
     @FXML
     void orderClicked(ActionEvent event) {
         unsee();
@@ -138,7 +107,6 @@ public class MainController implements Initializable {
         orderPane.setVisible(true);
         newOrderButton.setVisible(true);
     }
-
     @FXML
     void openCalenderPane(ActionEvent event) {
         unsee();
@@ -176,7 +144,6 @@ public class MainController implements Initializable {
 
 
     }
-
     @FXML
     void openUsersPane(ActionEvent event) {
         unsee();
@@ -186,7 +153,6 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
-
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         unsee();
@@ -269,12 +235,10 @@ public class MainController implements Initializable {
     }
     @FXML
     public void managerUI() { sideBarManager.toFront(); }
-
     @FXML
     public void assistantUI() {
         sideBarAssistant.toFront();
     }
-
     @FXML
     public void driverUI() {
         sideBarDriver.toFront();
@@ -379,13 +343,13 @@ public class MainController implements Initializable {
                 sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
                 DatabaseConnector.insert(sql);
                 contentLabel.setText("New Invoice created successfully");
-                orderList.clear();
                 searchBarTF1.setText("");
 
                 DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
                 try{
                     DatabaseConnector.getResultSet().next();
                     InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                    System.out.println("invoice id grabbed successfully");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -399,12 +363,8 @@ public class MainController implements Initializable {
                 System.out.println("invoice not created, due to not all parameters being present");
                 contentLabel.setText("Failed");
             }
-
-
-
         }
     }
-
 
     @FXML
     void pantsSelect(ActionEvent event) {
@@ -479,6 +439,36 @@ public class MainController implements Initializable {
         }
     }
 
+    //TODO put into databse correspondence
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+            return;
+        }
+        System.out.println("--> loadItemFromDb successful");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         currentUser = LogInController.getSessionUser();
@@ -491,8 +481,5 @@ public class MainController implements Initializable {
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
         orderTable.setItems(orderList);
-    }
-
-    private class orderList {
     }
 }
