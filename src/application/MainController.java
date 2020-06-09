@@ -9,6 +9,7 @@ import infrastructure.DatabaseConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +22,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -45,7 +48,7 @@ public class MainController implements Initializable {
     @FXML
     private JFXButton updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
-    private AnchorPane addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
+    private AnchorPane orderDetails, addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
     private CategoryAxis timeAxis;
     @FXML
@@ -203,6 +206,36 @@ public class MainController implements Initializable {
         stage.close();
         System.out.println("Closed Window");
     }
+    @FXML
+    void getMoreInformation(MouseEvent event){
+        try {
+            searchOrderTableview.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    if(event.getButton().equals(MouseButton.PRIMARY)) {
+                        if (event.getClickCount() == 2) {
+                            OrderViewObj selection = searchOrderTableview.getSelectionModel().getSelectedItem();
+                            openOrderDetails();
+
+
+                        }
+                    }
+                }
+            });
+        }catch (NullPointerException e)
+        {
+            System.out.println("Error");
+        }
+    }
+
+    void openOrderDetails() {
+        unsee();
+        contentLabel.setText("Here you get some Intel ");
+        orderDetails.setVisible(true);
+        orderDetails.toFront();
+        newOrderButton.setVisible(true);
+
+    }
 
 
     @FXML
@@ -232,7 +265,6 @@ public class MainController implements Initializable {
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
 
         alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
-
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStyleClass().remove("alert");
         dialogPane.getStylesheets().add(

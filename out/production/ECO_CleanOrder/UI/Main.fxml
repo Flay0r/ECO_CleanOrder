@@ -31,7 +31,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -138,18 +138,6 @@
                            <children>
                               <StackPane prefHeight="499.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
                                  <children>
-                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <StackedBarChart layoutX="-376.0" layoutY="-147.0" prefHeight="486.0" prefWidth="637.0">
-                                            <xAxis>
-                                              <CategoryAxis fx:id="timeAxis" side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis fx:id="salesAxix" side="LEFT" />
-                                            </yAxis>
-                                          </StackedBarChart>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="staffPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <HBox prefHeight="39.0" prefWidth="947.0">
@@ -262,18 +250,6 @@
                                                 <Insets left="20.0" />
                                              </padding>
                                           </HBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
-                                       <children>
-                                          <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
-                                            <xAxis>
-                                              <CategoryAxis fx:id="timeAxis" endMargin="53.0" label="Here goes the Weeks from 1- 52" side="BOTTOM" startMargin="1.0" tickLabelGap="7.0" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis fx:id="salesAxix" label="Revenue" side="LEFT" />
-                                            </yAxis>
-                                          </StackedBarChart>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane fx:id="locationPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
@@ -619,25 +595,37 @@
                                              </font></JFXButton>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
+                                       <children>
+                                          <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
+                                            <xAxis>
+                                              <CategoryAxis fx:id="timeAxis" endMargin="53.0" label="Here goes the Weeks from 1- 52" side="BOTTOM" startMargin="1.0" tickLabelGap="7.0" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis fx:id="salesAxix" label="Revenue" side="LEFT" />
+                                            </yAxis>
+                                          </StackedBarChart>
+                                       </children>
+                                    </AnchorPane>
                                     <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
                                        <children>
                                           <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="167.0" spacing="5.0" styleClass="menu-bar-search-field-box">
                                                    <children>
                                                       <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
                                                          <HBox.margin>
                                                             <Insets left="2.0" />
                                                          </HBox.margin>
                                                       </FontAwesomeIcon>
-                                                      <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                      <TextField fx:id="searchOrderNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="164.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                                          <font>
                                                             <Font name="Calibri" size="16.0" />
                                                          </font>
                                                       </TextField>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="197.0" spacing="5.0" styleClass="menu-bar-search-field-box">
                                                    <children>
                                                       <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
                                                          <HBox.margin>
@@ -651,7 +639,7 @@
                                                       </TextField>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="175.0" spacing="5.0" styleClass="menu-bar-search-field-box">
                                                    <children>
                                                       <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
                                                          <HBox.margin>
@@ -665,7 +653,7 @@
                                                       </TextField>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="164.0" spacing="5.0" styleClass="menu-bar-search-field-box">
                                                    <children>
                                                       <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
                                                          <HBox.margin>
@@ -679,7 +667,7 @@
                                                       </TextField>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="145.0" spacing="5.0" styleClass="menu-bar-search-field-box">
                                                    <children>
                                                       <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
                                                          <HBox.margin>
@@ -693,9 +681,23 @@
                                                       </TextField>
                                                    </children>
                                                 </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="102.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                                   <children>
+                                                      <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                         <HBox.margin>
+                                                            <Insets left="2.0" />
+                                                         </HBox.margin>
+                                                      </FontAwesomeIcon>
+                                                      <TextField fx:id="searchStatus2" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                         <font>
+                                                            <Font name="Calibri" size="16.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
                                              </children>
                                           </HBox>
-                                          <TableView fx:id="searchOrderTableview" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                                          <TableView fx:id="searchOrderTableview" blendMode="MULTIPLY" cache="true" layoutY="38.0" onMouseClicked="#getMoreInformation" prefHeight="429.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                             <columns>
                                               <TableColumn fx:id="searchOrderNoColumn" prefWidth="114.14288330078125" text="OrderNo" />
                                               <TableColumn fx:id="searchCustomerColumn" minWidth="0.0" prefWidth="153.71429443359375" text="Customer" />
