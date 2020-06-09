@@ -1,0 +1,22 @@
+
+m
+java:S1450	"WRemove the "timeDate" field and declare it as a local variable in the relevant methods.(§æãé
+—
+java:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îì©İ
+H
+java:S1135"2Complete the task associated to this TODO comment.(…ïœ†
+H
+java:S1135"2Complete the task associated to this TODO comment.(…ïœ†
+H
+java:S1135!"2Complete the task associated to this TODO comment.(…ïœ†
+D
+java:S1068".Remove this unused "customerID" private field.(¿‚¥Ğ
+B
+java:S1068	",Remove this unused "timeDate" private field.(§æãé
+D
+java:S1068
+".Remove this unused "totalPrice" private field.(Òğ·
+F
+java:S1068"0Remove this unused "subsidiaryID" private field.(Å­™å
+D
+java:S1068")Remove this unused "stage" private field.(Ï™ÿ¾ûÿÿÿÿ

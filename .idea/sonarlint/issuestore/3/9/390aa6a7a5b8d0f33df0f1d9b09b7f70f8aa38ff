@@ -1,8 +1,8 @@
 
+k	java:S116"QRename this field "ItemID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈÈ‡ùÿÿÿÿ
 f	java:S117	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¢Úà
+i	java:S116"ORename this field "Info" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À‚Õúúÿÿÿÿ
 f	java:S117	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¢Úà
+e	java:S116"PRename this field "Alias" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îÉ‡–
+e	java:S116"PRename this field "Price" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½‘­
 f	java:S117	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¢Úà
-f	java:S116"QRename this field "ItemID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼á‡Œ
-j	java:S116"PRename this field "Alias" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ŸÒ‡üÿÿÿÿ
-i	java:S116"ORename this field "Info" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ†ğ…üÿÿÿÿ
-j	java:S116"PRename this field "Price" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇØÆúÿÿÿÿ

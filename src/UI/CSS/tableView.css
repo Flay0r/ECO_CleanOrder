@@ -16,7 +16,13 @@
 
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: rgb(0, 70, 67);
+}
+.table-view:row-selection .column-header-background .show-hide-columns-button:hover{
+    -fx-fill: linear-gradient(#a1c4ba, #00008b)
+}
+.table-view .column-header-background .show-hide-columns-button{
+    -fx-background-color: transparent;
 }
 
 .table-view .column-header {
@@ -52,6 +58,18 @@
 .table-view > .virtual-flow > .scroll-bar:horizontal > .track,
 .table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
     -fx-background-color: transparent;
+}
+
+.table-view:row-selection .virtual-flow .scroll-bar:vertical{
+    -fx-background-color: #BAECE0;
+    -fx-fill: #abd1c6;
+    -fx-border-color: #004643;
+    -fx-border-width: 0.1;
+    -fx-border-radius: 3px 2px 1px;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color: #6f968d;
+    -fx-fill: #6c877f;
 }
 
 

@@ -42,6 +42,9 @@
 .label{
      -fx-text-fill: #001E1D;
 }
+.anotherLabel{
+     -fx-text-fill: #344442;
+}
 .sidebar-btn:pressed .label{
      -fx-background-color: transparent;
      -fx-background-radius: 0px;
@@ -95,7 +98,4 @@
 }
 .content-area-circle-btns:hover .content-area-circle-btns-icon{
      -fx-fill: #fff;
-}
-.logout-button:hover{
-
 }

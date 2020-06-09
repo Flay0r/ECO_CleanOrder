@@ -1,0 +1,45 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ğ¡¢
+>
+java:S1148("#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S11489"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S1148B"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+i	java:S116"TRename this field "InvoiceID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Éâ«·
+j	java:S116"URename this field "CustomerID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ÑÈë
+d	java:S116"ORename this field "Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«éÍŠ
+o	java:S116"URename this field "TotalPrice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯£˜Êûÿÿÿÿ
+q	java:S116"WRename this field "SubsidiaryID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡‰Úâøÿÿÿÿ
+g	java:S116"RRename this field "StageID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡Úü«
+l	java:S116"WRename this field "CustomerName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¨Ğ¢
+s	java:S116"YRename this field "SubsidiaryName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âµì×üÿÿÿÿ
+f	java:S116"QRename this field "Status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×˜ñ
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(ÇŞòô
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(åË÷ôşÿÿÿÿ
+S	java:S106C"9Replace this use of System.out or System.err by a logger.(Ú“Õ¦úÿÿÿÿ
+C
+java:S1068"-Remove this unused "InvoiceID" private field.(Éâ«·
+D
+java:S1068".Remove this unused "CustomerID" private field.(„ÑÈë
+>
+java:S1068"(Remove this unused "Date" private field.(«éÍŠ
+I
+java:S1068".Remove this unused "TotalPrice" private field.(¯£˜Êûÿÿÿÿ
+K
+java:S1068"0Remove this unused "SubsidiaryID" private field.(¡‰Úâøÿÿÿÿ
+A
+java:S1068"+Remove this unused "StageID" private field.(‡Úü«
+F
+java:S1068"0Remove this unused "CustomerName" private field.(ù¨Ğ¢
+M
+java:S1068"2Remove this unused "SubsidiaryName" private field.(âµì×üÿÿÿÿ
+@
+java:S1068"*Remove this unused "Status" private field.(×˜ñ

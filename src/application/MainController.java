@@ -52,7 +52,7 @@ public class MainController implements Initializable {
     @FXML
     private JFXButton cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
-    private AnchorPane allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
+    private AnchorPane addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
     private CategoryAxis timeAxis;
     @FXML
@@ -212,6 +212,15 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
+    @FXML
+    void openCustomerPane(ActionEvent event) {
+        unsee();
+        contentLabel.setText("Add another Customer to DB :) ");
+        addNewCustomer.setVisible(true);
+        addNewCustomer.toFront();
+        newOrderButton.setVisible(true);
+
+    }
 
     private void unsee() {
         calendarPane.setVisible(false);
@@ -222,6 +231,7 @@ public class MainController implements Initializable {
         staffPane.setVisible(false);
         workFlowPane.setVisible(false);
         orderPane.setVisible(false);
+        addNewCustomer.setVisible(false);
         contentLabel.setText("");
     }
 
@@ -435,7 +445,11 @@ public class MainController implements Initializable {
 
     @FXML
     void selectdressPants(ActionEvent event) {
-        //TODO
+        for (Item i : items) {
+            if (i.getAlias().equals("Dress pants")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
+            }
+        }
     }
 
     @FXML
@@ -476,7 +490,11 @@ public class MainController implements Initializable {
 
     @FXML
     void blazerSelect(ActionEvent event) {
-//TODO
+        for (Item i : items) {
+            if (i.getAlias().equals("Jacket")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
+            }
+        }
     }
 
     @FXML

@@ -1,152 +1,154 @@
 
-[	java:S106Û"9Replace this use of System.out or System.err by a logger.(šíÅìüÿÿÿÿ8ğ¼°Ğ§.
-P
-java:S1128!"3Remove this unused import 'java.math.RoundingMode'.(¿ì†‹8¸º–Ë§.
-E
-java:S1659<")Declare "userProfile" on a separate line.(şµù8ı›Û²§.
-Z	java:S106\"9Replace this use of System.out or System.err by a logger.(è–ùÕøÿÿÿÿ8ĞÿÊĞ§.
-D
-java:S1659<"(Declare "blazerButt" on a separate line.(şµù8ÙØ›«§.
-l	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½•@8¸å™Í¨.
-I
-java:S1659<"-Declare "locationsButton" on a separate line.(şµù8ÙØ›«§.
-S
-java:S1874Ö"0Remove this use of "setScale"; it is deprecated.(ÓËä•ùÿÿÿÿ8ğ¼°Ğ§.
-U	java:S106×"9Replace this use of System.out or System.err by a logger.(‚•¿
-8Ä¡õ¨.
-T
-java:S1128"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆıÿÿÿÿ8ïŠÉ§.
-L
-java:S1659:"/Declare "searchBillingName" on a separate line.(Å±‹ï8ÙØ›«§.
-m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û÷¹Â8ĞÿÊĞ§.
-U	java:S106u"9Replace this use of System.out or System.err by a logger.(Ö·ú‚8ĞÿÊĞ§.
-X
-java:S3655›"5Call "result.isPresent()" before accessing the value.(çŠë¿ıÿÿÿÿ8Ä¡õ¨.
-D
-java:S2111Ö"!Use "BigDecimal.valueOf" instead.(ÓËä•ùÿÿÿÿ8ğ¼°Ğ§.
+w	java:S1161"VRename this field "ContentArea" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò“Êøÿÿÿÿ8µõıª©.
+Z	java:S106o"9Replace this use of System.out or System.err by a logger.(è–ùÕøÿÿÿÿ8µõıª©.
+s	java:S117è"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³îÍºúÿÿÿÿ8µõıª©.
 N
-java:S1659<"2Declare "orderPaneOrderButton" on a separate line.(şµù8ÙØ›«§.
-K
-java:S37402"/Provide the parametrized type for this generic.(Êõš8¯¡ºÈ§.
-X
-java:S3655Ğ"5Call "result.isPresent()" before accessing the value.(çŠë¿ıÿÿÿÿ8ĞìâĞ§.
-I
-java:S1659:",Declare "searchStoreID1" on a separate line.(Å±‹ï8ÙØ›«§.
-E
-java:S16592")Declare "priceColumn" on a separate line.(Êõš8¯¡ºÈ§.
-C
-java:S1659<"'Declare "pantsButt" on a separate line.(şµù8ÙØ›«§.
-E
-java:S1659:"(Declare "searchMail" on a separate line.(Å±‹ï8ÙØ›«§.
-C
-java:S1659<"'Declare "shirtButt" on a separate line.(şµù8ÙØ›«§.
-V	java:S106¥"9Replace this use of System.out or System.err by a logger.(Ëûíñ8Ä¡õ¨.
-O
-java:S1659<"3Declare "orderPaneOrderButton1" on a separate line.(şµù8ı›Û²§.
+java:S16595"2Declare "orderPaneOrderButton" on a separate line.(şµù8µõıª©.
 G
-java:S1659:"*Declare "searchBarTF1" on a separate line.(Å±‹ï8ÙØ›«§.
+java:S16593"*Declare "searchBarTF1" on a separate line.(Å±‹ï8µõıª©.
+I
+java:S16593",Declare "searchStoreID1" on a separate line.(Å±‹ï8µõıª©.
 F
-java:S1148Ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ä¡õ¨.
-H
-java:S1659<",Declare "dressPantsButt" on a separate line.(şµù8ı›Û²§.
-E
-java:S1659<")Declare "staffButton" on a separate line.(şµù8ÙØ›«§.
-H
-java:S1659<",Declare "workflowButton" on a separate line.(şµù8ÙØ›«§.
-C
-java:S1659<"'Declare "dressButt" on a separate line.(şµù8ü¿¯¬§.
-s	java:S117¾"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³îÍºúÿÿÿÿ8Ä¡õ¨.
+java:S16593")Declare "searchMail1" on a separate line.(Å±‹ï8µõıª©.
 D
-java:S1659<"(Declare "mailSearch" on a separate line.(şµù8ÙØ›«§.
-E
-java:S1148q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ä¡õ¨.
+java:S2111ñ"!Use "BigDecimal.valueOf" instead.(ÓËä•ùÿÿÿÿ8µõıª©.
+V	java:S106¦"9Replace this use of System.out or System.err by a logger.(ø§Àè8µõıª©.
+V	java:S106‡"9Replace this use of System.out or System.err by a logger.(Ö·ú‚8µõıª©.
+I
+java:S16597"'Declare "staffPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+H
+java:S16595",Declare "calendarButton" on a separate line.(şµù8µõıª©.
 L
-java:S1659>"*Declare "locationPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-N
-java:S1659>",Declare "adminUsersPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
+java:S16593"/Declare "searchOrderNumber" on a separate line.(Å±‹ï8µõıª©.
+M
+java:S16593"0Declare "searchOrderNumber1" on a separate line.(Å±‹ï8µõıª©.
+F
+java:S16595"*Declare "logoutButton" on a separate line.(şµù8µõıª©.
+H
+java:S16593"+Declare "searchStoreID" on a separate line.(Å±‹ï8µõıª©.
+R
+java:S16597"0Declare "allThePanesAreHere" on a separate line.(…º”Ìÿÿÿÿÿ8´£Ä©.
+F
+java:S1148‰"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µõıª©.
+H
+java:S16595",Declare "dressPantsButt" on a separate line.(şµù8µõıª©.
 X
-java:S1874Ö"5Remove this use of "ROUND_HALF_UP"; it is deprecated.(ÓËä•ùÿÿÿÿ8ğ¼°Ğ§.
+java:S3655ú"5Call "result.isPresent()" before accessing the value.(çŠë¿ıÿÿÿÿ8µõıª©.
+H
+java:S16595",Declare "workflowButton" on a separate line.(şµù8µõıª©.
+E
+java:S16593"(Declare "searchMail" on a separate line.(Å±‹ï8µõıª©.
+D
+java:S16595"(Declare "mailSearch" on a separate line.(şµù8µõıª©.
+C
+java:S16595"'Declare "dressButt" on a separate line.(şµù8µõıª©.
+F
+java:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µõıª©.
+V	java:S106Š"9Replace this use of System.out or System.err by a logger.(Â¨·8µõıª©.
+U	java:S106›"9Replace this use of System.out or System.err by a logger.(æø¢(8µõıª©.
+G
+java:S16593"*Declare "searchStatus" on a separate line.(Å±‹ï8µõıª©.
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µõıª©.
+K
+java:S3740+"/Provide the parametrized type for this generic.(Êõš8µõıª©.
+T
+java:S2696ÿ"6Make the enclosing method "static" or remove this set.(€áÒ8µõıª©.
+G
+java:S16595"+Declare "usersProfiles" on a separate line.(şµù8µõıª©.
+I
+java:S16597"'Declare "orderPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+m	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û÷¹Â8µõıª©.
+C
+java:S16595"'Declare "skirtButt" on a separate line.(şµù8µõıª©.
+C
+java:S16595"'Declare "shirtButt" on a separate line.(şµù8µõıª©.
 J
-java:S1659<".Declare "statisticsButton" on a separate line.(şµù8ÙØ›«§.
-F
-java:S1659:")Declare "searchMail1" on a separate line.(Å±‹ï8ÙØ›«§.
-V	java:S106£"9Replace this use of System.out or System.err by a logger.(„—×8Ä¡õ¨.
-I
-java:S1659>"'Declare "staffPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-H
-java:S1659:"+Declare "searchStatus1" on a separate line.(Å±‹ï8ÙØ›«§.
-F
-java:S1148ß"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ôˆã ¨.
-G
-java:S1659:"*Declare "searchStatus" on a separate line.(Å±‹ï8ÙØ›«§.
-M
-java:S1659:"0Declare "searchBillingName1" on a separate line.(Å±‹ï8ÙØ›«§.
-s	java:S1166"WRename this field "content_area" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Çê8ÙØ›«§.
-H
-java:S1659<",Declare "newOrderButton" on a separate line.(şµù8ÙØ›«§.
-I
-java:S1659>"'Declare "orderPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
+java:S16595".Declare "statisticsButton" on a separate line.(şµù8µõıª©.
+w
+java:S1192‘"TDefine a constant instead of duplicating this literal "Choose your option." 3 times.(°ĞÈ•øÿÿÿÿ8µõıª©.
 L
-java:S1659>"*Declare "calendarPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-G
-java:S1659<"+Declare "usersProfiles" on a separate line.(şµù8ı›Û²§.
-N
-java:S1659>",Declare "statisticsPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-X
-java:S1128"6Remove this unused import 'javax.swing.text.html.CSS'.(–êãóûÿÿÿÿ8¸å™Í¨.
-V	java:S106Ş"9Replace this use of System.out or System.err by a logger.(¨Œ“8ğ¼°Ğ§.
-•
-java:S1130‰"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(‰˜ÊÊ8‰Ÿ…Ÿ¨.
-T
-java:S2696Ñ"6Make the enclosing method "static" or remove this set.(€áÒ8Ä¡õ¨.
-w	java:S1168"VRename this field "ContentArea" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò“Êøÿÿÿÿ8ÙØ›«§.
-M
-java:S1659:"0Declare "searchOrderNumber1" on a separate line.(Å±‹ï8ÙØ›«§.
-Z	java:S106{"9Replace this use of System.out or System.err by a logger.(Šı‹úÿÿÿÿ8¯¡ºÈ§.
-V	java:S106±"9Replace this use of System.out or System.err by a logger.(é¸“8Ä¡õ¨.
-C
-java:S1659<"'Declare "skirtButt" on a separate line.(şµù8ı›Û²§.
-V	java:S106à"9Replace this use of System.out or System.err by a logger.(Â¨·8Ä¡õ¨.
-E
-java:S1659<")Declare "pantiesButt" on a separate line.(şµù8ı›Û²§.
-E
-java:S1659<")Declare "mailSearch1" on a separate line.(şµù8ü¨ÎĞ§.
-K
-java:S16598")Declare "ContentArea" on a separate line.(ò“Êøÿÿÿÿ8ÙØ›«§.
-O
-java:S1135Z"2Complete the task associated to this TODO comment.(¿ŒÃõ8×¸ƒõ¨.
-E
-java:S1659<")Declare "orderButton" on a separate line.(şµù8•üó±§.
-U	java:S106r"9Replace this use of System.out or System.err by a logger.(²Ã¹ª8ĞÿÊĞ§.
-K
-java:S37402"/Provide the parametrized type for this generic.(Êõš8¯¡ºÈ§.
-F
-java:S1659<"*Declare "logoutButton" on a separate line.(şµù8ı›Û²§.
-H
-java:S1659<",Declare "calendarButton" on a separate line.(şµù8ı›Û²§.
-r	java:S1164"VRename this field "border_pane" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é½ÉÄ8ÙØ›«§.
-P
-java:S1135š"2Complete the task associated to this TODO comment.(…ïœ†8Ä¡õ¨.
-P
-java:S1135Ã"2Complete the task associated to this TODO comment.(…ïœ†8Ä¡õ¨.
-K
-java:S1604é"(Make this anonymous inner class a lambda(—Ü§şÿÿÿÿ8íÔõ¨.
-L
-java:S1659:"/Declare "searchOrderNumber" on a separate line.(Å±‹ï8ÙØ›«§.
-H
-java:S1659:"+Declare "searchStoreID" on a separate line.(Å±‹ï8ÙØ›«§.
-F
-java:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ä¡õ¨.
+java:S16597"*Declare "newOrderPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
 B
-java:S1659<"&Declare "sockButt" on a separate line.(şµù8ÙØ›«§.
-D
-java:S1659<"(Declare "tShirtButt" on a separate line.(şµù8ÙØ›«§.
-L
-java:S1659>"*Declare "workFlowPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-V	java:S106ü"9Replace this use of System.out or System.err by a logger.(ø§Àè8Ä¡õ¨.
+java:S16595"&Declare "sockButt" on a separate line.(şµù8µõıª©.
+E
+java:S16595")Declare "orderButton" on a separate line.(şµù8µõıª©.
+H
+java:S16593"+Declare "searchStatus1" on a separate line.(Å±‹ï8µõıª©.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(Šı‹úÿÿÿÿ8µõıª©.
+S
+java:S1874ñ"0Remove this use of "setScale"; it is deprecated.(ÓËä•ùÿÿÿÿ8µõıª©.
 u
-java:S3776µ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ªÙ¸›ùÿÿÿÿ8Ä¡õ¨.
+java:S3776ß"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ªÙ¸›ùÿÿÿÿ8µõıª©.
+O
+java:S16595"3Declare "orderPaneOrderButton1" on a separate line.(şµù8µõıª©.
+F
+java:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µõıª©.
+E
+java:S16595")Declare "pantiesButt" on a separate line.(şµù8µõıª©.
+s	java:S116/"WRename this field "content_area" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Çê8µõıª©.
 L
-java:S1659>"*Declare "newOrderPane" on a separate line.(£û´’şÿÿÿÿ8ÙØ›«§.
-l	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆàß58¤ó¯¤©.
-]	java:S125-"<This block of commented-out lines of code should be removed.(ĞˆÁ¶şÿÿÿÿ8¤ó¯¤©.
+java:S16593"/Declare "searchBillingName" on a separate line.(Å±‹ï8µõıª©.
+E
+java:S16595")Declare "staffButton" on a separate line.(şµù8µõıª©.
+N
+java:S16597",Declare "adminUsersPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+V	java:S106Ï"9Replace this use of System.out or System.err by a logger.(Ëûíñ8µõıª©.
+H
+java:S16595",Declare "newOrderButton" on a separate line.(şµù8µõıª©.
+e
+java:S1192”"GDefine a constant instead of duplicating this literal "Cancel" 3 times.(ÈÂ—É8µõıª©.
+D
+java:S16595"(Declare "blazerButt" on a separate line.(şµù8µõıª©.
+V	java:S106ù"9Replace this use of System.out or System.err by a logger.(¨Œ“8µõıª©.
+j
+java:S1192‚"LDefine a constant instead of duplicating this literal "ecoSolution" 3 times.(¦›®·8µõıª©.
+C
+java:S16595"'Declare "pantsButt" on a separate line.(şµù8µõıª©.
+D
+java:S16595"(Declare "tShirtButt" on a separate line.(şµù8µõıª©.
+E
+java:S16595")Declare "mailSearch1" on a separate line.(şµù8µõıª©.
+L
+java:S16597"*Declare "calendarPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+r	java:S116-"VRename this field "border_pane" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é½ÉÄ8µõıª©.
+K
+java:S16591")Declare "ContentArea" on a separate line.(ò“Êøÿÿÿÿ8µõıª©.
+O
+java:S1135m"2Complete the task associated to this TODO comment.(¿ŒÃõ8µõıª©.
+E
+java:S1659+")Declare "priceColumn" on a separate line.(Êõš8µõıª©.
+[	java:S106ö"9Replace this use of System.out or System.err by a logger.(šíÅìüÿÿÿÿ8µõıª©.
+v
+java:S1192‰"XDefine a constant instead of duplicating this literal "../UI/CSS/alertPane.css" 4 times.(êº®Ø8µõıª©.
+V	java:S106Í"9Replace this use of System.out or System.err by a logger.(„—×8µõıª©.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(‚•¿
+8µõıª©.
+N
+java:S16597",Declare "statisticsPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+V	java:S106Û"9Replace this use of System.out or System.err by a logger.(é¸“8µõıª©.
+I
+java:S16595"-Declare "locationsButton" on a separate line.(şµù8µõıª©.
+L
+java:S16597"*Declare "workFlowPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+d
+java:S1192‡"FDefine a constant instead of duplicating this literal "alert" 4 times.(ÕİËô8µõıª©.
+l	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½•@8µõıª©.
+l	java:S117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆàß58µõıª©.
+X
+java:S3655Å"5Call "result.isPresent()" before accessing the value.(çŠë¿ıÿÿÿÿ8µõıª©.
+V	java:S106„"9Replace this use of System.out or System.err by a logger.(²Ã¹ª8µõıª©.
+X
+java:S1874ñ"5Remove this use of "ROUND_HALF_UP"; it is deprecated.(ÓËä•ùÿÿÿÿ8µõıª©.
+L
+java:S16597"*Declare "locationPane" on a separate line.(…º”Ìÿÿÿÿÿ8µõıª©.
+X
+java:S3655"5Call "result.isPresent()" before accessing the value.(çŠë¿ıÿÿÿÿ8µõıª©.
+•
+java:S1130³"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(‰˜ÊÊ8µõıª©.
+E
+java:S16595")Declare "userProfile" on a separate line.(şµù8µõıª©.
+M
+java:S16593"0Declare "searchBillingName1" on a separate line.(Å±‹ï8µõıª©.
+K
+java:S3740+"/Provide the parametrized type for this generic.(Êõš8µõıª©.
