@@ -33,7 +33,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -349,6 +349,17 @@
                                           <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
                                           <JFXButton layoutX="405.0" layoutY="439.0" prefHeight="25.0" prefWidth="326.0" text="Choose Destination " />
                                        </children></AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
+                                       <children>
+                                          <TableView editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                            <columns>
+                                              <TableColumn minWidth="50.0" prefWidth="458.42852783203125" text="orderLocation" />
+                                              <TableColumn minWidth="50.0" prefWidth="477.57147216796875" text="orderStatus" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="sidebar-btn" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
                                     <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css" visible="false">
                                        <children>
                                           <SplitPane dividerPositions="0.7890295358649789" layoutX="3.0" layoutY="1.0" prefHeight="498.0" prefWidth="950.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -514,9 +525,7 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="addNewCustomer" prefHeight="200.0" prefWidth="200.0" />
-                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0" />
-                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
+                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0" visible="false">
                                        <children>
                                           <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
@@ -594,11 +603,11 @@
                                           </HBox>
                                           <TableView fx:id="searchOrderTableView" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                             <columns>
-                                              <TableColumn fx:id="searchOrderTableOrderNo" prefWidth="192.85711669921875" text="OrderNo" />
-                                              <TableColumn fx:id="searchOrderTableCustomer" minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
-                                                <TableColumn fx:id="searchOrderTableDate" prefWidth="176.4285888671875" text="Date" />
-                                                <TableColumn fx:id="searchOrderTableTotalPrice" prefWidth="170.0" text="TotalPrice" />
-                                                <TableColumn fx:id="searchOrderTableStatus" prefWidth="207.0" text="Status" />
+                                              <TableColumn prefWidth="192.85711669921875" text="OrderNo" />
+                                              <TableColumn minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
+                                                <TableColumn prefWidth="176.4285888671875" text="Date" />
+                                                <TableColumn prefWidth="170.0" text="TotalPrice" />
+                                                <TableColumn prefWidth="207.0" text="Status" />
                                             </columns>
                                              <contextMenu>
                                                 <ContextMenu>
@@ -614,17 +623,107 @@
                                           <URL value="@CSS/tableView.css" />
                                        </stylesheets>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                    <AnchorPane fx:id="addNewCustomer" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
-                                          <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
-                                            <columns>
-                                              <TableColumn fx:id="driverLocationColumn" minWidth="50.0" prefWidth="458.42852783203125" text="Location" />
-                                              <TableColumn fx:id="driverStatusColumn" minWidth="50.0" prefWidth="477.57147216796875" text="Status" />
-                                            </columns>
-                                          </TableView>
-                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="sidebar-btn" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="231.0" spacing="5.0" styleClass="menu-bar-search-field-box" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="225.0">
+                                             <children>
+                                                <FontAwesomeIcon iconName="TTY" size="2em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSPhoneTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Phone" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="CHILD" size="2em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSFullNameTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="FUllName" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SLACK" size="2em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSHomelocationTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="HomeLocation" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="AT" size="2em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSMailTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Email" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5010548523206751" layoutX="307.0" layoutY="113.0" prefHeight="501.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TableView layoutX="10.0" layoutY="10.0" prefHeight="499.0" prefWidth="442.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colInvoiveID" prefWidth="75.0" text="InvoiceNo" />
+                                                            <TableColumn fx:id="colCUS" prefWidth="75.0" text="Customer" />
+                                                            <TableColumn fx:id="colTimeDate" prefWidth="75.0" text="Placed The:" />
+                                                            <TableColumn fx:id="colTotalPrice" prefWidth="75.0" text="Price of:" />
+                                                            <TableColumn fx:id="colSubsidiaryID" prefWidth="75.0" text="\@Store: " />
+                                                            <TableColumn fx:id="colStage" prefWidth="75.0" text="has Stage:" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="20.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TableView prefHeight="499.0" prefWidth="500.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colLaundryList" prefWidth="150.0" text="LaundryList" />
+                                                          <TableColumn fx:id="colItemID" minWidth="0.0" prefWidth="155.5714111328125" text="ItemID" />
+                                                            <TableColumn fx:id="colInfo" minWidth="0.0" prefWidth="144.4285888671875" text="Info" />
+                                                        </columns>
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </SplitPane>
+                                       </children></AnchorPane>
                                  </children>
                               </StackPane>
                            </children>

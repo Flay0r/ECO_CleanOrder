@@ -514,9 +514,68 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="addNewCustomer" prefHeight="200.0" prefWidth="200.0" />
+                                    <AnchorPane fx:id="addNewCustomer" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchOrderNumber2" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchOrderNumber21" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchOrderNumber22" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SEARCH" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="searchOrderNumber23" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
                                     <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0" />
-                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
+                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0" visible="false">
                                        <children>
                                           <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>

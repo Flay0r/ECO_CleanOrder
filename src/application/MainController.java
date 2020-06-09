@@ -3,7 +3,6 @@ package application;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import domain.Item;
-import domain.OrderViewObj;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
 import javafx.beans.binding.Bindings;
@@ -206,8 +205,7 @@ public class MainController implements Initializable {
     void handleDeletion(ActionEvent event) {
 
         Item toBeDeleted = orderTable.getSelectionModel().getSelectedItem();
-        if(toBeDeleted == null)
-        {
+        if (toBeDeleted == null) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("ecoSolution");
             alert.setHeaderText("No valid order was selected ");
@@ -237,21 +235,22 @@ public class MainController implements Initializable {
                 getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == buttonTypeOne){
-           //Hier kommt der SQL Scheiß :3
-
+        if (result.get() == buttonTypeOne) {
+            //Hier kommt der SQL Scheiß :3
         }
-
-
-
+    }
 
     }
     @FXML
-    public void managerUI() { sideBarManager.toFront(); }
+    public void managerUI() {
+        sideBarManager.toFront();
+    }
+
     @FXML
     public void assistantUI() {
         sideBarAssistant.toFront();
     }
+
     @FXML
     public void driverUI() {
         sideBarDriver.toFront();
@@ -276,7 +275,7 @@ public class MainController implements Initializable {
                 getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == buttonTypeOne){
+        if (result.get() == buttonTypeOne) {
             orderList.clear();
         }
 
@@ -292,7 +291,7 @@ public class MainController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("EcoCleaner Login");
         stage.setScene(scene);
-        stage.setMinHeight(600);
+        stage.setMinHeight(650);
         stage.setMinWidth(800);
         stage.show();
         currentUser.id = 0;
@@ -302,16 +301,16 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    public void newInvoice(){
+    public void newInvoice() {
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String email = searchBarTF1.getText();
-        int customerID=0;
-        String sql="";
+        int customerID = 0;
+        String sql = "";
         double totalPrice = 0;
-        int subsidiaryID=0;
-        int InvoiceID=0;
+        int subsidiaryID = 0;
+        int InvoiceID = 0;
 
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("eCoSolution");
@@ -329,7 +328,7 @@ public class MainController implements Initializable {
                 getClass().getResource("../UI/CSS/alertPane.css").toExternalForm());
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == buttonTypeOne){
+        if (result.get() == buttonTypeOne) {
             DatabaseConnector.query("select * from Customers where Email='" + email + "'");
             try {
                 DatabaseConnector.getResultSet().next();
@@ -348,18 +347,18 @@ public class MainController implements Initializable {
                 System.out.println("empty resultset for subsidiaryID select");
             }
 
-            for(Item i : orderList){
+            for (Item i : orderList) {
                 totalPrice = totalPrice + i.getPrice();
             }
 
-            if(customerID!=0 && totalPrice!=0 && subsidiaryID!=0 && !searchBarTF1.getText().equals("")) {
+            if (customerID != 0 && totalPrice != 0 && subsidiaryID != 0 && !searchBarTF1.getText().equals("")) {
                 sql = "insert into Invoice values (" + customerID + ", '" + dtf.format(now) + "', " + roundTo2(totalPrice, 2) + "," + subsidiaryID + ", 1)";
                 DatabaseConnector.insert(sql);
                 contentLabel.setText("New Invoice created successfully");
                 searchBarTF1.setText("");
 
                 DatabaseConnector.query("select InvoiceID from Invoice where CustomerID=" + customerID + " order by InvoiceID desc");
-                try{
+                try {
                     DatabaseConnector.getResultSet().next();
                     InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
                     System.out.println("invoice id grabbed successfully");
@@ -381,18 +380,18 @@ public class MainController implements Initializable {
 
     @FXML
     void pantsSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Pants")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Pants")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
 
     @FXML
     void selectPanties(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Underpants")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Underpants")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
@@ -404,36 +403,36 @@ public class MainController implements Initializable {
 
     @FXML
     void shirtSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Shirt")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Shirt")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
 
     @FXML
     void skirtSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Skirt")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Skirt")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
 
     @FXML
     void sockSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Socks")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Socks")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
 
     @FXML
     void tShirtSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("T-Shirt")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("T-Shirt")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
@@ -445,9 +444,9 @@ public class MainController implements Initializable {
 
     @FXML
     void dressSelect(ActionEvent event) {
-        for(Item i : items){
-            if(i.getAlias().equals("Dress")){
-                orderList.add(new Item(i.getItemID(),i.getAlias(),i.getPrice()));
+        for (Item i : items) {
+            if (i.getAlias().equals("Dress")) {
+                orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
     }
@@ -540,17 +539,5 @@ public class MainController implements Initializable {
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
         orderTable.setItems(orderList);
-
-        loadOrdersFromDb();
-        searchOrderTableOrderNo.setCellValueFactory((new PropertyValueFactory<>("InvoiceID")));
-        searchOrderTableCustomer.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
-        searchOrderTableDate.setCellValueFactory(new PropertyValueFactory<>("Date"));
-        searchOrderTableTotalPrice.setCellValueFactory((new PropertyValueFactory<>("TotalPrice")));
-        searchOrderTableStatus.setCellValueFactory(new PropertyValueFactory<>("Status"));
-        searchOrderTableView.setItems(invoiceList);
-
-        driverLocationColumn.setCellValueFactory(new PropertyValueFactory<>("SubsidiaryName"));
-        driverStatusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
-        driverTableview.setItems(driverList);
     }
 }
