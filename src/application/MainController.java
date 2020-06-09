@@ -60,7 +60,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXButton updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -536,6 +536,11 @@ public class MainController implements Initializable {
                 orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
             }
         }
+    }
+
+    @FXML
+    void updateLocationStatus(ActionEvent event){
+
     }
 
     @Override
