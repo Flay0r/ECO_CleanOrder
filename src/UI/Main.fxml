@@ -568,20 +568,6 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
-                                       <children>
-                                          <TableView editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
-                                            <columns>
-                                              <TableColumn minWidth="50.0" prefWidth="458.42852783203125" text="orderLocation" />
-                                              <TableColumn minWidth="50.0" prefWidth="477.57147216796875" text="orderStatus" />
-                                            </columns>
-                                          </TableView>
-                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="content-area-manager" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></JFXButton>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -616,6 +602,21 @@
                                     <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
+                                       <children>
+                                          <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                            <columns>
+                                              <TableColumn fx:id="driverLocationColumn" minWidth="50.0" prefWidth="280.14288330078125" text="orderLocation" />
+                                              <TableColumn fx:id="driverStatusColumn" minWidth="0.0" prefWidth="373.85711669921875" text="orderStatus" />
+                                                <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="content-area-manager" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></JFXButton>
                                        </children>
                                     </AnchorPane>
                                     <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
@@ -694,13 +695,14 @@
                                                 </HBox>
                                              </children>
                                           </HBox>
-                                          <TableView fx:id="searchOrderTableView" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                                          <TableView fx:id="searchOrderTableview" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                             <columns>
-                                              <TableColumn prefWidth="192.85711669921875" text="OrderNo" />
-                                              <TableColumn minWidth="0.0" prefWidth="204.5714111328125" text="Customer" />
-                                                <TableColumn prefWidth="176.4285888671875" text="Date" />
-                                                <TableColumn prefWidth="170.0" text="TotalPrice" />
-                                                <TableColumn prefWidth="207.0" text="Status" />
+                                              <TableColumn fx:id="searchOrderNumberColumn" prefWidth="114.14288330078125" text="OrderNo" />
+                                              <TableColumn fx:id="searchCustomerColumn" minWidth="0.0" prefWidth="153.71429443359375" text="Customer" />
+                                                <TableColumn fx:id="searchDateColumn" prefWidth="214.28570556640625" text="Date" />
+                                                <TableColumn fx:id="searchTotalPriceColumn" prefWidth="164.7142333984375" text="TotalPrice" />
+                                                <TableColumn fx:id="searchStatusColumn" prefWidth="137.1429443359375" text="Status" />
+                                                <TableColumn fx:id="searchLocationColumn" prefWidth="166.428466796875" text="Location" />
                                             </columns>
                                              <contextMenu>
                                                 <ContextMenu>
