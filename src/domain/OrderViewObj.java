@@ -10,7 +10,7 @@ public class OrderViewObj {
     //DB fields
     private int InvoiceID;
     private int CustomerID;
-    private LocalDateTime Date;
+    private String Date;
     private double TotalPrice;
     private int SubsidiaryID;
     private int StageID;
@@ -24,7 +24,7 @@ public class OrderViewObj {
     dtf.format(now)
 */
 
-    public OrderViewObj(int InvoiceID, int CustomerID, LocalDateTime Date, double TotalPrice, int SubsidiaryID, int StageID){
+    public OrderViewObj(int InvoiceID, int CustomerID, String Date, double TotalPrice, int SubsidiaryID, int StageID, String CustomerName, String SubsidiaryName, String Status){
         //DB fields
         this.InvoiceID=InvoiceID;
         this.CustomerID=CustomerID;
@@ -33,38 +33,80 @@ public class OrderViewObj {
         this. SubsidiaryID=SubsidiaryID;
         this.StageID=StageID;
         //extracted fields
-        DatabaseConnector.query("select FullName from Customers where CustomerID=" + CustomerID);
-        try{
-            DatabaseConnector.getResultSet().next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        this.CustomerName=CustomerName;
+        this.SubsidiaryName=SubsidiaryName;
+        this.Status=Status;
+    }
 
-        DatabaseConnector.query("select FullName from Customers where CustomerID=" + CustomerID);
-        try{
-            DatabaseConnector.getResultSet().next();
-            CustomerName = DatabaseConnector.getResultSet().getString("FullName");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("selecting customer name for creating orderviewobject did not work");
-        }
+    public int getInvoiceID() {
+        return InvoiceID;
+    }
 
-        DatabaseConnector.query("select Alias from Subsidiaries where SubsidiaryID=" + SubsidiaryID);
-        try{
-            DatabaseConnector.getResultSet().next();
-            SubsidiaryName = DatabaseConnector.getResultSet().getString("Alias");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("selecting subsidiary for creating orderviewobject did not work");
-        }
+    public void setInvoiceID(int invoiceID) {
+        InvoiceID = invoiceID;
+    }
 
-        DatabaseConnector.query("select Alias from Stage where StageID=" + StageID);
-        try{
-            DatabaseConnector.getResultSet().next();
-            Status = DatabaseConnector.getResultSet().getString("Alias");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("selecting status for creating orderviewobject did not work");
-        }
+    public int getCustomerID() {
+        return CustomerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        CustomerID = customerID;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public double getTotalPrice() {
+        return TotalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        TotalPrice = totalPrice;
+    }
+
+    public int getSubsidiaryID() {
+        return SubsidiaryID;
+    }
+
+    public void setSubsidiaryID(int subsidiaryID) {
+        SubsidiaryID = subsidiaryID;
+    }
+
+    public int getStageID() {
+        return StageID;
+    }
+
+    public void setStageID(int stageID) {
+        StageID = stageID;
+    }
+
+    public String getCustomerName() {
+        return CustomerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        CustomerName = customerName;
+    }
+
+    public String getSubsidiaryName() {
+        return SubsidiaryName;
+    }
+
+    public void setSubsidiaryName(String subsidiaryName) {
+        SubsidiaryName = subsidiaryName;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 }

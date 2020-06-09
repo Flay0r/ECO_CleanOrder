@@ -5,13 +5,16 @@ import com.jfoenix.controls.JFXListView;
 import domain.Item;
 import domain.SessionUser;
 import infrastructure.DatabaseConnector;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
@@ -20,11 +23,17 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.CSS;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -33,14 +42,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    private static SessionUser currentUser;
-    private static ObservableList<Item> items = FXCollections.observableArrayList();
-    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
-
-    @FXML
-    TableView<Item> orderTable;
-    @FXML
-    TableColumn itemColumn, priceColumn;
     @FXML
     private BorderPane border_pane;
     @FXML
@@ -50,7 +51,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXButton   cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -80,60 +81,23 @@ public class MainController implements Initializable {
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
     @FXML
-    private TableColumn<?, ?> colInvoiveID;
-
+    TableView<Item> orderTable;
     @FXML
-    private TableColumn<?, ?> colCUS;
-
+    TableColumn itemColumn, priceColumn;
     @FXML
-    private TableColumn<?, ?> colTimeDate;
-
+    TableView<OrderViewObj> searchOrderTableView;
     @FXML
-    private TableColumn<?, ?> colTotalPrice;
-
+    TableColumn searchOrderTableOrderNo, searchOrderTableCustomer, searchOrderTableDate, searchOrderTableTotalPrice, searchOrderTableStatus;
     @FXML
-    private TableColumn<?, ?> colSubsidiaryID;
-
+    TableView<OrderViewObj> driverTableview;
     @FXML
-    private TableColumn<?, ?> colStage;
+    TableColumn driverLocationColumn, driverStatusColumn;
 
-    @FXML
-    private TableColumn<?, ?> colLaundryList;
-
-    @FXML
-    private TableColumn<?, ?> colItemID;
-
-    @FXML
-    private TableColumn<?, ?> colInfo;
-
-    //TODO put into databse correspondence
-    public static void loadItemsFromDb() {
-        System.out.println("--> loadItemFromDb()");
-
-        String sql = "select ItemID, Alias, Price from Items";
-        String Alias = "";
-        int ItemID = 0;
-        float Price = 0;
-
-        DatabaseConnector.query(sql);
-        items.clear();
-
-        try {
-            DatabaseConnector.getResultSet().next();
-            do {
-                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
-                Alias = DatabaseConnector.getResultSet().getString("Alias");
-                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
-
-                items.add(new Item(ItemID, Alias, Price));
-            } while (DatabaseConnector.getResultSet().next());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("loadItemsFromDb encountered a problem");
-            return;
-        }
-        System.out.println("--> loadItemFromDb successful");
-    }
+    private static SessionUser currentUser;
+    private static ObservableList<Item> items = FXCollections.observableArrayList();
+    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
+    private static ObservableList<OrderViewObj> invoiceList = FXCollections.observableArrayList();
+    private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
 
     @FXML
     void openNewOrderPane(ActionEvent event) {
@@ -145,8 +109,8 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(false);
         searchBarTF1.setText("");
         orderList.clear();
-    }
 
+    }
     @FXML
     void orderClicked(ActionEvent event) {
         unsee();
@@ -154,7 +118,6 @@ public class MainController implements Initializable {
         orderPane.setVisible(true);
         newOrderButton.setVisible(true);
     }
-
     @FXML
     void openCalenderPane(ActionEvent event) {
         unsee();
@@ -192,7 +155,6 @@ public class MainController implements Initializable {
 
 
     }
-
     @FXML
     void openUsersPane(ActionEvent event) {
         unsee();
@@ -202,7 +164,6 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
-
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         unsee();
@@ -222,7 +183,7 @@ public class MainController implements Initializable {
 
     }
 
-    private void unsee() {
+    private void unsee(){
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
@@ -235,7 +196,7 @@ public class MainController implements Initializable {
         contentLabel.setText("");
     }
 
-    public double roundTo2(double value, int places) {
+    public double roundTo2(double value, int places){
         if (places < 0) throw new IllegalArgumentException();
 
         return new BigDecimal(value).setScale(places, BigDecimal.ROUND_HALF_UP).doubleValue();
@@ -248,6 +209,7 @@ public class MainController implements Initializable {
         stage.close();
         System.out.println("Closed Window");
     }
+
 
     @FXML
     void handleDeletion(ActionEvent event) {
@@ -288,6 +250,7 @@ public class MainController implements Initializable {
         }
     }
 
+    }
     @FXML
     public void managerUI() {
         sideBarManager.toFront();
@@ -502,6 +465,82 @@ public class MainController implements Initializable {
         for (Item i : items) {
             if (i.getAlias().equals("Dress")) {
                 orderList.add(new Item(i.getItemID(), i.getAlias(), i.getPrice()));
+            }
+        }
+    }
+
+    //TODO put into databse correspondence
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+            return;
+        }
+        System.out.println("--> loadItemFromDb successful");
+    }
+
+    public static void loadOrdersFromDb(){
+        System.out.println("--> loadOrderFromDb");
+
+        int InvoiceID=0;
+        int CustomerID=0;
+        String TimeDate="";
+        double TotalPrice=0;
+        int SubsidiaryID=0;
+        int StageID=0;
+        String FullName="";
+        String Subsidiary="";
+        String Status="";
+
+        invoiceList.clear();
+        driverList.clear();
+
+        DatabaseConnector.query("select * from OrderViewObjects");
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do {
+                InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                CustomerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
+                TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
+                TotalPrice = Double.parseDouble(DatabaseConnector.getResultSet().getString("TotalPrice"));
+                SubsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+                StageID = Integer.parseInt(DatabaseConnector.getResultSet().getString("StageID"));
+
+                FullName = DatabaseConnector.getResultSet().getString("FullName");
+                Subsidiary = DatabaseConnector.getResultSet().getString("Subsidiary");
+                Status = DatabaseConnector.getResultSet().getString("Status");
+
+                invoiceList.add(new OrderViewObj(InvoiceID, CustomerID, TimeDate, TotalPrice, SubsidiaryID, StageID, FullName, Subsidiary, Status));
+            } while (DatabaseConnector.getResultSet().next());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for loadOrderFromDb");
+        }
+
+        for(OrderViewObj o : invoiceList){
+            if(o.getStageID()==1 || o.getStageID()==5) {
+                driverList.add(o);
             }
         }
     }
