@@ -34,23 +34,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    private static SessionUser currentUser;
-    private static ObservableList<Item> items = FXCollections.observableArrayList();
-    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
-    private static ObservableList<OrderViewObj> invoiceList = FXCollections.observableArrayList();
-    private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
-    @FXML
-    TableView<Item> orderTable;
-    @FXML
-    TableColumn itemColumn, priceColumn;
-    @FXML
-    TableView<OrderViewObj> searchOrderTableView;
-    @FXML
-    TableColumn searchOrderTableOrderNo, searchOrderTableCustomer, searchOrderTableDate, searchOrderTableTotalPrice, searchOrderTableStatus;
-    @FXML
-    TableView<OrderViewObj> driverTableview;
-    @FXML
-    TableColumn driverLocationColumn, driverStatusColumn;
     @FXML
     private BorderPane border_pane;
     @FXML
@@ -89,81 +72,24 @@ public class MainController implements Initializable {
     private Group groupSideBars;
     @FXML
     private Label contentLabel; //Use setText on Button Press for each ContentArea
+    @FXML
+    TableView<Item> orderTable;
+    @FXML
+    TableColumn itemColumn, priceColumn;
+    @FXML
+    TableView<OrderViewObj> searchOrderTableview;
+    @FXML
+    TableColumn searchOrderNoColumn, searchCustomerColumn, searchDateColumn, searchTotalPriceColumn, searchStatusColumn, searchLocationColumn;
+    @FXML
+    TableView<OrderViewObj> driverTableview;
+    @FXML
+    TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn;
 
-    //TODO put into databse correspondence
-    public static void loadItemsFromDb() {
-        System.out.println("--> loadItemFromDb()");
-
-        String sql = "select ItemID, Alias, Price from Items";
-        String Alias = "";
-        int ItemID = 0;
-        float Price = 0;
-
-        DatabaseConnector.query(sql);
-        items.clear();
-
-        try {
-            DatabaseConnector.getResultSet().next();
-            do {
-                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
-                Alias = DatabaseConnector.getResultSet().getString("Alias");
-                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
-
-                items.add(new Item(ItemID, Alias, Price));
-            } while (DatabaseConnector.getResultSet().next());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("loadItemsFromDb encountered a problem");
-            return;
-        }
-        System.out.println("--> loadItemFromDb successful");
-    }
-
-    public static void loadOrdersFromDb() {
-        System.out.println("--> loadOrderFromDb");
-
-        int InvoiceID = 0;
-        int CustomerID = 0;
-        String TimeDate = "";
-        double TotalPrice = 0;
-        int SubsidiaryID = 0;
-        int StageID = 0;
-        String FullName = "";
-        String Subsidiary = "";
-        String Status = "";
-
-        invoiceList.clear();
-        driverList.clear();
-
-        DatabaseConnector.query("select * from OrderViewObjects");
-
-        try {
-            DatabaseConnector.getResultSet().next();
-            do {
-                InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
-                CustomerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
-                TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
-                TotalPrice = Double.parseDouble(DatabaseConnector.getResultSet().getString("TotalPrice"));
-                SubsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
-                StageID = Integer.parseInt(DatabaseConnector.getResultSet().getString("StageID"));
-
-                FullName = DatabaseConnector.getResultSet().getString("FullName");
-                Subsidiary = DatabaseConnector.getResultSet().getString("Subsidiary");
-                Status = DatabaseConnector.getResultSet().getString("Status");
-
-                invoiceList.add(new OrderViewObj(InvoiceID, CustomerID, TimeDate, TotalPrice, SubsidiaryID, StageID, FullName, Subsidiary, Status));
-            } while (DatabaseConnector.getResultSet().next());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("empty resultset for loadOrderFromDb");
-        }
-
-        for (OrderViewObj o : invoiceList) {
-            if (o.getStageID() == 1 || o.getStageID() == 5) {
-                driverList.add(o);
-            }
-        }
-    }
+    private static SessionUser currentUser;
+    private static ObservableList<Item> items = FXCollections.observableArrayList();
+    private static ObservableList<Item> orderList = FXCollections.observableArrayList();
+    private static ObservableList<OrderViewObj> invoiceList = FXCollections.observableArrayList();
+    private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
 
     @FXML
     void openNewOrderPane(ActionEvent event) {
@@ -223,7 +149,6 @@ public class MainController implements Initializable {
 
 
     }
-
     @FXML
     void openUsersPane(ActionEvent event) {
         unsee();
@@ -233,7 +158,6 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
-
     @FXML
     void openWorkFlowPane(ActionEvent event) {
         unsee();
@@ -243,7 +167,6 @@ public class MainController implements Initializable {
         newOrderButton.setVisible(true);
 
     }
-
     @FXML
     void openCustomerPane(ActionEvent event) {
         unsee();
@@ -254,7 +177,7 @@ public class MainController implements Initializable {
 
     }
 
-    private void unsee() {
+    private void unsee(){
         calendarPane.setVisible(false);
         locationPane.setVisible(false);
         statisticsPane.setVisible(false);
@@ -267,7 +190,7 @@ public class MainController implements Initializable {
         contentLabel.setText("");
     }
 
-    public double roundTo2(double value, int places) {
+    public double roundTo2(double value, int places){
         if (places < 0) throw new IllegalArgumentException();
 
         return new BigDecimal(value).setScale(places, BigDecimal.ROUND_HALF_UP).doubleValue();
@@ -280,6 +203,7 @@ public class MainController implements Initializable {
         stage.close();
         System.out.println("Closed Window");
     }
+
 
     @FXML
     void handleDeletion(ActionEvent event) {
@@ -538,6 +462,82 @@ public class MainController implements Initializable {
         }
     }
 
+    //TODO put into databse correspondence
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+            return;
+        }
+        System.out.println("--> loadItemFromDb successful");
+    }
+
+    public static void loadOrdersFromDb(){
+        System.out.println("--> loadOrderFromDb");
+
+        int InvoiceID=0;
+        int CustomerID=0;
+        String TimeDate="";
+        double TotalPrice=0;
+        int SubsidiaryID=0;
+        int StageID=0;
+        String FullName="";
+        String Subsidiary="";
+        String Status="";
+
+        invoiceList.clear();
+        driverList.clear();
+
+        DatabaseConnector.query("select * from OrderViewObjects");
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do {
+                InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                CustomerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
+                TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
+                TotalPrice = Double.parseDouble(DatabaseConnector.getResultSet().getString("TotalPrice"));
+                SubsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+                StageID = Integer.parseInt(DatabaseConnector.getResultSet().getString("StageID"));
+
+                FullName = DatabaseConnector.getResultSet().getString("FullName");
+                Subsidiary = DatabaseConnector.getResultSet().getString("Subsidiary");
+                Status = DatabaseConnector.getResultSet().getString("Status");
+
+                invoiceList.add(new OrderViewObj(InvoiceID, CustomerID, TimeDate, TotalPrice, SubsidiaryID, StageID, FullName, Subsidiary, Status));
+            } while (DatabaseConnector.getResultSet().next());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for loadOrderFromDb");
+        }
+
+        for(OrderViewObj o : invoiceList){
+            if(o.getStageID()==1 || o.getStageID()==5) {
+                driverList.add(o);
+            }
+        }
+    }
+
     @FXML
     void updateLocationStatus(ActionEvent event){
 
@@ -555,5 +555,19 @@ public class MainController implements Initializable {
         itemColumn.setCellValueFactory(new PropertyValueFactory<>("Alias"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("Price"));
         orderTable.setItems(orderList);
+
+        loadOrdersFromDb();
+        searchOrderNoColumn.setCellValueFactory(new PropertyValueFactory<>("InvoiceID"));
+        searchCustomerColumn.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
+        searchDateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        searchTotalPriceColumn.setCellValueFactory(new PropertyValueFactory<>("TotalPrice"));
+        searchStatusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        searchLocationColumn.setCellValueFactory(new PropertyValueFactory<>("SubsidiaryName"));
+        searchOrderTableview.setItems(invoiceList);
+
+        driverStatusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        driverLocationColumn.setCellValueFactory(new PropertyValueFactory<>("SubsidiaryName"));
+        driverOrderNoColumn.setCellValueFactory(new PropertyValueFactory<>("InvoiceID"));
+        driverTableview.setItems(driverList);
     }
 }

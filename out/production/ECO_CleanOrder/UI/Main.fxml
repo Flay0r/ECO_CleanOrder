@@ -31,7 +31,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -697,7 +697,7 @@
                                           </HBox>
                                           <TableView fx:id="searchOrderTableview" blendMode="MULTIPLY" cache="true" layoutY="38.0" prefHeight="462.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                             <columns>
-                                              <TableColumn fx:id="searchOrderNumberColumn" prefWidth="114.14288330078125" text="OrderNo" />
+                                              <TableColumn fx:id="searchOrderNoColumn" prefWidth="114.14288330078125" text="OrderNo" />
                                               <TableColumn fx:id="searchCustomerColumn" minWidth="0.0" prefWidth="153.71429443359375" text="Customer" />
                                                 <TableColumn fx:id="searchDateColumn" prefWidth="214.28570556640625" text="Date" />
                                                 <TableColumn fx:id="searchTotalPriceColumn" prefWidth="164.7142333984375" text="TotalPrice" />
