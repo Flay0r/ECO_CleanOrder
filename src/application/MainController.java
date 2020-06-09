@@ -190,6 +190,7 @@ public class MainController implements Initializable {
         workFlowPane.setVisible(false);
         orderPane.setVisible(false);
         addNewCustomer.setVisible(false);
+        orderDetails.setVisible(false);
         contentLabel.setText("");
     }
 
