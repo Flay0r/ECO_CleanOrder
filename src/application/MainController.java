@@ -241,7 +241,7 @@ public class MainController implements Initializable {
     @FXML
     void handleDeletion(ActionEvent event) {
 
-        Item toBeDeleted = orderTable.getSelectionModel().getSelectedItem();
+        OrderViewObj toBeDeleted = searchOrderTableview.getSelectionModel().getSelectedItem();
         if (toBeDeleted == null) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("ecoSolution");
@@ -272,7 +272,11 @@ public class MainController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne) {
-            //Hier kommt der SQL Scheiß :3
+            int InvoiceID = toBeDeleted.getInvoiceID();
+            DatabaseConnector.delete("delete from LaundryList where InvoiceID=" + InvoiceID);
+            DatabaseConnector.delete("delete from OrderChain where InvoiceID=" + InvoiceID);
+            DatabaseConnector.delete("delete from Invoice where InvoiceID=" + InvoiceID);
+            loadOrdersFromDb();
         }
     }
 
@@ -411,6 +415,8 @@ public class MainController implements Initializable {
                 contentLabel.setText("Failed");
             }
         }
+
+        loadOrdersFromDb();
     }
 
     @FXML
