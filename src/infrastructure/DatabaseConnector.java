@@ -76,5 +76,17 @@ public class DatabaseConnector {
             System.out.println("insert didnt work, and sql error");
         }
     }
+
+    public static void delete(String sql){
+        try {
+            prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
+            System.out.println("preparing statement: OK");
+            int ok = prpstmt.executeUpdate();
+            System.out.println("executing statement: OK");
+        } catch ( SQLException e){
+            e.printStackTrace();
+            System.out.println("delete didnt work, and sql error");
+        }
+    }
 }
 
