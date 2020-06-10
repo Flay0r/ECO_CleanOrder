@@ -32,7 +32,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -706,7 +706,7 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0">
+                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <SplitPane dividerPositions="0.5010548523206751" layoutX="307.0" layoutY="113.0" prefHeight="501.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
@@ -745,7 +745,7 @@
                                              </opaqueInsets>
                                           </SplitPane>
                                        </children></AnchorPane>
-                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>

@@ -122,7 +122,9 @@ public class MainController implements Initializable {
         contentLabel.setText("Welcome to the Calender");
         calendarPane.setVisible(true);
         calendarPane.toFront();
-        newOrderButton.setVisible(true);
+        if (currentUser.id == 2) {
+            newOrderButton.setVisible(true);
+        }
     }
 
     /**
@@ -136,7 +138,9 @@ public class MainController implements Initializable {
         contentLabel.setText("Live tracking Trucks");
         locationPane.setVisible(true);
         locationPane.toFront();
-        newOrderButton.setVisible(true);
+        if(currentUser.id == 2){
+            newOrderButton.setVisible(true);
+        }
     }
 
     /**
@@ -195,9 +199,12 @@ public class MainController implements Initializable {
         contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
         workFlowPane.toFront();
-        newOrderButton.setVisible(true);
+        if(currentUser.id == 2){
+            newOrderButton.setVisible(true);
+        }
 
     }
+
 
     /**
      * Open customer pane.
@@ -404,8 +411,6 @@ public class MainController implements Initializable {
         sideBarDriver.toFront();
         sendOrderToArchive.setVisible(false);
         newOrderButton.setVisible(false);
-        updateStatusButt.setVisible(true);
-        updater.setVisible(true);
         sendOrderToArchive.setVisible(false);
     }
 
