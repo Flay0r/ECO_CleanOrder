@@ -52,7 +52,7 @@
                                     <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="412.0" styleClass="menu-bar-search-field-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <FontAwesomeIcon iconName="SEARCH" size="2em" styleClass="menu-bar-btns-icon" />
-                                          <TextField fx:id="searchBarTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                          <TextField fx:id="searchBarTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="705.0" promptText="Search" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
@@ -114,7 +114,15 @@
                                     <FontAwesomeIcon iconName="MAP_MARKER" />
                                  </graphic>
                               </Label>
-                              <JFXButton fx:id="newOrderButton" onAction="#openNewOrderPane" prefHeight="27.0" prefWidth="114.0" styleClass="content-area-circle-btns" text="New Order">
+                              <JFXButton fx:id="sendOrderToArchive" prefHeight="27.0" prefWidth="173.0" styleClass="content-area-circle-btns" text="Checkout Order">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="SEND_ALT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="newOrderButton" onAction="#openNewOrderPane" prefHeight="27.0" prefWidth="119.0" styleClass="content-area-circle-btns" text="New Order">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -122,7 +130,7 @@
                                     <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
                                  </graphic>
                                  <HBox.margin>
-                                    <Insets left="120.0" />
+                                    <Insets left="10.0" right="1.0" />
                                  </HBox.margin>
                               </JFXButton>
                            </children>
@@ -373,177 +381,6 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css" visible="false">
-                                       <children>
-                                          <SplitPane dividerPositions="0.7890295358649789" layoutX="3.0" layoutY="1.0" prefHeight="498.0" prefWidth="950.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="753.0" style="-fx-background-color: #a1c4ba;" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                                                   <children>
-                                                      <GridPane prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                        <columnConstraints>
-                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
-                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
-                                                        </columnConstraints>
-                                                        <rowConstraints>
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                                        </rowConstraints>
-                                                         <children>
-                                                            <JFXButton fx:id="tShirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#tShirtSelect" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/tShirt.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="pantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#pantsSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Jeans.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="132.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Rock.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="pantiesButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectPanties" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="121.0" fitWidth="163.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/UnterHose.png" />
-                                                                     </image></ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="sockButt" contentDisplay="GRAPHIC_ONLY" onAction="#sockSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Socken.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="shirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#shirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Hemd.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="dressButt" contentDisplay="GRAPHIC_ONLY" onAction="#dressSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Kleid.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="blazerButt" contentDisplay="GRAPHIC_ONLY" onAction="#blazerSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/Blazer.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                            <JFXButton fx:id="dressPantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectdressPants" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                               <graphic>
-                                                                  <ImageView fitHeight="169.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
-                                                                     <image>
-                                                                        <Image url="@images/HoseAnzug.png" />
-                                                                     </image>
-                                                                  </ImageView>
-                                                               </graphic>
-                                                            </JFXButton>
-                                                         </children>
-                                                      </GridPane>
-                                                   </children>
-                                                </AnchorPane>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="219.0" style="-fx-background-color: #a1c4ba;" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                                                   <children>
-                                                      <TableView fx:id="orderTable" layoutX="-100.0" layoutY="62.0" prefHeight="431.0" prefWidth="195.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="62.0">
-                                                        <columns>
-                                                          <TableColumn fx:id="itemColumn" prefWidth="93.71435546875" text="Item">
-                                                               <styleClass>
-                                                                  <String fx:value="sidebar-btn" />
-                                                                  <String fx:value="table-view" />
-                                                               </styleClass></TableColumn>
-                                                          <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price">
-                                                               <styleClass>
-                                                                  <String fx:value="sidebar-btn" />
-                                                                  <String fx:value="table-view" />
-                                                               </styleClass></TableColumn>
-                                                        </columns>
-                                                      </TableView>
-                                                      <VBox layoutX="-1.0" prefHeight="77.0" prefWidth="200.0">
-                                                         <children>
-                                                            <HBox alignment="CENTER_RIGHT" prefHeight="84.0" prefWidth="226.0">
-                                                               <children>
-                                                                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#newInvoice" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                                                                     <font>
-                                                                        <Font name="System Bold" size="12.0" />
-                                                                     </font>
-                                                                     <graphic>
-                                                                        <FontAwesomeIcon iconName="CHECK" size="2em" styleClass="content-area-circle-btns-icon" />
-                                                                     </graphic>
-                                                                     <HBox.margin>
-                                                                        <Insets bottom="5.0" right="5.0" />
-                                                                     </HBox.margin>
-                                                                  </JFXButton>
-                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#doCancellation" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns" text="Button">
-                                                                     <font>
-                                                                        <Font name="System Bold" size="12.0" />
-                                                                     </font>
-                                                                     <graphic>
-                                                                        <FontAwesomeIcon fontSmoothingType="LCD" iconName="CLOSE" size="2em" styleClass="content-area-circle-btns-icon" />
-                                                                     </graphic>
-                                                                     <HBox.margin>
-                                                                        <Insets bottom="5.0" />
-                                                                     </HBox.margin>
-                                                                  </JFXButton>
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="200.0" styleClass="menu-bar-search-field-box">
-                                                               <children>
-                                                                  <FontAwesomeIcon iconName="SEARCH" size="1.5em" styleClass="menu-bar-btns-icon" />
-                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="153.0" promptText="Enter mail" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                                     <font>
-                                                                        <Font name="Calibri" size="16.0" />
-                                                                     </font>
-                                                                  </TextField>
-                                                               </children>
-                                                               <padding>
-                                                                  <Insets left="20.0" />
-                                                               </padding>
-                                                               <VBox.margin>
-                                                                  <Insets bottom="510.0" />
-                                                               </VBox.margin>
-                                                            </HBox>
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </AnchorPane>
-                                            </items>
-                                          </SplitPane>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -580,21 +417,6 @@
                                           <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
-                                       <children>
-                                          <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
-                                            <columns>
-                                              <TableColumn fx:id="driverLocationColumn" minWidth="50.0" prefWidth="280.14288330078125" text="orderLocation" />
-                                              <TableColumn fx:id="driverStatusColumn" minWidth="0.0" prefWidth="373.85711669921875" text="orderStatus" />
-                                                <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
-                                            </columns>
-                                          </TableView>
-                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="content-area-manager" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></JFXButton>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="statisticsPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="950.0" visible="false">
                                        <children>
                                           <StackedBarChart layoutX="-376.0" layoutY="-2.0" prefHeight="502.0" prefWidth="625.0" stylesheets="@CSS/barChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="-2.0">
@@ -607,7 +429,7 @@
                                           </StackedBarChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0">
+                                    <AnchorPane fx:id="orderPane" focusTraversable="true" prefHeight="503.0" prefWidth="950.0" visible="false">
                                        <children>
                                           <HBox layoutX="1.0" layoutY="-5.0" prefHeight="504.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
@@ -720,6 +542,191 @@
                                           <URL value="@CSS/tableView.css" />
                                        </stylesheets>
                                     </AnchorPane>
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                                       <children>
+                                          <SplitPane dividerPositions="0.7890295358649789" layoutX="3.0" layoutY="1.0" prefHeight="498.0" prefWidth="950.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="753.0" style="-fx-background-color: #E3EFEC;" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                                                   <children>
+                                                      <GridPane prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <JFXButton fx:id="tShirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#tShirtSelect" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/tShirt.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="pantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#pantsSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Jeans.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="skirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#skirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="132.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Rock.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="pantiesButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectPanties" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="121.0" fitWidth="163.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/UnterHose.png" />
+                                                                     </image></ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="sockButt" contentDisplay="GRAPHIC_ONLY" onAction="#sockSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Socken.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="shirtButt" contentDisplay="GRAPHIC_ONLY" onAction="#shirtSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Hemd.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="dressButt" contentDisplay="GRAPHIC_ONLY" onAction="#dressSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Kleid.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="blazerButt" contentDisplay="GRAPHIC_ONLY" onAction="#blazerSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/Blazer.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="dressPantsButt" contentDisplay="GRAPHIC_ONLY" onAction="#selectdressPants" prefHeight="200.0" prefWidth="200.0" text="Button" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="169.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@images/HoseAnzug.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="219.0" style="-fx-background-color: #E3EFEC;" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                                                   <children>
+                                                      <VBox layoutX="-1.0" layoutY="427.0" prefHeight="31.0" prefWidth="197.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="427.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="200.0" styleClass="menu-bar-search-field-box">
+                                                               <children>
+                                                                  <FontAwesomeIcon iconName="SEARCH" size="1.5em" styleClass="menu-bar-btns-icon" />
+                                                                  <TextField fx:id="searchBarTF1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="153.0" promptText="Enter mail" style="-fx-background-color: transparent; -fx-prompt-text-fill: #5B7B72;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                                     <font>
+                                                                        <Font name="Calibri" size="16.0" />
+                                                                     </font>
+                                                                  </TextField>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="20.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER" prefHeight="84.0" prefWidth="226.0">
+                                                               <children>
+                                                                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#newInvoice" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <FontAwesomeIcon iconName="CHECK" size="2em" styleClass="content-area-circle-btns-icon" />
+                                                                     </graphic>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" right="5.0" />
+                                                                     </HBox.margin>
+                                                                  </JFXButton>
+                                                                  <JFXButton fx:id="cancelButt" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#doCancellation" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns" text="Button">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="12.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <FontAwesomeIcon fontSmoothingType="LCD" iconName="CLOSE" size="2em" styleClass="content-area-circle-btns-icon" />
+                                                                     </graphic>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </JFXButton>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <TableView fx:id="orderTable" prefHeight="425.0" prefWidth="197.0" stylesheets="@CSS/tableView.css">
+                                                        <columns>
+                                                          <TableColumn fx:id="itemColumn" prefWidth="95.71435546875" text="Item">
+                                                               <styleClass>
+                                                                  <String fx:value="sidebar-btn" />
+                                                                  <String fx:value="table-view" />
+                                                               </styleClass>
+                                                            </TableColumn>
+                                                          <TableColumn fx:id="priceColumn" prefWidth="98.28564453125" text="Price">
+                                                               <styleClass>
+                                                                  <String fx:value="sidebar-btn" />
+                                                                  <String fx:value="table-view" />
+                                                               </styleClass>
+                                                            </TableColumn>
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                       <children>
+                                          <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                            <columns>
+                                              <TableColumn fx:id="driverLocationColumn" minWidth="50.0" prefWidth="280.14288330078125" text="orderLocation" />
+                                              <TableColumn fx:id="driverStatusColumn" minWidth="0.0" prefWidth="373.85711669921875" text="orderStatus" />
+                                                <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="content-area-manager" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></JFXButton>
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </StackPane>
                            </children>
@@ -736,82 +743,6 @@
          <children>
             <StackPane fx:id="stackedSideBar" prefHeight="650.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="locationsButton" onAction="#openLocationPane" text="LOCATIONS">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
                   <VBox fx:id="sideBarManager" alignment="TOP_CENTER" focusTraversable="true" prefHeight="659.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
                      <children>
                         <AnchorPane>
@@ -1028,9 +959,85 @@
                            </padding>
                            <children>
                               <FontAwesomeIcon iconName="MALE" size="1.75em" />
-                              <JFXButton fx:id="customersButt" onAction="#openCustomerPane" text="CUSTOMERS">
+                              <JFXButton fx:id="customersButt" onAction="#openCustomerPane" prefHeight="30.0" prefWidth="102.0" text="CUSTOMERS">
                                  <graphic>
                                     <FontAwesomeIcon iconName="FEMALE" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                     <children>
+                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@images/art-markiv-zAm1sdicGXc-unsplash_DRIVER.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="48.0" text="Driver" textAlignment="CENTER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="workflowButton" onAction="#openWorkFlowPane" text="WORKFLOW">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="SITEMAP" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="locationsButton" onAction="#openLocationPane" text="LOCATIONS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="MAP_MARKER" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="calendarButton" onAction="#openCalenderPane" text="CALENDAR">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="CALENDAR" size="1.5em" />
                                  </graphic>
                                  <font>
                                     <Font name="Consolas Bold" size="13.0" />

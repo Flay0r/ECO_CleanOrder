@@ -46,7 +46,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
     @FXML
-    private JFXButton updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXButton sendOrderToArchive, updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane orderDetails, addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -110,7 +110,8 @@ public class MainController implements Initializable {
     @FXML
     void orderClicked(ActionEvent event) {
         unsee();
-        contentLabel.setText("Manage/seek orders");
+        contentLabel.setText("Manage orders");
+        sendOrderToArchive.setVisible(true);
         orderPane.setVisible(true);
         newOrderButton.setVisible(true);
     }
@@ -191,6 +192,7 @@ public class MainController implements Initializable {
         orderPane.setVisible(false);
         addNewCustomer.setVisible(false);
         orderDetails.setVisible(false);
+        sendOrderToArchive.setVisible(false);
         contentLabel.setText("");
     }
 
@@ -294,6 +296,7 @@ public class MainController implements Initializable {
     @FXML
     public void driverUI() {
         sideBarDriver.toFront();
+        sendOrderToArchive.setVisible(false);
     }
 
     @FXML
