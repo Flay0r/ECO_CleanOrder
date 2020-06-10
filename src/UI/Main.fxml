@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
@@ -106,7 +107,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" focusTraversable="true" layoutX="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="950.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label fx:id="contentLabel" prefHeight="28.0" prefWidth="713.0" styleClass="lbl2" text="Welcome to the solution" textFill="#757373">
+                              <Label fx:id="contentLabel" prefHeight="36.0" prefWidth="690.0" styleClass="lbl2" text="Welcome to the solution" textFill="#757373">
                                  <font>
                                     <Font name="Consolas Bold Italic" size="28.0" />
                                  </font>
@@ -114,25 +115,52 @@
                                     <FontAwesomeIcon iconName="MAP_MARKER" />
                                  </graphic>
                               </Label>
-                              <JFXButton fx:id="sendOrderToArchive" prefHeight="27.0" prefWidth="173.0" styleClass="content-area-circle-btns" text="Checkout Order">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="SEND_ALT" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                 </graphic>
-                              </JFXButton>
-                              <JFXButton fx:id="newOrderButton" onAction="#openNewOrderPane" prefHeight="27.0" prefWidth="119.0" styleClass="content-area-circle-btns" text="New Order">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
-                                 </graphic>
-                                 <HBox.margin>
-                                    <Insets left="10.0" right="1.0" />
-                                 </HBox.margin>
-                              </JFXButton>
+                              <VBox>
+                                 <children>
+                                    <JFXButton fx:id="sendOrderToArchive" prefHeight="27.0" prefWidth="242.0" styleClass="content-area-circle-btns" text="Checkout Order">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="SEND_ALT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets top="33.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updater" onAction="#driverShiftWorkflow" prefHeight="27.0" prefWidth="242.0" styleClass="content-area-circle-btns" text="UpdateStats">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="SEND_ALT" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets right="2.0" top="-27.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="0.0" prefWidth="235.0">
+                                 <children>
+                                    <JFXButton fx:id="newOrderButton" onAction="#openNewOrderPane" prefHeight="27.0" prefWidth="209.0" styleClass="content-area-circle-btns" text="New Order">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon iconName="CIRCLE" size="1.2em" styleClass="content-area-circle-btns-icon" />
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets right="2.0" top="33.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXRadioButton fx:id="updateStatusButt" onAction="#toogleSelection" prefHeight="27.0" prefWidth="223.0" text="Change Multi Orders">
+                                       <VBox.margin>
+                                          <Insets right="2.0" top="-27.0" />
+                                       </VBox.margin>
+                                    </JFXRadioButton>
+                                 </children>
+                              </VBox>
                            </children>
                         </HBox>
                      </children>
@@ -721,10 +749,6 @@
                                                 <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
                                             </columns>
                                           </TableView>
-                                          <JFXButton layoutX="816.0" layoutY="2.0" prefHeight="30.0" prefWidth="134.0" styleClass="content-area-manager" text="Update Status" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="816.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></JFXButton>
                                        </children>
                                     </AnchorPane>
                                  </children>

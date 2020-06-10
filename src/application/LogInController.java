@@ -55,7 +55,7 @@ public class LogInController implements Initializable {
             startDashBoard();
             c.closeWindow(loginButton);
         } else {
-            System.out.println("login failed");
+            validatorLabel.setText("Login Failed");
         }
     }
 

@@ -2,6 +2,7 @@ package application;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXRadioButton;
 import domain.Item;
 import domain.OrderViewObj;
 import domain.SessionUser;
@@ -27,14 +28,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.CSS;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainController implements Initializable {
     @FXML
@@ -45,8 +46,12 @@ public class MainController implements Initializable {
     private HBox menubar, ContentArea;
     @FXML
     private TextField searchBarTF, searchOrderNumber, searchBarTF1, searchMail, searchBillingName, searchStoreID, searchStatus, searchOrderNumber1, searchStatus1, searchMail1, searchBillingName1, searchStoreID1;
+
     @FXML
-    private JFXButton sendOrderToArchive, updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
+    private JFXRadioButton updateStatusButt;
+
+    @FXML
+    private JFXButton updater, sendOrderToArchive, updateButt, cancelButt, skirtButt, pantsButt, pantiesButt, dressButt, shirtButt, tShirtButt, blazerButt, sockButt, dressPantsButt, newOrderButton, userProfile, logoutButton, orderPaneOrderButton, mailSearch, orderPaneOrderButton1, mailSearch1, orderButton, workflowButton, locationsButton, calendarButton, staffButton, statisticsButton, usersProfiles;
     @FXML
     private AnchorPane orderDetails, addNewCustomer, allThePanesAreHere, statisticsPane, orderPane, staffPane, workFlowPane, calendarPane, locationPane, adminUsersPane, newOrderPane;
     @FXML
@@ -85,6 +90,7 @@ public class MainController implements Initializable {
     TableColumn searchOrderNoColumn, searchCustomerColumn, searchDateColumn, searchTotalPriceColumn, searchStatusColumn, searchLocationColumn;
     @FXML
     TableView<OrderViewObj> driverTableview;
+
     @FXML
     TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn;
 
@@ -93,6 +99,7 @@ public class MainController implements Initializable {
     private static ObservableList<Item> orderList = FXCollections.observableArrayList();
     private static ObservableList<OrderViewObj> invoiceList = FXCollections.observableArrayList();
     private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
+    private static ObservableList<TablePosition> selectedCells = FXCollections.observableArrayList();
 
     @FXML
     void openNewOrderPane(ActionEvent event) {
@@ -286,17 +293,49 @@ public class MainController implements Initializable {
     @FXML
     public void managerUI() {
         sideBarManager.toFront();
+        updateStatusButt.setVisible(false);
+        updater.setVisible(false);
     }
 
     @FXML
     public void assistantUI() {
         sideBarAssistant.toFront();
+        updater.setVisible(false);
+        updateStatusButt.setVisible(false);
     }
 
     @FXML
     public void driverUI() {
         sideBarDriver.toFront();
         sendOrderToArchive.setVisible(false);
+        newOrderButton.setVisible(false);
+        updateStatusButt.setVisible(true);
+        updater.setVisible(true);
+        sendOrderToArchive.setVisible(false);
+    }
+
+    @FXML
+    public void toogleSelection() {
+        driverTableview.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
+
+    @FXML
+    public void driverShiftWorkflow(ActionEvent evevnt){
+        ObservableList<OrderViewObj> selectedItems = driverTableview.getSelectionModel().getSelectedItems();
+        System.out.println(selectedItems.get(0).getInvoiceID());
+        System.out.println(selectedItems.get(1).getCustomerName());
+
+        // TEST
+        ArrayList<OrderViewObj> selectedIDs = new ArrayList<OrderViewObj>();
+        for (OrderViewObj row : selectedItems) {
+//            selectedIDs.add(row.get(0)); Have Fun triggering Logic
+        }
+
+        ListIterator<OrderViewObj> iterator = selectedIDs.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
     }
 
     @FXML
