@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * The type Log in controller.
+ */
 public class LogInController implements Initializable {
     @FXML
     private Label validatorLabel;
@@ -28,6 +31,11 @@ public class LogInController implements Initializable {
     @FXML
     private JFXPasswordField passwordTF;
 
+    /**
+     * Get session user session user.
+     *
+     * @return the session user
+     */
     public static SessionUser getSessionUser(){
         return currentUser;
     }
@@ -38,6 +46,11 @@ public class LogInController implements Initializable {
 
     }
 
+    /**
+     * Btn login.
+     *
+     * @throws Exception the exception
+     */
     @FXML
     public void btn_login() throws Exception {
         currentUser.password = passwordTF.getText();
@@ -76,6 +89,9 @@ public class LogInController implements Initializable {
         return result;
     }
 
+    /**
+     * Save position.
+     */
     public void savePosition() {
         DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
         try {
@@ -87,6 +103,12 @@ public class LogInController implements Initializable {
         System.out.println("saving position: " + currentUser.position);
     }
 
+    /**
+     * Start dash board stage.
+     *
+     * @return the stage
+     * @throws Exception the exception
+     */
     @FXML
     public Stage startDashBoard() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/UI/Main.fxml"));

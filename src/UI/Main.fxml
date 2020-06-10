@@ -344,71 +344,6 @@
                                              </opaqueInsets>
                                           </SplitPane>
                                        </children></AnchorPane>
-                                    <AnchorPane fx:id="addNewCustomer" onDragDetected="#openCustomerPane" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="231.0" spacing="5.0" styleClass="menu-bar-search-field-box" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="225.0">
-                                             <children>
-                                                <FontAwesomeIcon iconName="TTY" size="2em" styleClass="menu-bar-btns-icon">
-                                                   <HBox.margin>
-                                                      <Insets left="2.0" />
-                                                   </HBox.margin>
-                                                </FontAwesomeIcon>
-                                                <TextField fx:id="addCUSPhoneTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Phone" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="CHILD" size="2em" styleClass="menu-bar-btns-icon">
-                                                   <HBox.margin>
-                                                      <Insets left="2.0" />
-                                                   </HBox.margin>
-                                                </FontAwesomeIcon>
-                                                <TextField fx:id="addCUSFullNameTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="FUllName" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="SLACK" size="2em" styleClass="menu-bar-btns-icon">
-                                                   <HBox.margin>
-                                                      <Insets left="2.0" />
-                                                   </HBox.margin>
-                                                </FontAwesomeIcon>
-                                                <TextField fx:id="addCUSHomelocationTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="HomeLocation" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
-                                             <children>
-                                                <FontAwesomeIcon iconName="AT" size="2em" styleClass="menu-bar-btns-icon">
-                                                   <HBox.margin>
-                                                      <Insets left="2.0" />
-                                                   </HBox.margin>
-                                                </FontAwesomeIcon>
-                                                <TextField fx:id="addCUSMailTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Email" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
-                                                   <font>
-                                                      <Font name="Calibri" size="16.0" />
-                                                   </font>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
-                                          <Label layoutX="333.0" layoutY="85.0" styleClass="anotherLabel" text="Please enter the Details">
-                                             <font>
-                                                <Font name="System Bold" size="16.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -570,7 +505,7 @@
                                           <URL value="@CSS/tableView.css" />
                                        </stylesheets>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                                    <AnchorPane fx:id="newOrderPane" prefHeight="485.0" prefWidth="950.0" stylesheets="@CSS/Stylesheet_Dashboard.css" visible="false">
                                        <children>
                                           <SplitPane dividerPositions="0.7890295358649789" layoutX="3.0" layoutY="1.0" prefHeight="498.0" prefWidth="950.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
@@ -740,7 +675,7 @@
                                           </SplitPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
                                        <children>
                                           <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                             <columns>
@@ -749,6 +684,71 @@
                                                 <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
                                             </columns>
                                           </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="addNewCustomer" onDragDetected="#openCustomerPane" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="231.0" spacing="5.0" styleClass="menu-bar-search-field-box" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="225.0">
+                                             <children>
+                                                <FontAwesomeIcon iconName="TTY" size="1.5em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSPhoneTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Phone" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="212.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="CHILD" size="2em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSFullNameTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="173.0" promptText="FUllName" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="SLACK" size="1.5em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSHomelocationTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="171.0" promptText="HomeLocation" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" spacing="5.0" styleClass="menu-bar-search-field-box">
+                                             <children>
+                                                <FontAwesomeIcon iconName="AT" size="1.6em" styleClass="menu-bar-btns-icon">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="addCUSMailTF" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" promptText="Email" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="333.0" layoutY="85.0" styleClass="anotherLabel" text="Please enter the Details">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
                                        </children>
                                     </AnchorPane>
                                  </children>
