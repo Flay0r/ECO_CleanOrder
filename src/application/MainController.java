@@ -411,6 +411,9 @@ public class MainController implements Initializable {
                 for (Item i : orderList) {
                     DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
                 }
+                DatabaseConnector.insert("insert into OrderChain(InvoiceID, FromSubsidiaryID, ToSubsidiaryID, TimeDate, EmployeeID)" +
+                        "values (" + InvoiceID + "," + subsidiaryID + ", " + subsidiaryID + ",'" + dtf.format(now) + "'," + currentUser.id + ")");
+
                 orderList.clear();
                 searchBarTF1.setText("");
 
@@ -504,7 +507,6 @@ public class MainController implements Initializable {
         }
     }
 
-    //TODO put into databse correspondence
     public static void loadItemsFromDb(){
         System.out.println("--> loadItemFromDb()");
 
