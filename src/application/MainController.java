@@ -96,6 +96,11 @@ public class MainController implements Initializable {
         orderList.clear();
 
     }
+    @FXML
+    void addCustomer(){
+        //Code goes here TODO
+
+    }
 
     /**
      * Open order pane.
@@ -199,9 +204,9 @@ public class MainController implements Initializable {
         contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
         workFlowPane.toFront();
-        if(currentUser.id == 2 || currentUser.id ==1){
-            newOrderButton.setVisible(true);
-        }
+        newOrderButton.setVisible(false);
+        updater.setVisible(true);
+        updateStatusButt.setVisible(true);
 
     }
 
@@ -235,6 +240,8 @@ public class MainController implements Initializable {
         addNewCustomer.setVisible(false);
         orderDetails.setVisible(false);
         sendOrderToArchive.setVisible(false);
+        updater.setVisible(false);
+        updateStatusButt.setVisible(false);
         contentLabel.setText("");
     }
 

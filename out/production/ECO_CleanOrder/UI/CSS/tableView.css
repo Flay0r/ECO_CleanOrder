@@ -71,6 +71,17 @@
     -fx-background-color: #6f968d;
     -fx-fill: #6c877f;
 }
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal{
+    -fx-background-color: #BAECE0;
+    -fx-fill: #abd1c6;
+    -fx-border-color: #004643;
+    -fx-border-width: 0.1;
+    -fx-border-radius: 3px 2px 1px;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .thumb{
+    -fx-background-color: #6f968d;
+    -fx-fill: #6c877f;
+}
 
 .table-view > .virtual-flow > .scroll-bar > .increment-button,
 .table-view > .virtual-flow > .scroll-bar > .decrement-button {
