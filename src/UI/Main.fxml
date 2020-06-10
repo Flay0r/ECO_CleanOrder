@@ -337,7 +337,7 @@
                                             <items>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="753.0" style="-fx-background-color: #E3EFEC;" stylesheets="@CSS/Stylesheet_Dashboard.css">
                                                    <children>
-                                                      <GridPane prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <GridPane prefHeight="498.0" prefWidth="753.0" style="-fx-background-color: transparent; -fx-border-color: #E3EFEC;" stylesheets="@CSS/Stylesheet_Dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                         <columnConstraints>
                                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.71435546875" minWidth="10.0" prefWidth="200.0" />
                                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="561.7142333984375" minWidth="10.0" prefWidth="200.0" />
@@ -936,65 +936,6 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox fx:id="sideBarAssistant" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
-                           <image>
-                              <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
-                           </image>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="71.0" text="Assistant" textAlignment="CENTER" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
-                           <font>
-                              <Font name="Calibri Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <JFXButton fx:id="orderButton" onAction="#orderClicked" text="ORDERS">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="BARCODE" size="1.5em" wrappingWidth="25.7857666015625" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                           <children>
-                              <FontAwesomeIcon iconName="MALE" size="1.75em" />
-                              <JFXButton fx:id="customersButt" onAction="#openCustomerPane" prefHeight="30.0" prefWidth="102.0" text="CUSTOMERS">
-                                 <graphic>
-                                    <FontAwesomeIcon iconName="FEMALE" size="1.5em" />
-                                 </graphic>
-                                 <font>
-                                    <Font name="Consolas Bold" size="13.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
                   <VBox fx:id="sideBarDriver" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
                      <children>
                         <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
@@ -1067,6 +1008,68 @@
                                     <Font name="Consolas Bold" size="13.0" />
                                  </font>
                               </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBarAssistant" alignment="TOP_CENTER" focusTraversable="true" prefHeight="650.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@CSS/Stylesheet_Dashboard.css">
+                     <children>
+                        <ImageView fitHeight="74.0" fitWidth="93.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@images/nick-de-partee-5DLBoEX99Cs-unsplash_SHOPASSIS.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="71.0" text="Assistant" textAlignment="CENTER" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Main" textFill="#b8b1b1">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="orderButton" onAction="#orderClicked" text="ORDERS">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="BARCODE" size="1.5em" wrappingWidth="25.7857666015625" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="customersButt" onAction="#openCustomerPane" prefHeight="30.0" prefWidth="110.0" text="CUSTOMERS+">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="FEMALE" size="1.5em" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Consolas Bold" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <FontAwesomeIcon iconName="MALE" size="1.75em" text="" />
                            </children>
                         </HBox>
                      </children>
