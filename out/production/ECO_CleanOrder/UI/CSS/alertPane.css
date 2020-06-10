@@ -5,7 +5,7 @@
 .button{
     -fx-text-alignment: center;
     -fx-background-radius: 0;
-    -fx-text-fill: #2e7575;
+    -fx-text-fill: #ffffff;
     -fx-background-color: rgba(74, 84, 95, 0.5);
 
 }
@@ -13,7 +13,7 @@
 .button:hover{
     -fx-background-radius: 0;
     -fx-background-color: WHITE;
-    -fx-text-fill:#004643;
+    -fx-text-fill: #5a8a88;
     -fx-border-color: #BBCCCC;
     -fx-border-width: 0,5px;
     -fx-border-style: solid;
