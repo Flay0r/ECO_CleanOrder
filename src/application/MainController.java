@@ -199,7 +199,7 @@ public class MainController implements Initializable {
         contentLabel.setText("Manage WorkFlow Here");
         workFlowPane.setVisible(true);
         workFlowPane.toFront();
-        if(currentUser.id == 2){
+        if(currentUser.id == 2 || currentUser.id ==1){
             newOrderButton.setVisible(true);
         }
 
@@ -218,7 +218,6 @@ public class MainController implements Initializable {
         addNewCustomer.setVisible(true);
         addNewCustomer.toFront();
         newOrderButton.setVisible(true);
-
     }
 
     /**

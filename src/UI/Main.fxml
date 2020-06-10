@@ -304,22 +304,6 @@
                                           <JFXTimePicker layoutX="296.0" layoutY="426.0" prefHeight="67.0" prefWidth="787.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="426.0" />
                                           <JFXButton layoutX="405.0" layoutY="439.0" prefHeight="25.0" prefWidth="326.0" text="Choose Destination " />
                                        </children></AnchorPane>
-                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TableView layoutX="632.0" prefHeight="501.0" prefWidth="315.0" stylesheets="@CSS/tableView.css">
-                                            <columns>
-                                              <TableColumn prefWidth="85.857177734375" text="Where" />
-                                              <TableColumn prefWidth="77.142822265625" text="What" />
-                                                <TableColumn prefWidth="66.428466796875" text="Why" />
-                                                <TableColumn prefWidth="85.0" text="When" />
-                                            </columns>
-                                          </TableView>
-                                       </children></AnchorPane>
                                     <AnchorPane fx:id="adminUsersPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <TableView editable="true" prefHeight="501.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -641,7 +625,67 @@
                                           </TableView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="addNewCustomer" onDragDetected="#openCustomerPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5010548523206751" layoutX="307.0" layoutY="113.0" prefHeight="501.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="686.0">
+                                                   <children>
+                                                      <TableView fx:id="detailOrderChainTableview" editable="true" layoutX="10.0" layoutY="-1.0" prefHeight="500.0" prefWidth="495.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-23.0" AnchorPane.topAnchor="-1.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colInvoiceID" prefWidth="75.0" text="InvoiceNo" />
+                                                            <TableColumn fx:id="colNewLocation" prefWidth="75.85714721679688" text="Location" />
+                                                            <TableColumn fx:id="colTimeDate" prefWidth="81.857177734375" text="TimeDate" />
+                                                            <TableColumn fx:id="colEmployee" prefWidth="81.857177734375" text="Employee" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="20.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="457.0">
+                                                   <children>
+                                                      <TableView fx:id="detailLaundryListTableview" editable="true" layoutX="-20.0" prefHeight="499.0" prefWidth="490.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colLaundryListID" prefWidth="150.0" text="LaundryList" />
+                                                          <TableColumn fx:id="colAlias" minWidth="0.0" prefWidth="155.5714111328125" text="Item" />
+                                                            <TableColumn fx:id="colInfo" minWidth="0.0" prefWidth="144.4285888671875" text="Info" />
+                                                        </columns>
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </SplitPane>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/All-Months-Calendar-2020-Background-PNG-Image.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView layoutX="632.0" prefHeight="501.0" prefWidth="315.0" stylesheets="@CSS/tableView.css">
+                                            <columns>
+                                              <TableColumn prefWidth="85.857177734375" text="Where" />
+                                              <TableColumn prefWidth="77.142822265625" text="What" />
+                                                <TableColumn prefWidth="66.428466796875" text="Why" />
+                                                <TableColumn prefWidth="85.0" text="When" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                    <AnchorPane fx:id="addNewCustomer" onDragDetected="#openCustomerPane" prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <HBox alignment="CENTER_LEFT" layoutX="333.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="231.0" spacing="5.0" styleClass="menu-bar-search-field-box" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="225.0">
                                              <children>
@@ -704,50 +748,7 @@
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
                                           </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane fx:id="orderDetails" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <SplitPane dividerPositions="0.5010548523206751" layoutX="307.0" layoutY="113.0" prefHeight="501.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="686.0">
-                                                   <children>
-                                                      <TableView fx:id="detailOrderChainTableview" editable="true" layoutX="10.0" layoutY="-1.0" prefHeight="500.0" prefWidth="495.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-23.0" AnchorPane.topAnchor="-1.0">
-                                                         <columns>
-                                                            <TableColumn fx:id="colInvoiceID" prefWidth="75.0" text="InvoiceNo" />
-                                                            <TableColumn fx:id="colNewLocation" prefWidth="75.85714721679688" text="Location" />
-                                                            <TableColumn fx:id="colTimeDate" prefWidth="81.857177734375" text="TimeDate" />
-                                                            <TableColumn fx:id="colEmployee" prefWidth="81.857177734375" text="Employee" />
-                                                         </columns>
-                                                      </TableView>
-                                                   </children>
-                                                   <padding>
-                                                      <Insets right="20.0" />
-                                                   </padding>
-                                                </AnchorPane>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="457.0">
-                                                   <children>
-                                                      <TableView fx:id="detailLaundryListTableview" editable="true" layoutX="-20.0" prefHeight="499.0" prefWidth="490.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                        <columns>
-                                                          <TableColumn fx:id="colLaundryListID" prefWidth="150.0" text="LaundryList" />
-                                                          <TableColumn fx:id="colAlias" minWidth="0.0" prefWidth="155.5714111328125" text="Item" />
-                                                            <TableColumn fx:id="colInfo" minWidth="0.0" prefWidth="144.4285888671875" text="Info" />
-                                                        </columns>
-                                                         <padding>
-                                                            <Insets left="20.0" />
-                                                         </padding>
-                                                      </TableView>
-                                                   </children>
-                                                </AnchorPane>
-                                            </items>
-                                             <opaqueInsets>
-                                                <Insets />
-                                             </opaqueInsets>
-                                          </SplitPane>
-                                       </children></AnchorPane>
-                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <JFXButton fx:id="customerAddButt" layoutX="333.0" layoutY="262.0" onAction="#addCustomer" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: #89B9AC; -fx-background-radius: 0;" text="ADD" />
                                        </children>
                                     </AnchorPane>
                                  </children>
