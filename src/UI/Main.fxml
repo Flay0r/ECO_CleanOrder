@@ -32,7 +32,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -712,13 +712,12 @@
                                             <items>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="686.0">
                                                    <children>
-                                                      <TableView editable="true" layoutX="10.0" layoutY="-1.0" prefHeight="500.0" prefWidth="495.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-23.0" AnchorPane.topAnchor="-1.0">
+                                                      <TableView fx:id="detailOrderChainTableview" editable="true" layoutX="10.0" layoutY="-1.0" prefHeight="500.0" prefWidth="495.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-23.0" AnchorPane.topAnchor="-1.0">
                                                          <columns>
-                                                            <TableColumn fx:id="colInvoiveID" prefWidth="75.0" text="InvoiceNo" />
-                                                            <TableColumn fx:id="colCUS" prefWidth="108.14285278320312" text="From" />
-                                                            <TableColumn fx:id="colTimeDate" prefWidth="75.85714721679688" text="To" />
-                                                            <TableColumn fx:id="colTotalPrice" prefWidth="81.857177734375" text="TimeDate" />
-                                                            <TableColumn fx:id="colSubsidiaryID" prefWidth="111.0" text="Washing Style" />
+                                                            <TableColumn fx:id="colInvoiceID" prefWidth="75.0" text="InvoiceNo" />
+                                                            <TableColumn fx:id="colNewLocation" prefWidth="75.85714721679688" text="Location" />
+                                                            <TableColumn fx:id="colTimeDate" prefWidth="81.857177734375" text="TimeDate" />
+                                                            <TableColumn fx:id="colEmployee" prefWidth="81.857177734375" text="Employee" />
                                                          </columns>
                                                       </TableView>
                                                    </children>
@@ -728,10 +727,10 @@
                                                 </AnchorPane>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="457.0">
                                                    <children>
-                                                      <TableView editable="true" layoutX="-20.0" prefHeight="499.0" prefWidth="490.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <TableView fx:id="detailLaundryListTableview" editable="true" layoutX="-20.0" prefHeight="499.0" prefWidth="490.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
-                                                          <TableColumn fx:id="colLaundryList" prefWidth="150.0" text="LaundryList" />
-                                                          <TableColumn fx:id="colItemID" minWidth="0.0" prefWidth="155.5714111328125" text="ItemID" />
+                                                          <TableColumn fx:id="colLaundryListID" prefWidth="150.0" text="LaundryList" />
+                                                          <TableColumn fx:id="colAlias" minWidth="0.0" prefWidth="155.5714111328125" text="Item" />
                                                             <TableColumn fx:id="colInfo" minWidth="0.0" prefWidth="144.4285888671875" text="Info" />
                                                         </columns>
                                                          <padding>

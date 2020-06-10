@@ -72,9 +72,11 @@
     -fx-fill: #6c877f;
 }
 
-
-
 .table-view > .virtual-flow > .scroll-bar > .increment-button,
 .table-view > .virtual-flow > .scroll-bar > .decrement-button {
     -fx-opacity: 0;
+}
+
+.split-pane:horizontal .split-pane-divider{
+    -fx-background-color: transparent;
 }

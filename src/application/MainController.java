@@ -1,6 +1,8 @@
 package application;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import domain.*;
 import com.jfoenix.controls.JFXRadioButton;
 import domain.Item;
 import domain.OrderViewObj;
@@ -42,15 +44,21 @@ public class MainController implements Initializable {
     private static ObservableList<Item> orderList = FXCollections.observableArrayList();
     private static ObservableList<OrderViewObj> invoiceList = FXCollections.observableArrayList();
     private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
+    private static ObservableList<DetailLaundryListObj> detailsLaundryList = FXCollections.observableArrayList();
+    private static ObservableList<DetailOrderChainObj> detailsChainList = FXCollections.observableArrayList();
 
     @FXML
     TableView<Item> orderTable;
     @FXML
     TableView<OrderViewObj> searchOrderTableview, driverTableview;
     @FXML
+    TableView<DetailLaundryListObj> detailLaundryListTableview;
+    @FXML
+    TableView<DetailOrderChainObj> detailOrderChainTableview;
+    @FXML
     TableColumn searchOrderNoColumn,searchCustomerColumn, searchDateColumn, searchTotalPriceColumn, searchStatusColumn, searchLocationColumn, itemColumn, priceColumn;
     @FXML
-    TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn;
+    TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn, colInvoiceID, colNewLocation, colTimeDate, colEmployee, colLaundryListID, colAlias, colInfo;
     @FXML
     private TextField searchBarTF1;
     @FXML
@@ -65,86 +73,11 @@ public class MainController implements Initializable {
     private Label contentLabel;
 
     /**
-     * Load items from db.
-     */
-    public static void loadItemsFromDb() {
-        System.out.println("--> loadItemFromDb()");
-
-        String sql = "select ItemID, Alias, Price from Items";
-        String Alias = "";
-        int ItemID = 0;
-        float Price = 0;
-
-        DatabaseConnector.query(sql);
-        items.clear();
-
-        try {
-            DatabaseConnector.getResultSet().next();
-            do {
-                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
-                Alias = DatabaseConnector.getResultSet().getString("Alias");
-                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
-
-                items.add(new Item(ItemID, Alias, Price));
-            } while (DatabaseConnector.getResultSet().next());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("loadItemsFromDb encountered a problem");
-            return;
-        }
-        System.out.println("--> loadItemFromDb successful");
-    }
-
-    /**
      * Copies all order entries into the Invoice observable list.
      * And takes information for status 1 and 5 (from shop and to shop) into the driverslist.
      *
      */
-    public static void loadOrdersFromDb() {
-        System.out.println("--> loadOrderFromDb");
 
-        int InvoiceID = 0;
-        int CustomerID = 0;
-        String TimeDate = "";
-        double TotalPrice = 0;
-        int SubsidiaryID = 0;
-        int StageID = 0;
-        String FullName = "";
-        String Subsidiary = "";
-        String Status = "";
-
-        invoiceList.clear();
-        driverList.clear();
-
-        DatabaseConnector.query("select * from OrderViewObjects");
-
-        try {
-            DatabaseConnector.getResultSet().next();
-            do {
-                InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
-                CustomerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
-                TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
-                TotalPrice = Double.parseDouble(DatabaseConnector.getResultSet().getString("TotalPrice"));
-                SubsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
-                StageID = Integer.parseInt(DatabaseConnector.getResultSet().getString("StageID"));
-
-                FullName = DatabaseConnector.getResultSet().getString("FullName");
-                Subsidiary = DatabaseConnector.getResultSet().getString("Subsidiary");
-                Status = DatabaseConnector.getResultSet().getString("Status");
-
-                invoiceList.add(new OrderViewObj(InvoiceID, CustomerID, TimeDate, TotalPrice, SubsidiaryID, StageID, FullName, Subsidiary, Status));
-            } while (DatabaseConnector.getResultSet().next());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("empty resultset for loadOrderFromDb");
-        }
-
-        for (OrderViewObj o : invoiceList) {
-            if (o.getStageID() == 1 || o.getStageID() == 5) {
-                driverList.add(o);
-            }
-        }
-    }
 
     /**
      * Open new order pane.
@@ -341,7 +274,40 @@ public class MainController implements Initializable {
                             OrderViewObj selection = searchOrderTableview.getSelectionModel().getSelectedItem();
                             openOrderDetails();
 
+                            detailsChainList.clear();
+                            detailsLaundryList.clear();
 
+                            DatabaseConnector.query("select * from DetailOrderChain where InvoiceID=" + selection.getInvoiceID());
+                            try {
+                                DatabaseConnector.getResultSet().next();
+                                do {
+                                    int InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                                    int LocationID = Integer.parseInt(DatabaseConnector.getResultSet().getString("LocationID"));;
+                                    String TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
+                                    int EmployeeID = Integer.parseInt(DatabaseConnector.getResultSet().getString("EmployeeID"));;
+                                    String NewLocation = DatabaseConnector.getResultSet().getString("NewLocation");
+                                    String FullName = DatabaseConnector.getResultSet().getString("FullName");
+
+                                    detailsChainList.add(new DetailOrderChainObj(InvoiceID, LocationID,TimeDate,EmployeeID,NewLocation,FullName));
+                                } while (DatabaseConnector.getResultSet().next());
+                            } catch (SQLException e){
+                                e.printStackTrace();
+                            }
+
+                            DatabaseConnector.query("select * from DetailLaundryList where InvoiceID=" + selection.getInvoiceID());
+                            try {
+                                DatabaseConnector.getResultSet().next();
+                                do {
+                                    int LaundryListID = Integer.parseInt(DatabaseConnector.getResultSet().getString("LaundryListID"));
+                                    int InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                                    int ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                                    String Alias = DatabaseConnector.getResultSet().getString("Alias");
+
+                                    detailsLaundryList.add(new DetailLaundryListObj(LaundryListID, InvoiceID, ItemID, Alias));
+                                } while (DatabaseConnector.getResultSet().next());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }
@@ -360,7 +326,6 @@ public class MainController implements Initializable {
         orderDetails.setVisible(true);
         orderDetails.toFront();
         newOrderButton.setVisible(true);
-
     }
 
     /**
@@ -599,8 +564,8 @@ public class MainController implements Initializable {
                 for (Item i : orderList) {
                     DatabaseConnector.insert("insert into LaundryList values (" + InvoiceID + "," + i.getItemID() + ",'')");
                 }
-                DatabaseConnector.insert("insert into OrderChain(InvoiceID, FromSubsidiaryID, ToSubsidiaryID, TimeDate, EmployeeID)" +
-                        "values (" + InvoiceID + "," + subsidiaryID + ", " + subsidiaryID + ",'" + dtf.format(now) + "'," + currentUser.id + ")");
+                DatabaseConnector.insert("insert into OrderChain(InvoiceID, NewLocation, TimeDate, EmployeeID)" +
+                        "values (" + InvoiceID + "," + subsidiaryID + ",'" + dtf.format(now) + "'," + currentUser.id + ")");
 
                 orderList.clear();
                 searchBarTF1.setText("");
@@ -741,6 +706,81 @@ public class MainController implements Initializable {
         }
     }
 
+    public static void loadItemsFromDb(){
+        System.out.println("--> loadItemFromDb()");
+
+        String sql = "select ItemID, Alias, Price from Items";
+        String Alias="";
+        int ItemID=0;
+        float Price=0;
+
+        DatabaseConnector.query(sql);
+        items.clear();
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do
+            {
+                ItemID = Integer.parseInt(DatabaseConnector.getResultSet().getString("ItemID"));
+                Alias = DatabaseConnector.getResultSet().getString("Alias");
+                Price = Float.parseFloat(DatabaseConnector.getResultSet().getString("Price"));
+
+                items.add(new Item(ItemID, Alias, Price));
+            } while(DatabaseConnector.getResultSet().next());
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("loadItemsFromDb encountered a problem");
+            return;
+        }
+        System.out.println("--> loadItemFromDb successful");
+    }
+
+    public static void loadOrdersFromDb(){
+        System.out.println("--> loadOrderFromDb");
+
+        int InvoiceID=0;
+        int CustomerID=0;
+        String TimeDate="";
+        double TotalPrice=0;
+        int SubsidiaryID=0;
+        int StageID=0;
+        String FullName="";
+        String Subsidiary="";
+        String Status="";
+
+        invoiceList.clear();
+        driverList.clear();
+
+        DatabaseConnector.query("select * from OrderViewObjects");
+
+        try{
+            DatabaseConnector.getResultSet().next();
+            do {
+                InvoiceID = Integer.parseInt(DatabaseConnector.getResultSet().getString("InvoiceID"));
+                CustomerID = Integer.parseInt(DatabaseConnector.getResultSet().getString("CustomerID"));
+                TimeDate = DatabaseConnector.getResultSet().getString("TimeDate");
+                TotalPrice = Double.parseDouble(DatabaseConnector.getResultSet().getString("TotalPrice"));
+                SubsidiaryID = Integer.parseInt(DatabaseConnector.getResultSet().getString("SubsidiaryID"));
+                StageID = Integer.parseInt(DatabaseConnector.getResultSet().getString("StageID"));
+
+                FullName = DatabaseConnector.getResultSet().getString("FullName");
+                Subsidiary = DatabaseConnector.getResultSet().getString("Subsidiary");
+                Status = DatabaseConnector.getResultSet().getString("Status");
+
+                if(StageID!=8) invoiceList.add(new OrderViewObj(InvoiceID, CustomerID, TimeDate, TotalPrice, SubsidiaryID, StageID, FullName, Subsidiary, Status));
+            } while (DatabaseConnector.getResultSet().next());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("empty resultset for loadOrderFromDb");
+        }
+
+        for(OrderViewObj o : invoiceList){
+            if(o.getStageID()==1 || o.getStageID()==5) {
+                driverList.add(o);
+            }
+        }
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -768,5 +808,16 @@ public class MainController implements Initializable {
         driverLocationColumn.setCellValueFactory(new PropertyValueFactory<>("SubsidiaryName"));
         driverOrderNoColumn.setCellValueFactory(new PropertyValueFactory<>("InvoiceID"));
         driverTableview.setItems(driverList);
+
+        colInvoiceID.setCellValueFactory(new PropertyValueFactory<>("InvoiceID"));
+        colNewLocation.setCellValueFactory(new PropertyValueFactory<>("NewLocation"));
+        colTimeDate.setCellValueFactory(new PropertyValueFactory<>("TimeDate"));
+        colEmployee.setCellValueFactory(new PropertyValueFactory<>("FullName"));
+        detailOrderChainTableview.setItems(detailsChainList);
+
+        colLaundryListID.setCellValueFactory(new PropertyValueFactory<>("LaundryListID"));
+        colAlias.setCellValueFactory(new PropertyValueFactory<>("Alias"));
+        colInfo.setCellValueFactory(new PropertyValueFactory<>("Info"));
+        detailLaundryListTableview.setItems(detailsLaundryList);
     }
 }
