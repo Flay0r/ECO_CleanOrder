@@ -97,7 +97,7 @@ public class MainController implements Initializable {
 
     /**
      * Copies all order entries into the Invoice observable list.
-     * And takes information for status 1 & 5 (from shop & to shop) into the driverslist.
+     * And takes information for status 1 and 5 (from shop and to shop) into the driverslist.
      *
      */
     public static void loadOrdersFromDb() {
@@ -529,7 +529,7 @@ public class MainController implements Initializable {
     }
 
     /**
-     * New invoice.
+     * New invoice is created after confirmation. With TimeStamp and DB Entry
      */
     @FXML
     public void newInvoice() {
@@ -615,9 +615,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Pants select.
+     * Pants select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void pantsSelect(ActionEvent event) {
@@ -629,9 +629,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Select panties.
+     * Select panties. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void selectPanties(ActionEvent event) {
@@ -643,9 +643,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Selectdress pants.
+     * Selectdress pants. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void selectdressPants(ActionEvent event) {
@@ -657,9 +657,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Shirt select.
+     * Shirt select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void shirtSelect(ActionEvent event) {
@@ -671,10 +671,11 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Skirt select.
+     * Skirt select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
+
     @FXML
     void skirtSelect(ActionEvent event) {
         for (Item i : items) {
@@ -685,9 +686,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Sock select.
+     * Sock select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void sockSelect(ActionEvent event) {
@@ -699,9 +700,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * T shirt select.
+     * T shirt select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void tShirtSelect(ActionEvent event) {
@@ -713,9 +714,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Blazer select.
+     * Blazer select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void blazerSelect(ActionEvent event) {
@@ -727,9 +728,9 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Dress select.
+     * Dress select. For Invoice creation.
      *
-     * @param event the event
+     * @param event the event of pressing the button
      */
     @FXML
     void dressSelect(ActionEvent event) {
@@ -740,15 +741,6 @@ public class MainController implements Initializable {
         }
     }
 
-    /**
-     * Update location status.
-     *
-     * @param event the event
-     */
-    @FXML
-    void updateLocationStatus(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
