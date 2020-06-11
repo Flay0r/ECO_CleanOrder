@@ -70,7 +70,7 @@ public class DatabaseConnector {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
             System.out.println("preparing statement: OK");
             boolean ok = prpstmt.execute();
-            if (ok) System.out.println("executing statement: OK"); else System.out.println("insert didnt work, but program keeps running");
+            if (ok) System.out.println("executing statement: OK"); else System.out.println("insert: OK");
         } catch ( SQLException e){
             e.printStackTrace();
             System.out.println("insert didnt work, and sql error");

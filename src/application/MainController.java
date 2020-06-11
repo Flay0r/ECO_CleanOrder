@@ -103,9 +103,18 @@ public class MainController implements Initializable {
             String Email = addCUSMailTF.getText();
             String Phone = addCUSPhoneTF.getText();
 
-            DatabaseConnector.insert("insert into Customers values(" + FullName + "," + HomeLocation + "," + Email + "," + Phone + ")");
+            System.out.println(FullName);
+            System.out.println(HomeLocation);
+            System.out.println(Email);
+            System.out.println(Phone);
+
+            DatabaseConnector.insert("insert into Customers values('" + FullName + "','" + HomeLocation + "','" + Email + "','" + Phone + "')");
 
             System.out.println("new user created successfully");
+            addCUSFullNameTF.setText("");
+            addCUSHomelocationTF.setText("");
+            addCUSMailTF.setText("");
+            addCUSPhoneTF.setText("");
         } else {
             System.out.println("new user NOT registered, missing data");
         }
