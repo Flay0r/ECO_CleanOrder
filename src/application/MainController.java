@@ -60,7 +60,7 @@ public class MainController implements Initializable {
     @FXML
     TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn, colInvoiceID, colNewLocation, colTimeDate, colEmployee, colLaundryListID, colAlias, colInfo;
     @FXML
-    private TextField searchBarTF1;
+    TextField searchBarTF1, addCUSFullNameTF, addCUSHomelocationTF, addCUSMailTF, addCUSPhoneTF;
     @FXML
     private JFXRadioButton updateStatusButt;
     @FXML
@@ -77,7 +77,6 @@ public class MainController implements Initializable {
      * And takes information for status 1 and 5 (from shop and to shop) into the driverslist.
      *
      */
-
 
     /**
      * Open new order pane.
@@ -98,7 +97,18 @@ public class MainController implements Initializable {
     }
     @FXML
     void addCustomer(){
-        //Code goes here TODO
+        if(!addCUSFullNameTF.getText().equals("") && !addCUSHomelocationTF.getText().equals("") && !addCUSMailTF.getText().equals("") && !addCUSPhoneTF.getText().equals("")) {
+            String FullName = addCUSFullNameTF.getText();
+            String HomeLocation = addCUSHomelocationTF.getText();
+            String Email = addCUSMailTF.getText();
+            String Phone = addCUSPhoneTF.getText();
+
+            DatabaseConnector.insert("insert into Customers values(" + FullName + "," + HomeLocation + "," + Email + "," + Phone + ")");
+
+            System.out.println("new user created successfully");
+        } else {
+            System.out.println("new user NOT registered, missing data");
+        }
 
     }
 
