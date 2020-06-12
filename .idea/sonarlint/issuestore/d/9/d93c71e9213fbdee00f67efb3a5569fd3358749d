@@ -1,10 +1,9 @@
 
-o	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8„Ñ°§.
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(ªİ‡8„Ñ°§.
-T	java:S106I"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
-U	java:S106W"9Replace this use of System.out or System.err by a logger.(ÅÈèş8œÔ±§.
 £
-java:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÛŒ¦…ıÿÿÿÿ8Û¡»Ï§.
-b	java:S112["FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8„Ñ°§.
-T	java:S106U"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
-Z	java:S106:"9Replace this use of System.out or System.err by a logger.(³Ö»õÿÿÿÿÿ8„Ñ°§.
+java:S1186,"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÛŒ¦…ıÿÿÿÿ8Û¡»Ï§.
+T	java:S106V"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
+b	java:S112q"FDefine and throw a dedicated exception instead of using a generic one.(ÖŒü‹8„Ñ°§.
+T	java:S106e"9Replace this use of System.out or System.err by a logger.(òßŞb8œÔ±§.
+U	java:S106g"9Replace this use of System.out or System.err by a logger.(ÅÈèş8œÔ±§.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(ªİ‡8„Ñ°§.
+o	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ó£Üúÿÿÿÿ8„Ñ°§.

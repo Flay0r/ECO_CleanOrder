@@ -1,11 +1,5 @@
 package domain;
 
-import infrastructure.DatabaseConnector;
-
-import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class OrderViewObj {
     //DB fields
     private int InvoiceID;

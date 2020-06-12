@@ -2,7 +2,6 @@ package infrastructure;
 
 import application.Launch;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
