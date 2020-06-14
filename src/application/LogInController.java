@@ -17,12 +17,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * The type Log in controller.
+ * The LogIn controller class for the LogIn pane.
  */
 public class LogInController implements Initializable {
     @FXML
     private Label validatorLabel;
     private static SessionUser currentUser = new SessionUser();
+    /**
+     * The C.
+     */
     MainController c = new MainController();
     @FXML
     private JFXButton loginButton;
@@ -34,7 +37,7 @@ public class LogInController implements Initializable {
     /**
      * Get session user session user.
      *
-     * @return the session user
+     * @return the current session-user
      */
     public static SessionUser getSessionUser(){
         return currentUser;
@@ -47,12 +50,12 @@ public class LogInController implements Initializable {
     }
 
     /**
-     * Btn login.
+     * Handles the login function with validation
      *
      * @throws Exception the exception
      */
     @FXML
-    public void btn_login() throws Exception {
+    public void handleLogin() throws Exception {
         currentUser.password = passwordTF.getText();
         if (empNoTF.getText().matches("[0-9]+")) {
             currentUser.id = Integer.valueOf(empNoTF.getText());
@@ -64,7 +67,7 @@ public class LogInController implements Initializable {
             savePosition();
             empNoTF.setText("");
             passwordTF.setText("");
-            validatorLabel.setText("LoginSucces");
+            validatorLabel.setText("Login successful");
             startDashBoard();
             c.closeWindow(loginButton);
         } else {
@@ -72,6 +75,11 @@ public class LogInController implements Initializable {
         }
     }
 
+    /**
+    Checks if the given password matches the Password from the database.
+
+    @return boolean, true if the password matches.
+     */
     private boolean comparePassword() {
         boolean result = false;
         DatabaseConnector.query("select * from LogCred where EmployeeID=" + currentUser.id);
@@ -90,7 +98,7 @@ public class LogInController implements Initializable {
     }
 
     /**
-     * Save position.
+     * Saves the position from the one trying to log in.
      */
     public void savePosition() {
         DatabaseConnector.query("select Position from Employees where EmployeeID=" + currentUser.id);
@@ -106,7 +114,7 @@ public class LogInController implements Initializable {
     /**
      * Start dash board stage.
      *
-     * @return the stage
+     * @return the stage from the main dashboard
      * @throws Exception the exception
      */
     @FXML

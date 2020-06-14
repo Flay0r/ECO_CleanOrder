@@ -7,6 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * The usually known as main class.
+ */
 public class Launch extends Application {
     @Override
     public void start(Stage stage) throws Exception {
@@ -18,7 +21,12 @@ public class Launch extends Application {
         stage.show();
         DatabaseConnector.createConnection();
     }
-    
+
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

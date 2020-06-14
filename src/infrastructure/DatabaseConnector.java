@@ -6,13 +6,31 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The JDBC Database connector.
+ */
 public class DatabaseConnector {
 
+    /**
+     * The Con.
+     */
     static Connection con;
+    /**
+     * The Rs.
+     */
     static ResultSet rs;
+    /**
+     * The Rsmd.
+     */
     static ResultSetMetaData rsmd;
+    /**
+     * The Prpstmt.
+     */
     static PreparedStatement prpstmt;
 
+    /**
+     * Create connection.
+     */
     public static void createConnection() {
         try {
             con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ECO_CleanOrder", "sa", "123456");
@@ -23,14 +41,27 @@ public class DatabaseConnector {
         }
     }
 
+    /**
+     * Gets connection.
+     *
+     * @return the connection
+     */
     public static Connection getConnection() {
         return con;
     }
 
+    /**
+     * Get result set result set.
+     *
+     * @return the result set
+     */
     public static ResultSet getResultSet(){
         return rs;
     }
 
+    /**
+     * Manual disconnect.
+     */
     public static void manualDisconnect() {
         try {
             con.close();
@@ -39,6 +70,11 @@ public class DatabaseConnector {
         }
     }
 
+    /**
+     * Query.
+     *
+     * @param sql the sql
+     */
     public static void query(String sql) {
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
@@ -52,6 +88,11 @@ public class DatabaseConnector {
         System.out.println("SELECT: OK");
     }
 
+    /**
+     * Update.
+     *
+     * @param sql the sql
+     */
     public static void update(String sql){
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
@@ -64,6 +105,11 @@ public class DatabaseConnector {
         }
     }
 
+    /**
+     * Insert.
+     *
+     * @param sql the sql
+     */
     public static void insert(String sql){
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
@@ -76,6 +122,11 @@ public class DatabaseConnector {
         }
     }
 
+    /**
+     * Delete.
+     *
+     * @param sql the sql
+     */
     public static void delete(String sql){
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);

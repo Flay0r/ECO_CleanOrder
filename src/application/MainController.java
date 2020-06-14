@@ -35,6 +35,9 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
+/**
+ * The controller for our mainpage logic.
+ */
 public class MainController implements Initializable {
 
     private static SessionUser currentUser;
@@ -44,17 +47,17 @@ public class MainController implements Initializable {
     private static ObservableList<OrderViewObj> driverList = FXCollections.observableArrayList();
     private static ObservableList<DetailLaundryListObj> detailsLaundryList = FXCollections.observableArrayList();
     private static ObservableList<DetailOrderChainObj> detailsChainList = FXCollections.observableArrayList();
-
     @FXML
     TableView<Item> orderTable;
     @FXML
-    TableView<OrderViewObj> searchOrderTableview, driverTableview;
+    TableView<OrderViewObj> searchOrderTableview,
+    driverTableview;
     @FXML
     TableView<DetailLaundryListObj> detailLaundryListTableview;
     @FXML
     TableView<DetailOrderChainObj> detailOrderChainTableview;
     @FXML
-    TableColumn searchOrderNoColumn,searchCustomerColumn, searchDateColumn, searchTotalPriceColumn, searchStatusColumn, searchLocationColumn, itemColumn, priceColumn;
+    TableColumn searchOrderNoColumn, searchCustomerColumn, searchDateColumn, searchTotalPriceColumn, searchStatusColumn, searchLocationColumn, itemColumn, priceColumn;
     @FXML
     TableColumn driverLocationColumn, driverStatusColumn, driverOrderNoColumn, colInvoiceID, colNewLocation, colTimeDate, colEmployee, colLaundryListID, colAlias, colInfo;
     @FXML
@@ -69,13 +72,6 @@ public class MainController implements Initializable {
     private VBox sideBarAssistant, sideBarDriver, sideBarManager  = new VBox();
     @FXML
     private Label contentLabel;
-
-    /**
-     * Copies all order entries into the Invoice observable list.
-     * And takes information for status 1 and 5 (from shop and to shop) into the driverslist.
-     *
-     */
-
     /**
      * Open new order pane.
      *
@@ -93,6 +89,10 @@ public class MainController implements Initializable {
         orderList.clear();
 
     }
+
+    /**
+     * Adding customer into database.
+     */
     @FXML
     void addCustomer(){
         if(!addCUSFullNameTF.getText().equals("") && !addCUSHomelocationTF.getText().equals("") && !addCUSMailTF.getText().equals("") && !addCUSPhoneTF.getText().equals("")) {
@@ -100,6 +100,7 @@ public class MainController implements Initializable {
             String HomeLocation = addCUSHomelocationTF.getText();
             String Email = addCUSMailTF.getText();
             String Phone = addCUSPhoneTF.getText();
+
 
             System.out.println(FullName);
             System.out.println(HomeLocation);
@@ -114,14 +115,13 @@ public class MainController implements Initializable {
             addCUSMailTF.setText("");
             addCUSPhoneTF.setText("");
         } else {
-            System.out.println("new user NOT registered, missing data");
+            contentLabel.setText("Not Possible - Add all information");
         }
 
     }
 
     /**
      * Open order pane.
-     *
      * @param event the event of pressing the button
      */
     @FXML
@@ -263,7 +263,7 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Round to 2 double.
+     * Round to 2 decimals.
      *
      * @param value  the value to be rounded
      * @param places the decimal places.
@@ -276,22 +276,23 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Close window.
+     * handles logIn and logOut Loop. .
+     * From the main we press the logOut and close the Main-Pane
+     * From the Login-Pane we press LogIn and close the LoginPain for opening the Main again.
      *
      * @param button the button which was press on either logIn or Main UI
      */
     @FXML
     public void closeWindow(Button button) {
-        System.out.println("logout Button reached closeWind");
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
-        System.out.println("Closed Window");
     }
 
     /**
      * Get more information on double pressing an entry.
-     * Inside the orders pane.
-     * @param event the event
+     * Inside the orders list - this will open the.
+     *
+     * @param event the event of double pressing an entry.
      */
     @FXML
     void getMoreInformation(MouseEvent event) {
@@ -438,20 +439,24 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Toogle multiselection.
+     * Toogle multiselection on and off.
      */
     @FXML
     public void toogleSelection() {
-        driverTableview.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        if(updateStatusButt.isSelected()){
+        driverTableview.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);}
+        else{
+            driverTableview.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        }
     }
 
     /**
      * Works as the status updater //Todo
      *
-     * @param evevnt the evevnt
+     * @param event the event of pressening the update statusButton.
      */
     @FXML
-    public void driverShiftWorkflow(ActionEvent evevnt) {
+    public void driverShiftWorkflow(ActionEvent event) {
         ObservableList<OrderViewObj> selectedItems = driverTableview.getSelectionModel().getSelectedItems();
         System.out.println(selectedItems.get(0).getInvoiceID());
         System.out.println(selectedItems.get(1).getCustomerName());
@@ -459,7 +464,7 @@ public class MainController implements Initializable {
 
         ArrayList<OrderViewObj> selectedIDs = new ArrayList<OrderViewObj>();
         for (OrderViewObj row : selectedItems) {
-//            selectedIDs.add(row.get(0)); Have Fun triggering Logic
+//            selectedIDs.add(row.get(0)); /TODO
         }
 
         ListIterator<OrderViewObj> iterator = selectedIDs.listIterator();
@@ -471,8 +476,9 @@ public class MainController implements Initializable {
 
     /**
      * Do cancellation. Asks the user if he is sure to cancel the placement of an order.
+     * Through an alert message.
      *
-     * @param event the event
+     * @param event of pressing the X button the pane
      * @throws InterruptedException the interrupted exception
      */
     @FXML
@@ -522,7 +528,7 @@ public class MainController implements Initializable {
     }
 
     /**
-     * New invoice is created after confirmation. With TimeStamp and DB Entry
+     * New invoice is created after confirmation. With TimeStamp and Database Entry
      */
     @FXML
     public void newInvoice() {
@@ -668,7 +674,6 @@ public class MainController implements Initializable {
      *
      * @param event the event of pressing the button
      */
-
     @FXML
     void skirtSelect(ActionEvent event) {
         for (Item i : items) {
@@ -734,6 +739,9 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * Load items from the database.
+     */
     public static void loadItemsFromDb(){
         System.out.println("--> loadItemFromDb()");
 
@@ -763,6 +771,9 @@ public class MainController implements Initializable {
         System.out.println("--> loadItemFromDb successful");
     }
 
+    /**
+     * Load orders from the database.
+     */
     public static void loadOrdersFromDb(){
         System.out.println("--> loadOrderFromDb");
 
