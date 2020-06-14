@@ -97,8 +97,9 @@ public class DatabaseConnector {
         try {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
             System.out.println("preparing statement: OK");
-            rs = prpstmt.executeQuery();
+            int u = prpstmt.executeUpdate();
             System.out.println("executing statement: OK");
+            System.out.println(u + " rows have been affected by update command");
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println("update didnt work");
@@ -115,7 +116,6 @@ public class DatabaseConnector {
             prpstmt = DatabaseConnector.getConnection().prepareStatement(sql);
             System.out.println("preparing statement: OK");
             boolean ok = prpstmt.execute();
-            if (ok) System.out.println("executing statement: OK"); else System.out.println("insert: OK");
         } catch ( SQLException e){
             e.printStackTrace();
             System.out.println("insert didnt work, and sql error");

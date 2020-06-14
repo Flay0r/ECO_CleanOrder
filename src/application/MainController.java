@@ -117,7 +117,6 @@ public class MainController implements Initializable {
         } else {
             contentLabel.setText("Not Possible - Add all information");
         }
-
     }
 
     /**
@@ -458,20 +457,26 @@ public class MainController implements Initializable {
     @FXML
     public void driverShiftWorkflow(ActionEvent event) {
         ObservableList<OrderViewObj> selectedItems = driverTableview.getSelectionModel().getSelectedItems();
-        System.out.println(selectedItems.get(0).getInvoiceID());
-        System.out.println(selectedItems.get(1).getCustomerName());
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        int employee = currentUser.id;
 
-        ArrayList<OrderViewObj> selectedIDs = new ArrayList<OrderViewObj>();
-        for (OrderViewObj row : selectedItems) {
-//            selectedIDs.add(row.get(0)); /TODO
+        for(OrderViewObj o : selectedItems){
+            if(o.getStageID()==1){
+                int InvoiceID = o.getInvoiceID();
+                //if we update an order on its status which currently has orderstatus=1, it will go to the HQ cleaning facility which in this case is subsidiary no 2, might be changed though
+                DatabaseConnector.update("update Invoice set StageID=5 where InvoiceID=" + InvoiceID);
+                DatabaseConnector.insert("insert into OrderChain values(" + InvoiceID + ",2,'" + dtf.format(now) + "'," + employee + ",NULL )");
+            } else if (o.getStageID()==5){
+                int InvoiceID = o.getInvoiceID();
+                //in this testcase, the order will be shipped back to subsidiary no 1 which in this case is out test shop / dropoff point, of course this can be changed accordingly
+                //in a real life scenario, at this point, code would have to fetch starting position of the invoice entry, and ship back to that subsidiary number
+                DatabaseConnector.update("update Invoice set StageID=7 where InvoiceID=" + InvoiceID);
+                DatabaseConnector.insert("insert into OrderChain values(" + InvoiceID + ",1,'" + dtf.format(now) + "'," + employee + ",NULL )");
+            }
         }
-
-        ListIterator<OrderViewObj> iterator = selectedIDs.listIterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-
+        loadOrdersFromDb();
     }
 
     /**
