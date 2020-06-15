@@ -32,7 +32,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <center>
       <AnchorPane>
          <children>
@@ -540,11 +540,6 @@
                                              </opaqueInsets>
                                           </SplitPane>
                                        </children></AnchorPane>
-                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0" visible="false">
-                                       <children>
-                                          <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
                                     <AnchorPane fx:id="calendarPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
                                        <children>
                                           <ImageView fitHeight="720.0" fitWidth="618.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
@@ -740,7 +735,7 @@
                                           <JFXButton fx:id="customerAddButt" layoutX="333.0" layoutY="262.0" onAction="#addCustomer" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: #89B9AC; -fx-background-radius: 0;" text="ADD" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager">
+                                    <AnchorPane fx:id="workFlowPane" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="content-area-manager" visible="false">
                                        <children>
                                           <TableView fx:id="driverTableview" editable="true" layoutY="30.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@CSS/tableView.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                             <columns>
@@ -749,6 +744,11 @@
                                                 <TableColumn fx:id="driverOrderNoColumn" minWidth="50.0" prefWidth="294.0" text="OrderNo" />
                                             </columns>
                                           </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="emptyDefault" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <Button layoutX="449.0" layoutY="238.0" mnemonicParsing="false" prefHeight="501.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>
